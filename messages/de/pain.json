@@ -1,0 +1,22 @@
+{
+  "h2": "Die Unterlagen sind vorhanden —<br></br>aber die Interpretation bleibt verstreut",
+  "scene1": {
+    "stageAriaLabel": "Verstreute Materialien werden zur Geschichte einer Person zusammengeführt",
+    "title": "Wenn Sie verstreute Materialien zur Geschichte einer Person zusammenführen müssen",
+    "quote": "\"Wenn Assessmentergebnisse und Sitzungsnotizen nicht miteinander sprechen,<br></br>ist das Zusammenführen zu einer einzigen Geschichte das Schwierigste.\"",
+    "cite": "Interview mit Berater:in"
+  },
+  "scene2": {
+    "stageAriaLabel": "Ein Berg von Dokumenten häuft sich nach einer Sitzung an",
+    "title": "Wenn Sie<br></br>dieselbe Sache immer wieder neu schreiben müssen",
+    "quote": "\"Dieselbe Sitzung in jedes Formular neu zu dokumentieren<br></br>verschiebt mein Feierabend immer weiter nach hinten.\"",
+    "cite": "Interview mit Berater:in einer Einrichtung"
+  },
+  "scene3": {
+    "stageAriaLabel": "Unterlagen sind vorhanden, aber der Faden für die nächste Sitzung verheddert sich",
+    "title": "Wenn Sie nicht sicher sind, wo Sie in der nächsten Sitzung anknüpfen sollen",
+    "quote": "\"Die Notizen sind da —<br></br>aber ich muss trotzdem alles noch einmal durchlesen, um meinen Faden wiederzufinden.\"",
+    "cite": "Interview mit praktizierender Therapeut:in"
+  },
+  "motionCaption": "Die Materialien jeder Szene sind noch immer unverbunden; die Arbeit des Integrierens, Überprüfens und Verknüpfens liegt weiterhin in den Händen der Berater:in"
+}

@@ -1,0 +1,76 @@
+{
+  "headTitle": "Comience con el plan que se adapta a su práctica",
+  "recommendedBadge": "Recomendado",
+  "feelLabel": "Uso típico",
+  "clientsKey": "Clientes",
+  "sessionsKey": "Sesiones/mes",
+  "footNote": "Las cifras de uso típico son ejemplos basados en la documentación media de sesiones. El uso real de créditos varía según el tipo de tarea y la extensión de las notas.",
+  "plans": [
+    {
+      "name": "Inicial",
+      "target": "Terapeutas individuales nuevos en Modalia AI",
+      "price": "Contáctenos",
+      "credits": "500 créditos / mes",
+      "clientsValue": "Hasta 5 al mes",
+      "sessionsValue": "Hasta ~8 al mes",
+      "features": [
+        "Transcripciones de sesión estándar y avanzadas",
+        "Notas de consejería",
+        "Supervisión con IA"
+      ],
+      "ctaLabel": "Comenzar",
+      "ctaIntent": "signup",
+      "ctaTier": "starter"
+    },
+    {
+      "name": "Plus",
+      "target": "Terapeutas individuales consolidados",
+      "price": "Contáctenos",
+      "credits": "2.500 créditos / mes",
+      "clientsValue": "Hasta 15 al mes",
+      "sessionsValue": "Hasta ~40 al mes",
+      "features": [
+        "Todo lo del plan Inicial",
+        "Todos los tipos de notas de conceptualización del caso",
+        "Todos los modos teóricos de supervisión con IA"
+      ],
+      "ctaLabel": "Comenzar",
+      "ctaIntent": "signup",
+      "ctaTier": "plus"
+    },
+    {
+      "name": "Pro",
+      "target": "Terapeutas a tiempo completo o equipos pequeños",
+      "price": "Contáctenos",
+      "credits": "5.000 créditos / mes",
+      "clientsValue": "30+ al mes",
+      "sessionsValue": "~80+ al mes",
+      "features": [
+        "Todo lo del plan Plus",
+        "Acceso anticipado a nuevas funciones",
+        "Procesamiento prioritario para cargas de trabajo grandes"
+      ],
+      "ctaLabel": "Comenzar",
+      "ctaIntent": "signup",
+      "ctaTier": "pro"
+    },
+    {
+      "name": "Institución",
+      "target": "Centros · Hospitales · Entidades públicas · Escuelas",
+      "price": "Contáctenos",
+      "credits": "Créditos personalizados",
+      "clientsValue": "Adaptado al tamaño del equipo",
+      "sessionsKey": "Notas",
+      "sessionsValue": "Plantillas institucionales personalizadas",
+      "features": [
+        "Cuentas para múltiples terapeutas y gestión de permisos",
+        "Plantillas de notas institucionales personalizadas",
+        "Herramientas de administración / gestión del equipo",
+        "Soporte de incorporación y consultoría de seguridad"
+      ],
+      "ctaLabel": "Consultar sobre el plan institucional",
+      "ctaIntent": "institution_inquiry",
+      "ctaTier": "institution"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "head": {
+    "h2Line1": "Vom Rückstand bei Notizen",
+    "h2Line2": "bis zum Stocken mitten in der Sitzung"
+  },
+  "navPrev": "Vorherige Situation",
+  "navNext": "Nächste Situation",
+  "railAriaLabel": "Karten-Schiene für Berater:innen-Situationen",
+  "counterAriaLabel": "Aktuelle Situationsposition",
+  "items": [
+    {
+      "cat": "Die in Dokumentation ertrinkende Berater:in",
+      "sceneLine1": "Montagnacht, 22 Uhr —",
+      "sceneLine2": "noch sechs Notizen zu schreiben",
+      "quote": "Die Sitzung ist vorbei, aber der Papierkram rutscht immer auf den nächsten Tag.",
+      "desc": "Sitzungsaufzeichnungen und Rohnotizen in einen überprüfungsfertigen Sitzungsnotiz-Entwurf umwandeln.",
+      "tag1": "Transkript",
+      "tag2": "Sitzungsnotizen"
+    },
+    {
+      "cat": "Die bei der integrierten Interpretation feststeckende Berater:in",
+      "sceneLine1": "Assessmentergebnisse und Interviewnotizen",
+      "sceneLine2": "sprechen nicht miteinander",
+      "quote": "Ich habe die Testergebnisse, aber ich weiß nicht, wie ich sie mit dem verbinden soll, was wirklich in der Sitzung passiert ist.",
+      "desc": "Assessmentergebnisse und Sitzungsunterlagen zu einem integrierten Interpretationsentwurf zusammenführen.",
+      "tag1": "Psychologisches Assessment",
+      "tag2": "Fallkonzeptualisierung"
+    },
+    {
+      "cat": "Die sich auf Supervision vorbereitende Berater:in",
+      "sceneLine1": "Der Abend vor der Supervision —",
+      "sceneLine2": "unsicher, welchen Fall zu bringen",
+      "quote": "Ich kann nicht herausfinden, was die zentrale Fallfrage überhaupt ist.",
+      "desc": "Fallkonzeptualisierung und Supervisionsfragen aus Sitzungsmustern und wiederkehrenden Hinweisen strukturieren.",
+      "tag1": "Fallkonzeptualisierung",
+      "tag2": "KI-Feedback"
+    },
+    {
+      "cat": "Die an institutionelle Formulare gebundene Berater:in",
+      "sceneLine1": "Gleicher Inhalt, anderes Formular",
+      "sceneLine2": "jedes einzelne Mal",
+      "quote": "Der Sitzungsinhalt ist derselbe, aber die Einreichungsvorlage ist immer anders.",
+      "desc": "Sitzungsunterlagen an institutionelle und Berichtsvorlagen anpassen.",
+      "tag1": "Sitzungsnotizen",
+      "tag2": "Institutionsformulare"
+    },
+    {
+      "cat": "Die komplexe Familiensysteme kartierende Berater:in",
+      "sceneLine1": "Familienbeziehungen zu verworren,",
+      "sceneLine2": "um das gesamte Bild auf einmal zu sehen",
+      "quote": "Ich spüre die Beziehungsdynamiken, aber sie in eine Struktur zu bringen ist schwer.",
+      "desc": "Familienhinweise und Beziehungsinformationen zu einer genogrammzentrierten Zusammenfassung strukturieren.",
+      "tag1": "Genogramm",
+      "tag2": "Beziehungskartierung"
+    }
+  ],
+  "markerName": "Personas · Situationen (5 Situationskarten)",
+  "markerPurpose": "Verzweigung nach dem 'Moment, in dem Sie stecken bleiben', nicht nach Berufsbezeichnung · 5 gleichwertige Karten · Selbstidentifikation"
+}

@@ -1,0 +1,222 @@
+/* Pre-launch waitlist modal styles. Plain stylesheet (NOT the Tailwind entry)
+   — imported in app/[locale]/layout.tsx after hifi.css. Moved out of globals.css
+   so the rules never depend on Tailwind layer ordering / dev HMR of the entry. */
+
+.wl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(16px, 5vh, 56px) 16px;
+  overflow-y: auto;
+  background: rgba(15, 18, 16, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: wl-fade 0.18s ease-out;
+}
+.wl-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: clamp(24px, 4vw, 36px);
+  border-radius: 20px;
+  background: var(--bg-base, #ffffff);
+  box-shadow:
+    0 24px 64px rgba(15, 18, 16, 0.24),
+    0 2px 8px rgba(15, 18, 16, 0.08);
+  animation: wl-pop 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.wl-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted, #6b7280);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.wl-close:hover {
+  background: var(--bg-warm, #f7f5f1);
+  color: var(--text-primary, #1f1f1f);
+}
+.wl-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--brand-primary-pale, #e2f6e6);
+  color: var(--brand-text-on-light, #2e7d3e);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.wl-title {
+  margin: 14px 0 8px;
+  font-family: var(--font-heading, inherit);
+  font-size: clamp(22px, 3.4vw, 27px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-heading-strong, #0e0e0e);
+}
+.wl-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-body, #4b4b4b);
+}
+.wl-video {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 6px 20px rgba(15, 18, 16, 0.16);
+}
+.wl-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.wl-perk {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--brand-primary-pale, #e2f6e6);
+  border: 1px solid var(--brand-primary-tint, #b5e2bf);
+}
+.wl-perk-icon {
+  font-size: 22px;
+  line-height: 1.2;
+}
+.wl-perk-title {
+  margin: 0 0 2px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--brand-text-on-light, #2e7d3e);
+}
+.wl-perk-body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-body, #4b4b4b);
+}
+.wl-form {
+  margin: 0;
+}
+.wl-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary, #4c5058);
+}
+.wl-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.wl-input {
+  flex: 1 1 200px;
+  min-width: 0;
+  height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line-1, #e1e3e7);
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--text-primary, #1f1f1f);
+  background: var(--bg-base, #ffffff);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.wl-input:focus {
+  outline: none;
+  border-color: var(--brand-primary, #44ce4b);
+  box-shadow: 0 0 0 3px var(--brand-primary-alpha-20, rgba(101, 195, 119, 0.2));
+}
+.wl-input[aria-invalid='true'] {
+  border-color: var(--alert, #e5484d);
+}
+.wl-row .btn {
+  height: 48px;
+  white-space: nowrap;
+}
+.wl-error {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--alert, #e5484d);
+}
+.wl-privacy {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted, #6b7280);
+}
+.wl-success {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+.wl-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: var(--brand-primary-pale, #e2f6e6);
+  color: var(--brand-primary-dark, #40a755);
+  font-size: 28px;
+  font-weight: 700;
+}
+.wl-success .wl-title {
+  margin-top: 0;
+}
+.wl-done {
+  margin-top: 20px;
+  width: 100%;
+}
+
+@keyframes wl-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes wl-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wl-overlay,
+  .wl-dialog {
+    animation: none;
+  }
+}

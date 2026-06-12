@@ -1,0 +1,41 @@
+{
+  "eyebrow": "Blog de Modalia AI",
+  "title": "Blog",
+  "subtitle": "Perspectivas del campo, seguridad, tecnología e historias de clientes para consejeros y terapeutas — todo en un solo lugar.",
+  "categorySubtitle": "Artículos en esta categoría.",
+  "headerAria": "Blog de Modalia AI — encabezado de página",
+  "all": "Todos",
+  "categoriesAria": "Categorías del blog",
+  "minRead": "min de lectura",
+  "prevPage": "Página anterior",
+  "nextPage": "Página siguiente",
+  "paginationAria": "Paginación",
+  "pageN": "Página {n}",
+  "empty": {
+    "title": "Artículos próximamente",
+    "body": "Estamos preparando nuestros primeros artículos de alta calidad para este idioma. Vuelva pronto.",
+    "cta": "Ver todas las publicaciones"
+  },
+  "related": "Artículos relacionados",
+  "breadcrumbHome": "Inicio",
+  "breadcrumbAria": "Ruta de navegación",
+  "backToList": "Volver al blog",
+  "author": {
+    "role": "Equipo Clínico y de Consejería"
+  },
+  "keyTakeaway": "Punto clave",
+  "contents": "Contenidos",
+  "references": "Referencias",
+  "refType": {
+    "academic": "Académico",
+    "government": "Gubernamental",
+    "industry": "Sectorial"
+  },
+  "faqTitle": "Preguntas frecuentes",
+  "disclosure": "Este artículo fue redactado y revisado con las directrices clínicas de Modalia AI, con revisión humana profesional antes de su publicación.",
+  "cta": {
+    "title": "Incorpore un aliado de IA seguro a su práctica",
+    "body": "Modalia AI ayuda a los terapeutas con la transcripción, la conceptualización del caso y la documentación — construido con la seguridad como prioridad.",
+    "button": "Comenzar gratis"
+  }
+}

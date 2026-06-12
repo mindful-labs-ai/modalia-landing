@@ -1,0 +1,541 @@
+  /* ============== COMPARE ============== */
+  .compare-wrap { border: 1px solid var(--ink); border-radius: 4px; background: var(--white); overflow: hidden; }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row > div { padding: 14px 18px; font-size: 13px; border-right: 1px solid var(--line); color: var(--ink-2); }
+  .compare-row > div:last-child { border-right: none; }
+  .compare-row.head > div { background: var(--bg-2); font-weight: 600; color: var(--ink); font-size: 13.5px; }
+  .compare-row.head .col-us { background: var(--ink); color: var(--white); }
+  .compare-row .col-label { background: var(--bg); font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink-3); font-weight: 500; }
+
+  .compare-note {
+    margin-top: 16px;
+    border: 1px dashed var(--ink-2);
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-size: 12.5px;
+    color: var(--ink-2);
+  }
+  .compare-note strong { color: var(--ink); }
+
+  /* ============== §07 vs-compare · dual panels v9 (사수 v9 · 2026-04-28) ==============
+     v8 row-by-row board → 좌우 dual panel 구조로 재정비.
+     - 마음토스 영역 전체를 하나의 박스 패널로 묶음 (각 행마다 끊긴 green left rule X)
+     - 좌(범용 AI): warm bg-2 panel · muted text · neutral
+     - 우(마음토스): white panel + 1.5px brand border + brand-tinted shadow + 살짝 lift -4px
+     - 행 구분: 안쪽 dashed 1px만 (외부 border가 panel 전체를 묶고, 행 단위 강조 X)
+     - 각 행 좌측에 작은 numbered chip (01..05) — 마음토스 panel은 brand-pale chip
+     - 비교 카피는 v1 와이어프레임 회수 (01/02/03/05) + 04만 상담 맥락 검토 메시지로 교체
+     - 톤: 범용 AI 비난 X / 역할 차이 / 40대 가독성 */
+
+  .vs-head {
+    max-width: 1080px;
+    margin: 0 auto 48px;
+    text-align: left;
+  }
+  .vs-head .t-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-base);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--brand-hover);
+    background: var(--brand-pale);
+    padding: 7px 14px 7px 12px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .vs-head .t-eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 4px rgba(50, 215, 75, 0.16);
+  }
+  .vs-head .t-h2 {
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.16;
+    letter-spacing: -0.034em;
+    margin: 0;
+    color: var(--ink-strong);
+    word-break: keep-all;
+  }
+  /* 사수 v11 (2026-04-29): H2 의도적 2줄 분리 — display:none 해제 */
+  .vs-head .t-h2 br { display: inline; }
+  .vs-head .t-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 660px;
+  }
+
+  /* Two-panel container — layered: Mindthos가 Generic 위로 살짝 얹어지는 구조 */
+  .vs-compare {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  /* Panel base */
+  .vs-side {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 32px 28px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Generic — neutral muted (후퇴, 배경 레이어 z-index:1) */
+  .vs-side-generic {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-2);
+    border: 1px solid var(--line-warm);
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
+    padding-right: 80px; /* Mindthos overlap zone safety — 텍스트가 가려지지 않도록 우측 여백 확보 */
+  }
+
+  /* Mindthos — premium panel: 더 깊은 layered shadow + 상단 brand glow accent bar + 더 큰 lift */
+  .vs-side-mindthos {
+    position: relative;
+    z-index: 2;
+    margin-left: -48px; /* Generic 카드 우측으로 ~48px overlap (전체 폭의 ~9%) */
+    background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+    border: 1.5px solid rgba(22, 138, 53, 0.62);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 28px 70px -24px rgba(22, 138, 53, 0.34),
+      0 18px 44px -20px rgba(15, 23, 42, 0.12),
+      0 4px 10px -6px rgba(15, 23, 42, 0.04);
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+    overflow: hidden;
+  }
+  .vs-side-mindthos::before {
+    /* 상단 가운데 brand glow accent bar */
+    content: '';
+    position: absolute;
+    top: -1.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-soft), var(--brand), var(--brand-hover));
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 8px 18px -4px rgba(22, 138, 53, 0.5);
+    pointer-events: none;
+  }
+  /* Mindthos hover (in-view scope) — Mindthos만 살짝 더 떠오름, Generic은 변화 없음 */
+  .vs-compare.vs-in-view .vs-side-mindthos:hover {
+    transform: translateX(0) translateY(-8px);
+    transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 36px 84px -22px rgba(22, 138, 53, 0.42),
+      0 22px 52px -20px rgba(15, 23, 42, 0.14),
+      0 4px 10px -6px rgba(15, 23, 42, 0.04);
+  }
+
+  /* Panel head */
+  .vs-side-head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 6px;
+  }
+  .vs-side-mindthos .vs-side-head { border-bottom-color: var(--brand-tint); }
+
+  .vs-side-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Match Generic brand-stack height (24 + 10 + 28) so both panels' first dividers align */
+    min-height: 62px;
+  }
+  .vs-side-tag-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--ink-3);
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+  .vs-side-tag-icons svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+  /* Generic AI 카드 — 우상단 Gemini / ChatGPT 로고 (실제 브랜드 이미지) */
+  .vs-side-tag-brands {
+    margin-left: auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .vs-brand-img {
+    display: block;
+    width: auto;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    user-select: none;
+  }
+  .vs-brand-gemini { height: 24px; }
+  .vs-brand-gpt { height: 28px; margin-right: 32px; }
+  .vs-side-tag-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  .vs-side-tag-logo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  /* Mindthos brand logo image (replaces text + small icon combo) */
+  .vs-side-logo-img {
+    display: block;
+    height: 34px;
+    width: auto;
+    user-select: none;
+  }
+  /* Mindthos brand watermark — top-right of Mindthos card */
+  .vs-side-watermark {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+  }
+  .vs-side-watermark img,
+  .vs-side-watermark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+  .vs-side-mindthos .vs-side-head,
+  .vs-side-mindthos .vs-rows {
+    position: relative;
+    z-index: 1;
+  }
+  .vs-side-name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.018em;
+    color: var(--ink-strong);
+    line-height: 1.25;
+  }
+  .vs-side-generic .vs-side-name { color: var(--ink-2); }
+  .vs-side-sub {
+    margin: 8px 0 0;
+    font-size: 13.5px;
+    color: var(--ink-3);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+  }
+  .vs-side-mindthos .vs-side-sub { color: var(--ink-2); }
+
+  /* Rows */
+  .vs-rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .vs-row {
+    position: relative;
+    padding: 20px 0 20px 44px;
+    border-top: 1px dashed var(--line);
+    transition: background 0.25s ease;
+  }
+  .vs-row:first-child { border-top: 0; padding-top: 22px; }
+  .vs-side-mindthos .vs-row { border-top-color: rgba(22, 138, 53, 0.18); }
+  .vs-side-mindthos .vs-row:hover {
+    background: rgba(22, 138, 53, 0.04);
+  }
+
+  /* Numbered chip — 좌측 작은 mono num */
+  .vs-row::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--ink-2);
+  }
+  .vs-row:first-child::before { top: 24px; }
+  .vs-side-mindthos .vs-row::before {
+    background: var(--brand-pale);
+    border-color: var(--brand-tint);
+    color: var(--brand-hover);
+  }
+
+  /* Row text */
+  .vs-row-key {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.014em;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .vs-side-generic .vs-row-key { color: var(--ink-2); font-weight: 600; }
+  .vs-side-mindthos .vs-row-key { color: var(--ink-strong); }
+
+  .vs-row-sub {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+  }
+  .vs-side-generic .vs-row-sub { color: var(--ink-3); }
+  .vs-side-mindthos .vs-row-sub { color: var(--ink-2); }
+
+  /* Bottom note — 작은 trust note (CTA X · 중앙 정렬 · check chip은 문구 위 중앙) */
+  .vs-bottom-note {
+    max-width: 880px;
+    margin: 36px auto 0;
+    padding: 22px 26px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+  .vs-bottom-note::before {
+    content: '✓';
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    box-shadow: 0 4px 10px -4px rgba(22, 138, 53, 0.45);
+  }
+  .vs-bottom-note p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    word-break: keep-all;
+    letter-spacing: -0.005em;
+    text-align: center;
+  }
+  .vs-bottom-note p strong {
+    color: var(--ink-strong);
+    font-weight: 700;
+  }
+
+  /* Entrance — IntersectionObserver toggles .vs-in-view
+     Generic side 먼저 조용히 fade-up · ~120-180ms 늦게 mindthos가 scale-in + glow pulse로 등장 */
+  .vs-side,
+  .vs-rows .vs-row {
+    opacity: 0;
+    transition: opacity .55s ease, transform .55s cubic-bezier(.22,.78,.32,1);
+  }
+  /* Generic enters first — 조용히 fade-up (배경 비교 기준 톤, 가독성 유지) */
+  .vs-side-generic { transform: translateY(16px); transition: opacity .55s ease, transform .6s cubic-bezier(.22,.78,.32,1); }
+  .vs-side-generic .vs-row { transform: translateY(8px); }
+  .vs-compare.vs-in-view .vs-side-generic            { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+  .vs-compare.vs-in-view .vs-side-generic .vs-row:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.16s; }
+  .vs-compare.vs-in-view .vs-side-generic .vs-row:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
+  .vs-compare.vs-in-view .vs-side-generic .vs-row:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.32s; }
+  .vs-compare.vs-in-view .vs-side-generic .vs-row:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
+  .vs-compare.vs-in-view .vs-side-generic .vs-row:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.48s; }
+
+  /* Mindthos enters second — 오른쪽/아래에서 들어오며 Generic 위에 얹어지는 lift, 등장 시 1회 glow pulse */
+  .vs-side-mindthos { transform: translateX(40px) translateY(24px); }
+  .vs-side-mindthos .vs-row { transform: translateY(8px); }
+  .vs-compare.vs-in-view .vs-side-mindthos {
+    opacity: 1;
+    /* translateY(0): align with Generic panel so row dividers sit at the same Y on both sides */
+    transform: translateX(0) translateY(0);
+    transition: opacity .75s ease 0.22s, transform .75s cubic-bezier(.22,.78,.32,1) 0.22s, box-shadow .3s ease;
+    animation: vs-mindthos-glow 1.6s cubic-bezier(.4,.0,.2,1) 0.45s 1 both;
+  }
+  .vs-compare.vs-in-view .vs-side-mindthos .vs-row:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.62s; }
+  .vs-compare.vs-in-view .vs-side-mindthos .vs-row:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.70s; }
+  .vs-compare.vs-in-view .vs-side-mindthos .vs-row:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.78s; }
+  .vs-compare.vs-in-view .vs-side-mindthos .vs-row:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.86s; }
+  .vs-compare.vs-in-view .vs-side-mindthos .vs-row:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.94s; }
+
+  /* 1회 glow pulse — entry 직후 brand shadow가 살짝 강해졌다가 정상 톤으로 정리 */
+  @keyframes vs-mindthos-glow {
+    0% {
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 24px 60px -28px rgba(22, 138, 53, 0.28),
+        0 16px 40px -22px rgba(15, 23, 42, 0.10),
+        0 4px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+    35% {
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 36px 80px -22px rgba(22, 138, 53, 0.45),
+        0 20px 48px -22px rgba(15, 23, 42, 0.12),
+        0 4px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+    100% {
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 24px 60px -28px rgba(22, 138, 53, 0.28),
+        0 16px 40px -22px rgba(15, 23, 42, 0.10),
+        0 4px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vs-side,
+    .vs-rows .vs-row {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+    .vs-side-mindthos { transform: none !important; animation: none !important; }
+    .vs-side-mindthos:hover { transform: none !important; }
+  }
+
+  /* Tablet/mobile — stack panels, overlap 해제 (Mindthos는 border + glow로만 강조) */
+  @media (max-width: 860px) {
+    .vs-compare { grid-template-columns: 1fr; gap: 20px; }
+    /* Stacked layout: drop the side-by-side title min-height so the Mindthos logo isn't padded with empty space */
+    .vs-side-title { min-height: 0; }
+    .vs-side-generic { padding-right: 26px; }
+    .vs-side-mindthos {
+      margin-left: 0;
+      transform: translateY(16px);
+    }
+    .vs-side-mindthos:hover { transform: none; }
+    .vs-compare.vs-in-view .vs-side-mindthos {
+      transform: translateY(0);
+      transition: opacity .65s ease 0.18s, transform .7s cubic-bezier(.22,.78,.32,1) 0.18s, box-shadow .3s ease;
+      animation: vs-mindthos-glow 1.6s cubic-bezier(.4,.0,.2,1) 0.50s 1 both;
+    }
+    .vs-compare.vs-in-view .vs-side-mindthos:hover {
+      transform: translateY(0);
+    }
+    .vs-side { padding: 26px 26px 22px; }
+    .vs-row { padding: 18px 0 18px 42px; }
+    .vs-row-key { font-size: 16.5px; }
+    .vs-row-sub { font-size: 14.5px; }
+  }
+
+  @media (max-width: 560px) {
+    .vs-head { margin-bottom: 44px; }
+    .vs-head .t-h2 { font-size: clamp(26px, 7.6vw, 32px); }
+    .vs-head .t-sub { font-size: 16px; }
+    .vs-side { padding: 22px 22px 20px; }
+    .vs-side-name { font-size: 20px; }
+    .vs-side-sub { font-size: 13px; }
+    .vs-side-logo-img { height: 28px; }
+    .vs-side-watermark { width: 60px; height: 60px; top: 14px; right: 16px; }
+    .vs-side-tag-brands { gap: 8px; }
+    .vs-brand-gemini { height: 18px; }
+    .vs-brand-gpt { height: 22px; margin-right: 22px; }
+    .vs-row-key { font-size: 15.5px; }
+    .vs-row-sub { font-size: 14px; }
+    .vs-bottom-note {
+      padding: 18px 20px;
+      gap: 12px;
+    }
+    .vs-bottom-note::before {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+    .vs-bottom-note p { font-size: 14px; }
+  }
+
+
+  /* ============== FLOW ============== */
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    position: relative;
+  }
+  .flow-step {
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    padding: 22px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 260px;
+    position: relative;
+  }
+  .flow-step .step-num {
+    position: absolute;
+    top: -12px;
+    left: 22px;
+    background: var(--white);
+    padding: 0 10px;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--ink-3);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .flow-connector-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    padding: 0 8px;
+    font-size: 14px;
+    color: var(--ink-4);
+  }
+  .flow-grid .flow-step:nth-child(2)::before { content: '→'; position: absolute; left: -16px; top: 50%; transform: translateY(-50%); font-size: 18px; color: var(--ink-4); }
+  .flow-grid .flow-step:nth-child(3)::before { content: '→'; position: absolute; left: -16px; top: 50%; transform: translateY(-50%); font-size: 18px; color: var(--ink-4); }
+

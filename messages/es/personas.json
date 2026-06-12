@@ -1,0 +1,59 @@
+{
+  "head": {
+    "h2Line1": "Desde el retraso en las notas",
+    "h2Line2": "hasta el bloqueo en mitad de la sesión"
+  },
+  "navPrev": "Situación anterior",
+  "navNext": "Siguiente situación",
+  "railAriaLabel": "Carrusel de tarjetas de situaciones del terapeuta",
+  "counterAriaLabel": "Posición de la situación actual",
+  "items": [
+    {
+      "cat": "El terapeuta abrumado por la documentación",
+      "sceneLine1": "Lunes por la noche, 22:00 —",
+      "sceneLine2": "todavía quedan seis notas por escribir",
+      "quote": "La sesión terminó, pero el papeleo sigue postergándose al día siguiente.",
+      "desc": "Convierta las grabaciones de sesión y las notas preliminares en un borrador de notas listo para revisar.",
+      "tag1": "Transcripción",
+      "tag2": "Notas de sesión"
+    },
+    {
+      "cat": "El terapeuta estancado en la interpretación integrada",
+      "sceneLine1": "Los resultados de la evaluación y las notas de entrevista",
+      "sceneLine2": "no se hablan entre sí",
+      "quote": "Tengo las puntuaciones de las pruebas, pero no sé cómo conectarlas con lo que ocurrió realmente en la sesión.",
+      "desc": "Integre los resultados de la evaluación y los registros de sesión en un borrador de interpretación integrada.",
+      "tag1": "Evaluación psicológica",
+      "tag2": "Conceptualización del caso"
+    },
+    {
+      "cat": "El terapeuta preparando la supervisión",
+      "sceneLine1": "La noche antes de la supervisión —",
+      "sceneLine2": "sin saber qué caso presentar",
+      "quote": "No logro identificar cuál es la pregunta central del caso.",
+      "desc": "Organice la conceptualización del caso y las preguntas de supervisión a partir de patrones de sesión e indicios recurrentes.",
+      "tag1": "Conceptualización del caso",
+      "tag2": "Retroalimentación de IA"
+    },
+    {
+      "cat": "El terapeuta sujeto a formularios institucionales",
+      "sceneLine1": "Mismo contenido, formato diferente",
+      "sceneLine2": "cada vez sin excepción",
+      "quote": "El contenido de la sesión es el mismo, pero la plantilla de presentación siempre es distinta.",
+      "desc": "Reformatee los registros de sesión para adaptarlos a plantillas institucionales y de informes.",
+      "tag1": "Notas de sesión",
+      "tag2": "Formularios institucionales"
+    },
+    {
+      "cat": "El terapeuta mapeando sistemas familiares complejos",
+      "sceneLine1": "Relaciones familiares demasiado enredadas",
+      "sceneLine2": "para ver el panorama completo de una vez",
+      "quote": "Percibo la dinámica relacional, pero plasmarla en una estructura es difícil.",
+      "desc": "Organice los indicios familiares y la información relacional en un resumen centrado en el genograma.",
+      "tag1": "Genograma",
+      "tag2": "Mapeo relacional"
+    }
+  ],
+  "markerName": "Personas · Situaciones (5 tarjetas de situación)",
+  "markerPurpose": "Ramificación por el 'momento en que se bloquea', no por el título del puesto · 5 tarjetas de igual peso · identificación propia"
+}

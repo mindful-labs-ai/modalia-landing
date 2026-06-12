@@ -1,0 +1,41 @@
+{
+  "markerName": "FAQ (last questions before getting started)",
+  "markerPurpose": "Resolve final hesitations — credits, security, counselor review, institutional adoption",
+  "heading": "Frequently Asked Questions",
+  "items": [
+    {
+      "question": "Is client data used to train the AI?",
+      "answer": "No. Modalia AI is built on the principle that client data is never used for AI training. Session records are processed to generate outputs, but are not used as model retraining data."
+    },
+    {
+      "question": "How are session records stored?",
+      "answer": "Session records are encrypted before storage. Access is restricted to the minimum necessary scope, and sensitive information can be de-identified by the user at any time."
+    },
+    {
+      "question": "Can I delete records?",
+      "answer": "Yes. Counselors will be able to request or directly manage record deletion. For institutional accounts, retention periods, deletion policies, and access control guidelines can be arranged through a separate agreement."
+    },
+    {
+      "question": "Do I get credits when I start for free?",
+      "answer": "Whether starter credits are included and how many will be announced after our operational policies are finalized. For now, you can explore the output flow through sample demos and select features."
+    },
+    {
+      "question": "How are credits deducted?",
+      "answer": "Credit usage varies by task type and the length of the session record. For example, tasks with different processing scopes — such as transcripts, session notes, case conceptualizations, and psychological test interpretations — may use different amounts.\n\nCredits on a monthly subscription plan are renewed each month and used within that billing cycle. Unused credits do not roll over to the next month; they reset with the next billing cycle.\n\nThe exact deduction structure will be announced after our operational policies are finalized."
+    },
+    {
+      "question": "Is it easy to change or cancel my plan?",
+      "answer": "Plan changes and cancellations will be self-managed by users. Institutional plans may require a separate process depending on contract terms."
+    },
+    {
+      "question": "What session note formats are available?",
+      "answer": "We are preparing templates tailored to counseling workflows — including standard session notes, SOAP, case conceptualizations, institutional formats, and supervision prep. Institution-specific formats can be added over time."
+    },
+    {
+      "question": "Can I use Modalia AI without a transcript?",
+      "answer": "Yes. Even without a recording or transcript, you can use certain features based on counselor notes, interview records, or assessment results. That said, richer and more specific input data will generally produce a more detailed output draft."
+    }
+  ],
+  "footerText": "Didn't find the answer you were looking for?<br></br>We'll walk you through it in an adoption consultation.",
+  "footerCta": "Talk to our team"
+}

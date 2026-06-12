@@ -1,0 +1,98 @@
+{
+  "ariaLabel": "Modalia AI by the numbers",
+  "sectionTitle": "Modalia AI, by the numbers",
+  "cards": [
+    {
+      "value": 2000,
+      "comma": true,
+      "unit": "+",
+      "label": "Active counselors"
+    },
+    {
+      "value": 10000,
+      "comma": true,
+      "unit": "+",
+      "label": "Sessions documented"
+    },
+    {
+      "value": 12,
+      "comma": false,
+      "unit": "hrs+",
+      "label": "Hours saved per month"
+    },
+    {
+      "value": 90,
+      "comma": false,
+      "unit": "%+",
+      "label": "Subscription renewal rate"
+    }
+  ],
+  "reviewsBridge": "Behind the numbers,<br></br>there are reasons counselors <mark>keep coming back</mark>.",
+  "reviewsLabel": "Stories from real counselors",
+  "reviews": [
+    {
+      "tag": "Less documentation burden",
+      "title": "The documentation load feels so much lighter",
+      "text": "Jotting down the session flow right after it ends means I'm no longer reconstructing memories after work. With less mental effort spent on notes, I can stay more present during the session itself.",
+      "authorName": "K. Counselor",
+      "authorRole": "13-year counseling veteran",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "Case organization",
+      "title": "Preparing for supervision got easier",
+      "text": "When I wasn't sure what to bring, having the session highlights and discussion points already laid out is a real help. Putting together materials for my supervisor takes far less time now.",
+      "authorName": "L. Trainee",
+      "authorRole": "Counseling intern",
+      "avatar": "/testimonial-05.webp"
+    },
+    {
+      "tag": "Institutional record keeping",
+      "title": "Our institution's records are finally consistent",
+      "text": "Even when each center uses a different template, I can organize the same session content in a single cohesive flow. Rewriting the same notes for every form is a thing of the past—administrative overhead dropped noticeably.",
+      "authorName": "P. Center Director",
+      "authorRole": "Counseling center manager",
+      "avatar": "/testimonial-06.webp"
+    },
+    {
+      "tag": "Session efficiency",
+      "title": "Time spent organizing records has shrunk",
+      "text": "A first draft gets pulled together in a short window right after the session, so I'm no longer spending evenings wrestling with half-remembered details. I can review the session flow without losing anything.",
+      "authorName": "J. Counselor",
+      "authorRole": "Youth counselor",
+      "avatar": "/testimonial-04.webp"
+    },
+    {
+      "tag": "Focus on clients",
+      "title": "The note-taking pressure has eased",
+      "text": "I used to think mid-session, 'How am I going to write this up later?' Now I stay more present with clients during the session, then just refine the draft afterward.",
+      "authorName": "Y. Counselor",
+      "authorRole": "University counseling center",
+      "avatar": "/testimonial-03.webp"
+    },
+    {
+      "tag": "Fresh perspective",
+      "title": "I now have a way to reframe when I'm stuck",
+      "text": "When case conceptualization hits a wall, reading a draft organized from a different angle surfaces clues I'd missed. I use it less as a finished product and more as a checkpoint for my own judgment.",
+      "authorName": "H. Trainee",
+      "authorRole": "Counseling psychology graduate student",
+      "avatar": "/testimonial-02.webp"
+    },
+    {
+      "tag": "Format conversion",
+      "title": "Different templates, one cohesive flow",
+      "text": "Time spent re-entering the same content for each institutional format has dropped. I can keep the session narrative intact while adapting it to whatever structure is needed.",
+      "authorName": "C. Counselor",
+      "authorRole": "Private counseling center",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "Report polish",
+      "title": "Polishing reports takes far less time",
+      "text": "The draft comes out in a tone close to how I write, so instead of starting from scratch I only touch up what needs changing. Even administrative reports flow more naturally now.",
+      "authorName": "S. Practitioner",
+      "authorRole": "Mental health welfare center",
+      "avatar": "/testimonial-04.webp"
+    }
+  ]
+}

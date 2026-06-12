@@ -1,0 +1,68 @@
+{
+  "wfPurpose": "Because of the sensitivity of client data, we demonstrate safety before features",
+  "h2": "Counseling records must be handled safely —<br></br>before any AI ever touches them",
+  "team": {
+    "title": "Protection principles designed<br></br>with domain experts",
+    "panelAriaLabel": "Expert panel co-designing counseling record protection",
+    "be": {
+      "role": "Backend engineer<br></br>from financial services",
+      "desc": "We structured storage and access controls so session records are never mixed with unrelated data.",
+      "tags": [
+        "Storage architecture",
+        "Access separation"
+      ]
+    },
+    "sec": {
+      "role": "Security consulting<br></br>specialist",
+      "desc": "We audited every point where client information could be exposed against industry standards.",
+      "tags": [
+        "Privacy standards",
+        "Risk review"
+      ]
+    },
+    "ai": {
+      "role": "AI engineer",
+      "desc": "We separated the processing pipeline so session records are never passed to AI training.",
+      "tags": [
+        "No training",
+        "Pipeline isolation"
+      ]
+    },
+    "conclusionLabel": "Our standard for protecting counseling records",
+    "conclusion": "Encrypted before storage · No AI training · Strict access controls",
+    "cta": "How are records protected? <arrow>→</arrow>"
+  },
+  "shield": {
+    "title": "3 safeguards protecting your counseling records",
+    "enc": {
+      "label": "Encrypted before it's ever stored",
+      "desc": "Session records are encrypted before storage and kept only in protected form."
+    },
+    "noai": {
+      "label": "Session records are never used to train AI",
+      "desc": "Records are used only for the task in front of them — they're never kept as AI training data."
+    },
+    "mask": {
+      "label": "Sensitive information is masked before sharing",
+      "desc": "Information that could identify a client is masked by default and can only be revealed when needed."
+    }
+  },
+  "encmini": {
+    "tagPlain": "Original",
+    "tagEnc": "Encrypting",
+    "tagStored": "Stored form",
+    "sentence": "Today's session notes have been securely organized."
+  },
+  "noaimini": {
+    "recordLabel": "Session record",
+    "aiLabel": "AI training"
+  },
+  "maskmini": {
+    "line1": "Client <pii1>Jamie Carter</pii1> can be reached at <pii2>+1 555-0142</pii2>.",
+    "line2": "Affiliated with: <pii3>Downtown Counseling Center</pii3>, session in progress.",
+    "pii1Label": "Person 1",
+    "pii2Label": "Contact",
+    "pii3Label": "Organization",
+    "hint": "Sensitive information is only revealed when needed"
+  }
+}

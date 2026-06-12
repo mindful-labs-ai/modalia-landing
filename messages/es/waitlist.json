@@ -1,0 +1,18 @@
+{
+  "badge": "Próximamente",
+  "title": "Modalia AI se lanza muy pronto",
+  "subtitle": "Estamos dando los últimos toques al lanzamiento global. Déjanos tu correo y sé el primero en enterarte en cuanto esté disponible.",
+  "videoTitle": "Demostración del producto Modalia AI",
+  "perkTitle": "1 mes gratis para quienes se registren antes",
+  "perkBody": "Deja tu correo ahora y te enviaremos un pase gratuito de 1 mes el día del lanzamiento.",
+  "emailLabel": "Correo electrónico",
+  "emailPlaceholder": "tu@ejemplo.com",
+  "submit": "Acceso anticipado",
+  "submitting": "Enviando…",
+  "successTitle": "¡Ya estás en la lista!",
+  "successBody": "Gracias por registrarte. Te escribiremos en el lanzamiento, con tu pase gratuito de 1 mes incluido.",
+  "done": "Listo",
+  "error": "Introduce un correo electrónico válido e inténtalo de nuevo.",
+  "privacy": "Solo usaremos tu correo para avisarte del lanzamiento. Sin spam.",
+  "close": "Cerrar"
+}

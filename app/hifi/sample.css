@@ -1,0 +1,2437 @@
+  /* ============== §05 SAMPLE — interactive demo (hi-fi pass) ============== */
+  .sample-head {
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 86vh;
+    padding: 64px 0 48px;
+  }
+  .sample-head-sub {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 540px;
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .sample-head .t-h2 { color: #FFFFFF; }
+  .sample-head-scroll {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 36px;
+    border: 1.4px solid rgba(50, 215, 75, 0.32);
+    border-radius: 18px;
+    margin-top: 28px;
+    position: relative;
+  }
+  .sample-head-scroll-line {
+    width: 2px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--brand);
+    margin-top: 6px;
+    animation: sample-scroll-bounce 1.8s ease-in-out infinite;
+  }
+  @keyframes sample-scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.85; }
+    50% { transform: translateY(8px); opacity: 0.4; }
+  }
+  .sample-head .t-h2,
+  .sample-head-sub,
+  .sample-head-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .6s var(--ease), transform .6s var(--ease);
+  }
+  .sample-section.is-in-view .sample-head .t-h2 {
+    opacity: 1; transform: none;
+    transition-delay: .1s;
+  }
+  .sample-section.is-in-view .sample-head-sub {
+    opacity: 1; transform: none;
+    transition-delay: .25s;
+  }
+  .sample-section.is-in-view .sample-head-scroll {
+    opacity: 1; transform: none;
+    transition-delay: .4s;
+  }
+  .sample-section .step-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  .sample-section.exp-in-view .step-card {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sample-head .t-h2,
+    .sample-head-sub,
+    .sample-head-scroll,
+    .sample-section .step-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .sample-head-scroll-line { animation: none; }
+  }
+  /* common .section-pill 컴포넌트 정합 */
+  .sample-head .t-eyebrow {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px 9px;
+    background: var(--brand-pale);
+    border: 1px solid var(--brand-tint);
+    color: var(--ink-strong);
+    font-family: var(--font-base);
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    margin: 0 auto 4px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  }
+  .sample-head .t-eyebrow::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 2.5px var(--brand-alpha);
+    flex-shrink: 0;
+  }
+  .sample-head .t-h2 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    font-weight: 700;
+    margin: 0;
+    text-wrap: balance;
+    word-break: keep-all;
+  }
+  .sample-head .t-sub {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    text-wrap: pretty;
+    word-break: keep-all;
+    max-width: 720px;
+    letter-spacing: -0.005em;
+  }
+  /* entry CTA / collapsed 상태 ❌ — 진입 시 Step 1 즉시 노출 */
+  .sample-entry-cta, .sample-entry-cta-arrow { display: none; }
+  .step-card[data-collapsed="false"] { animation: panel-expand 320ms ease both; }
+  @keyframes panel-expand {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .step-card[data-collapsed="false"] { animation: none; }
+  }
+
+  /* ===== Step 1 — 5 cards grid ===== */
+  .case-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 1100px) {
+    .case-grid-5 { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .case-grid-5 { grid-template-columns: 1fr; }
+  }
+  .case-grid-5 .case-card { min-height: 240px; padding: 18px 18px 16px; }
+  .case-grid-5 .case-card .cc-title { font-size: 16px; }
+  .case-grid-5 .case-card .cc-situ { font-size: 12.5px; }
+
+  /* ===== Step 2 — 템플릿 추천 ===== */
+  .sm-tpl-recommend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .sm-tpl-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--brand-hover);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .sm-tpl-primary {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background:
+      linear-gradient(180deg, var(--brand-pale) 0%, var(--white) 100%);
+    border: 1.5px solid var(--brand);
+    border-radius: var(--radius-xl);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 8px 22px -10px rgba(50, 215, 75, 0.40);
+    cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+  }
+  .sm-tpl-primary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 12px 28px -10px rgba(50, 215, 75, 0.50);
+  }
+  .sm-tpl-primary-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius);
+    background: var(--white);
+    border: 1px solid var(--brand-tint);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-hover);
+  }
+  .sm-tpl-primary-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .sm-tpl-primary-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.014em;
+  }
+  .sm-tpl-primary-desc {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    line-height: 1.4;
+  }
+  .sm-tpl-primary-mark {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--ink-strong);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 3px var(--brand-alpha);
+  }
+  .sm-tpl-others {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sm-tpl-others-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .sm-tpl-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .sm-tpl-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px 5px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    font-size: 12.5px;
+    color: var(--ink-2);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+  }
+  .sm-tpl-chip:hover {
+    border-color: var(--brand-tint);
+    background: var(--brand-pale);
+    color: var(--brand-hover);
+  }
+
+  /* ===== Step 3 — 생성 중 sequential check ===== */
+  .sm-gen-list {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .sm-gen-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--line-warm);
+    border-radius: var(--radius-lg);
+    transition:
+      background var(--dur-fast) var(--ease),
+      border-color var(--dur-fast) var(--ease);
+  }
+  .sm-gen-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--line);
+    flex-shrink: 0;
+    position: relative;
+    transition:
+      background var(--dur-fast) var(--ease),
+      border-color var(--dur-fast) var(--ease);
+  }
+  .sm-gen-text {
+    font-size: 14px;
+    color: var(--ink-2);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+  /* active — brand spinner */
+  .sm-gen-item.is-active {
+    background: var(--brand-pale);
+    border-color: var(--brand-tint);
+  }
+  .sm-gen-item.is-active .sm-gen-icon {
+    border-color: var(--brand);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    animation: sm-gen-spin 800ms linear infinite;
+  }
+  .sm-gen-item.is-active .sm-gen-text {
+    color: var(--ink-strong);
+    font-weight: 600;
+  }
+  /* done — brand check */
+  .sm-gen-item.is-done .sm-gen-icon {
+    background: var(--brand);
+    border-color: var(--brand);
+    animation: none;
+  }
+  .sm-gen-item.is-done .sm-gen-icon::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 5px;
+    width: 8px; height: 4px;
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    transform: rotate(-45deg);
+  }
+  .sm-gen-item.is-done .sm-gen-text {
+    color: var(--ink-strong);
+    font-weight: 600;
+  }
+  @keyframes sm-gen-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sm-gen-item.is-active .sm-gen-icon { animation: none; }
+  }
+
+  /* ===== Step 2 — 사수 v35 (2026-04-30): 자료 1개 → 4 양식 fan-out 그래픽 ===== */
+  .sm-step2-mock .sm-step2-body {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 100px minmax(220px, 1.3fr);
+    gap: 16px;
+    align-items: center;
+    padding: 28px 28px 30px;
+  }
+  .sm-step2-source {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sm-step2-source-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px -14px rgba(15, 23, 42, 0.16);
+  }
+  .sm-step2-source-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--brand-pale);
+    color: var(--brand-hover);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sm-step2-source-icon svg { width: 22px; height: 22px; display: block; }
+  .sm-step2-source-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+  .sm-step2-source-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sm-step2-source-sub {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+  }
+  .sm-step2-source-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .sm-step2-source-tags span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+
+  .sm-step2-svg {
+    width: 100%;
+    height: 220px;
+    display: block;
+  }
+  .sm-step2-svg path {
+    fill: none;
+    stroke: rgba(22, 138, 53, 0.40);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-dasharray: 8 6;
+  }
+  .sm-step2-svg path.is-flowing {
+    animation: sm-step2-flow 1.6s linear infinite;
+  }
+  @keyframes sm-step2-flow {
+    to { stroke-dashoffset: -28; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sm-step2-svg path.is-flowing { animation: none; }
+  }
+
+  .sm-step2-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sm-step2-doc {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .sm-step2-doc.is-done {
+    border-color: rgba(22, 138, 53, 0.40);
+    background: #f5fbf6;
+    box-shadow:
+      0 0 0 1px rgba(22, 138, 53, 0.20) inset,
+      0 6px 14px -8px rgba(22, 138, 53, 0.28);
+  }
+  .sm-step2-doc-tag {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-hover);
+    background: var(--brand-pale);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .sm-step2-doc-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.01em;
+  }
+  .sm-step2-doc-status {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid var(--line-strong);
+    background: var(--white);
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .sm-step2-doc.is-doing .sm-step2-doc-status,
+  .sm-step2-doc.is-active .sm-step2-doc-status {
+    border-color: var(--brand);
+    border-top-color: transparent;
+    animation: sm-gen-spin 0.85s linear infinite;
+  }
+  .sm-step2-doc.is-active {
+    border-color: rgba(22, 138, 53, 0.40);
+    background: #f5fbf6;
+  }
+  .sm-step2-doc.is-done .sm-step2-doc-status {
+    background: var(--brand);
+    border-color: var(--brand);
+  }
+  .sm-step2-doc.is-done .sm-step2-doc-status::after {
+    content: '';
+    position: absolute;
+    left: 4px; top: 5px;
+    width: 7px; height: 4px;
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    transform: rotate(-45deg);
+  }
+
+  /* === Step 1 — 사수 v35 case-card on dark stage 강화 + 선택 상태 명확 === */
+  .sample-section--immersive .case-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .sample-section--immersive .case-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(22, 138, 53, 0.45);
+    box-shadow:
+      0 14px 28px -16px rgba(0, 0, 0, 0.45),
+      0 8px 18px -10px rgba(50, 215, 75, 0.30);
+  }
+  .sample-section--immersive .case-card.is-selected,
+  .sample-section--immersive .case-card[aria-selected="true"] {
+    border-color: var(--brand);
+    box-shadow:
+      0 0 0 2px var(--brand) inset,
+      0 18px 36px -16px rgba(50, 215, 75, 0.45);
+  }
+  .sample-section--immersive .case-card .cc-pick-link {
+    color: var(--brand-hover);
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .sm-step2-mock .sm-step2-body {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 18px 16px 20px;
+    }
+    .sm-step2-svg { display: none; }
+    .sm-step2-source-tags span { font-size: 9.5px; }
+  }
+
+  /* ===== Step 4 — 결과 화면 ===== */
+  /* 사수 v32 (2026-04-29): 표 형식 → 카드형 결과 UI · 하단 fade-out으로 "더 긴 결과 이어짐" 표현 */
+  .sm-mock-result .sm-result-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 22px 28px;
+    position: relative;
+  }
+  .sm-mock-result .sm-result-body.sm-result-body-fade {
+    max-height: 560px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, rgba(0,0,0,0.4) 92%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 78%, rgba(0,0,0,0.4) 92%, transparent 100%);
+  }
+  .sm-result-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 16px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(22, 138, 53, 0.55);
+    border-radius: 10px;
+    align-items: stretch;
+    box-shadow: 0 2px 6px -4px rgba(15, 23, 42, 0.06);
+  }
+  .sm-result-row:last-of-type {
+    border-bottom: 1px solid var(--line);
+    border-left-color: rgba(22, 138, 53, 0.55);
+    padding-bottom: 14px;
+  }
+  .sm-result-label {
+    font-family: var(--font-base);
+    font-size: 11.5px;
+    color: var(--brand-hover);
+    letter-spacing: 0.02em;
+    font-weight: 700;
+    line-height: 1.4;
+    padding-top: 0;
+    text-transform: uppercase;
+  }
+  .sm-result-value {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+  }
+  .sm-result-strong {
+    font-size: 17px;
+    color: var(--ink-strong);
+    font-weight: 700;
+    letter-spacing: -0.014em;
+  }
+  .sm-result-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .sm-result-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px 3px;
+    background: var(--brand-pale);
+    border: 1px solid var(--brand-tint);
+    border-radius: var(--radius-pill);
+    font-size: 12.5px;
+    color: var(--brand-hover);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+  .sm-result-list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .sm-result-list li { padding-left: 4px; }
+  .sm-result-questions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sm-result-questions li {
+    position: relative;
+    padding: 10px 14px 10px 30px;
+    background: var(--bg-2);
+    border: 1px solid var(--line-warm);
+    border-radius: var(--radius);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-strong);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+  .sm-result-questions li::before {
+    content: '"';
+    position: absolute;
+    left: 12px;
+    top: 6px;
+    font-size: 22px;
+    color: var(--brand);
+    font-family: Georgia, serif;
+    font-weight: 700;
+    line-height: 1;
+  }
+  /* 안전 문구 */
+  .sm-result-safety {
+    margin: 16px 0 20px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border-left: 3px solid var(--ink-warm);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+
+  /* === 사수 v9: 사례별 양식 차별화 (Step 4 결과 화면) === */
+  /* 사례명 옆 추천 양식 tag */
+  .sm-result-template-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 8px;
+    padding: 3px 10px 2px;
+    background: var(--brand-pale);
+    border: 1px solid var(--brand-tint);
+    border-radius: 999px;
+    font-size: 11.5px;
+    color: var(--brand-hover);
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    vertical-align: middle;
+    word-break: keep-all;
+  }
+  .sm-result-template-tag::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--brand);
+    flex-shrink: 0;
+  }
+
+  /* row-wide — full-width content (genogram / highlight / flow) */
+  .sm-result-row.row-wide {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* 갈등 패턴 chain (case 02) */
+  .sm-result-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sm-flow-step {
+    padding: 6px 14px 5px;
+    background: var(--white);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+  .sm-flow-arrow {
+    color: var(--ink-3);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* 정보 highlight (case 03 보호자 메모, case 05 위험/보호 요인) */
+  .sm-result-highlight {
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border-left: 3px solid var(--brand);
+    border-radius: 0 12px 12px 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-strong);
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+    font-weight: 500;
+  }
+  .sm-result-highlight.tone-warn {
+    background: #fef2f2;
+    border-left-color: #dc2626;
+  }
+  .sm-result-highlight.tone-protect {
+    background: #f0fdf4;
+    border-left-color: var(--brand);
+  }
+  .sm-highlight-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .sm-highlight-chip {
+    display: inline-flex;
+    padding: 4px 11px 3px;
+    background: var(--white);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.005em;
+  }
+  .tone-warn .sm-highlight-chip { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }
+  .tone-protect .sm-highlight-chip { color: var(--brand-hover); border-color: var(--brand-tint); background: var(--white); }
+
+  /* 가계도 미니맵 (case 04) */
+  .sm-genogram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 22px 18px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .sm-geno-tier {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .sm-geno-node {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-base);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-2);
+    border: 1.5px solid var(--line-strong);
+    background: var(--white);
+    letter-spacing: -0.005em;
+  }
+  .sm-geno-node.square { border-radius: 5px; }
+  .sm-geno-node.circle { border-radius: 50%; }
+  .sm-geno-node.focus {
+    background: var(--brand-pale);
+    border-color: var(--brand);
+    color: var(--brand-hover);
+    box-shadow: 0 0 0 3px rgba(22, 138, 53, 0.14);
+  }
+  .sm-geno-link {
+    width: 36px;
+    height: 1.5px;
+    background: var(--line-strong);
+    flex-shrink: 0;
+  }
+  .sm-geno-link.conflict {
+    height: 0;
+    background: transparent;
+    border-top: 1.5px dashed #dc2626;
+  }
+  .sm-geno-link.bond {
+    height: 2.5px;
+    background: var(--brand);
+  }
+  .sm-geno-vlink {
+    width: 1.5px;
+    height: 18px;
+    background: var(--line-strong);
+  }
+  .sm-geno-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line-warm);
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .sm-geno-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    color: var(--ink-3);
+    font-weight: 600;
+  }
+  .sm-geno-legend-mark {
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--line-strong);
+  }
+  .sm-geno-legend-mark.conflict { background: transparent; border-top: 2px dashed #dc2626; height: 0; }
+  .sm-geno-legend-mark.bond { background: var(--brand); height: 2.5px; }
+
+  /* Step 2 — 4-stage flow + sequential check */
+  .sm-flow-5 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 18px;
+  }
+  .sm-flow-5 .sf-cell {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-2);
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    transition:
+      background var(--dur-fast) var(--ease),
+      border-color var(--dur-fast) var(--ease),
+      color var(--dur-fast) var(--ease);
+  }
+  .sm-flow-5 .sf-cell .sf-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: 0.10em;
+    font-weight: 700;
+  }
+  /* active 상태: brand-pale + brand-tint border + brand text */
+  .sm-flow-5 .sf-cell.is-active {
+    background: var(--brand-pale);
+    border-color: var(--brand);
+    color: var(--ink-strong);
+    box-shadow: 0 6px 14px -8px rgba(50, 215, 75, 0.40);
+  }
+  .sm-flow-5 .sf-cell.is-active .sf-num { color: var(--brand-hover); }
+  /* done 상태: brand 그린 dot 표시 */
+  .sm-flow-5 .sf-cell.is-done::before {
+    content: '';
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 2px var(--brand-alpha);
+  }
+  .sm-flow-5 .sf-cell.is-done {
+    border-color: var(--brand-tint);
+    color: var(--ink-strong);
+  }
+  .sm-flow-5 .sf-cell.last { border-color: var(--line); }
+
+  /* Step 3 — detailed clinical-note pane */
+  .sn-block { display: flex; flex-direction: column; gap: 14px; }
+  .sn-meta {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px 14px;
+    background: var(--white);
+  }
+  .sn-h {
+    font-family: ui-monospace, monospace;
+    font-size: 9.5px; color: var(--ink-4);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .sn-meta ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; }
+  .sn-meta ul li { font-size: 11.5px; color: var(--ink-2); line-height: 1.5; }
+  .sn-meta ul li::before { content: "·  "; color: var(--ink-4); }
+  .sn-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sn-tag {
+    display: inline-flex; align-items: center;
+    height: 22px; padding: 0 10px;
+    border: 1px solid var(--ink-3); border-radius: 999px;
+    font-size: 11px; color: var(--ink);
+    background: var(--white);
+  }
+  .sn-soap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .sn-soap-cell {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    background: var(--white);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .sn-soap-cell .sl {
+    font-family: ui-monospace, monospace;
+    font-size: 10px; color: var(--ink-3);
+    letter-spacing: 0.06em;
+  }
+  .sn-soap-cell .sn-text {
+    font-size: 11.5px; color: var(--ink); line-height: 1.55;
+    text-wrap: pretty; word-break: keep-all;
+  }
+  .sn-soap-cell .sn-text.quote {
+    border-left: 2px solid var(--ink-4);
+    padding-left: 10px;
+    color: var(--ink-2);
+  }
+  .sn-side-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .sn-side-card {
+    border: 0.5px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    background: var(--white);
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .sn-side-card .sct { font-size: 11.5px; font-weight: 600; color: var(--ink); }
+  .sn-side-card .scd { font-size: 10.5px; color: var(--ink-3); line-height: 1.5; }
+  .sm-transcript .scene-tag {
+    display: inline-flex; align-items: center;
+    height: 18px; padding: 0 8px;
+    margin: 2px 4px 2px 0;
+    border: 1px dashed var(--ink-3); border-radius: 999px;
+    font-family: ui-monospace, monospace;
+    font-size: 9.5px; color: var(--ink-3);
+    background: var(--white);
+    letter-spacing: 0.02em;
+    vertical-align: 1px;
+  }
+  .sm-transcript .scene-tag.inline { margin-left: 6px; }
+  .sm-transcript .scene-row {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    padding-top: 4px;
+    border-top: 1px dashed var(--line);
+    margin-top: 4px;
+  }
+  @media (max-width: 720px) {
+    .sm-flow-5 { grid-template-columns: 1fr; }
+    .sn-soap { grid-template-columns: 1fr; }
+    .sn-side-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === 사수 v33 (2026-04-29): §05 hero (1st viewport) → sticky stage (2nd viewport) 분리 ===
+     - .sample-hero: 큰 타이틀이 첫 화면 가득
+     - .sample-stage: 180vh 컨테이너 + .sample-stage-sticky로 체험 UI를 한 화면 고정
+     - 모바일에서는 sticky 단순화 (static) */
+  .sample-section {
+    position: relative;
+    padding: 0;
+    display: block;
+    background: linear-gradient(180deg,
+      #EAF8EF 0%,
+      #EAF8EF 22%,
+      #B7F3C7 32%,
+      #1A7A52 56%,
+      #0F5F3E 78%,
+      #064E3B 100%);
+    /* overflow: hidden 은 자식 sticky 핀 동작을 깨뜨려 제거.
+       (overflow:hidden 인 ancestor 안의 sticky 는 ancestor 가 스크롤 컨테이너 가 되어 viewport 기반 sticky 가 작동하지 않음) */
+  }
+  .sample-section .container { padding-top: 0; padding-bottom: 0; }
+  .sample-section .wf-marker { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); z-index: 2; padding: 0 var(--gutter); }
+  .sample-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 96px 0 48px;
+    gap: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .sample-hero .sample-head { margin: 0; text-align: center; }
+  .sample-hero .sample-head .t-h2 { text-wrap: balance; }
+  .sample-hero-cue {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-base);
+    font-size: 13px;
+    color: var(--ink-3);
+    letter-spacing: 0.005em;
+    font-weight: 500;
+    opacity: 0.8;
+    animation: sample-cue-bob 2.4s ease-in-out infinite;
+  }
+  .sample-hero-cue-arrow {
+    width: 9px; height: 9px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    display: inline-block;
+    margin-top: -2px;
+  }
+  @keyframes sample-cue-bob {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50% { transform: translateY(5px); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sample-hero-cue { animation: none; opacity: 0.7; }
+  }
+
+  .sample-stage {
+    position: relative;
+    min-height: 180vh;
+    z-index: 1;
+  }
+  .sample-stage-sticky {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 32px 0 56px;
+  }
+  /* descendant selector — 마크업이 .sample-stage-sticky > .container > .step-card 로 들어와도 매치되도록 */
+  .sample-stage-sticky .step-card { width: 100%; margin: 0 auto; animation-name: sample-stage-in; }
+
+  /* === 슬라이드형 순차 핀 패턴 (사수 v72, 2026-05-07) ===
+     §05 안에 두 개의 독립 슬롯이 차례로 viewport 에 핀:
+     - .sample-pin-slot: 외곽 (200vh) — 핀 지속 스크롤 거리
+     - .sample-pin-frame: position: sticky; top: 0; height: 100vh — viewport 에 고정되는 프레임
+     스크롤 → slot 1 의 frame 이 100vh 동안 sticky → slot 1 종료 시 다음 slot 진입 → slot 2 의 frame sticky.
+     순수 CSS sticky — overflow:hidden 인 ancestor 가 없도록 .sample-section 의 overflow 도 제거함. */
+  .sample-pin-slot {
+    position: relative;
+    height: 200vh;
+  }
+  .sample-pin-frame {
+    position: sticky;
+    /* GNB(56px) 아래에 stick → 헤더가 점유한 영역만큼 아래로 내려 시각적 정중앙 정렬 */
+    top: 56px;
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* promo banner(44px) 가 떠 있을 때는 banner+GNB(=100px) 만큼 더 내려 시각 중앙 유지 */
+  html.has-promo-top .sample-pin-frame {
+    top: 100px;
+    height: calc(100vh - 100px);
+  }
+  .sample-pin-frame > .container {
+    width: 100%;
+  }
+  /* 타이틀 슬롯 — sample-head 가 frame 중앙에 정렬 */
+  .sample-pin-slot--title .sample-head {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .sample-pin-slot--title .sample-head .t-h2 { text-wrap: balance; }
+
+  /* 슬라이드 트랜지션은 scroll-progress 기반 CSS 변수 (--title-progress, --card-enter, --card-exit) 로 구동.
+     JS 가 매 scroll frame 마다 0~1 값을 .sample-section 에 set → calc() 로 즉시 반영.
+     - title-progress: slot1 종료 직전, 타이틀이 fade+blur 로 사라짐
+     - card-enter: slot2 진입, 카드가 좌측 바깥 → 중앙으로 slide in
+     - card-exit:  slot2 핀 후반, 카드가 중앙 → 우측 바깥으로 slide out
+     양방향 스크롤에서 모두 작동 (값이 progress 에 직접 매핑). */
+  .sample-section {
+    --title-progress: 0;
+    --card-enter: 0;
+    --card-exit: 0;
+  }
+
+  /* 체험 UI 슬롯 — step-card 의 lifecycle.
+     특이도 주의: .sample-section.exp-in-view .step-card (0,0,3,0) 가 위쪽에 정의돼 있어
+     같은 특이도(0,0,3,0)를 만들고 source order 로 우선권 확보. transition 은 None 으로 scroll-progress 즉시 반영.
+
+     === [현재 모드] scale-up (enter only, exit 애니메이션 없음) ===
+     enter=0 → opacity 0, scale(0.7)    (pre-enter, 작게)
+     enter=1 → opacity 1, scale(1.0)    (centered, 이후 핀 종료까지 유지) */
+  .sample-section .sample-pin-slot--card .step-card {
+    margin: 0 auto;
+    min-height: 0;
+    opacity: var(--card-enter);
+    transform: scale(calc(0.7 + 0.3 * var(--card-enter)));
+    transform-origin: center center;
+    transition: none;
+    will-change: opacity, transform;
+  }
+  /* === [롤백용 백업] slide 애니메이션 ===
+     아래 .sample-section .sample-pin-slot--card .step-card 블록의 transform 을
+     translateX 버전으로 되돌리고 위쪽 scale 블록을 주석 처리하면 slide 모드로 즉시 복구.
+  ----------------------------------------------------------------
+  .sample-section .sample-pin-slot--card .step-card {
+    margin: 0 auto;
+    min-height: 0;
+    opacity: calc(var(--card-enter) - var(--card-exit));
+    transform: translateX(calc(
+      -160px * (1 - var(--card-enter)) + 160px * var(--card-exit)
+    ));
+    transition: none;
+    will-change: opacity, transform;
+  }
+  ---------------------------------------------------------------- */
+
+  /* 타이틀 슬라이드 — 기본 visible. --title-progress 가 0→1 이 되면 뒤로 흐려지며 사라짐. */
+  .sample-pin-slot--title .sample-head .t-h2,
+  .sample-pin-slot--title .sample-head-sub {
+    transform: none;
+  }
+  .sample-pin-slot--title .sample-head {
+    opacity: calc(1 - var(--title-progress));
+    filter: blur(calc(var(--title-progress) * 14px));
+    transform: scale(calc(1 - var(--title-progress) * 0.06));
+    will-change: opacity, filter, transform;
+  }
+  .sample-pin-slot--title .sample-head-scroll {
+    opacity: calc(1 - var(--title-progress));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sample-pin-slot--title .sample-head {
+      opacity: 1;
+      filter: none;
+      transform: none;
+    }
+    .sample-pin-slot--card .step-card {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* 모바일: 작은 화면에서는 sticky 핀이 부자연스러우므로 일반 흐름으로 적층 */
+  @media (max-width: 860px) {
+    .sample-pin-slot { height: auto; }
+    .sample-pin-frame {
+      position: static;
+      height: auto;
+      display: block;
+      padding: 60px 0;
+    }
+    .sample-pin-slot--card .sample-pin-frame { padding: 16px 0 60px; }
+
+    /* 모바일에서는 §05 의 모든 스크롤/진입 애니메이션 비활성화.
+       - 진입 fade-in (is-in-view / exp-in-view) → 즉시 visible
+       - 스크롤-progress (--title-progress / --card-enter / --card-exit) → 무력화 */
+    .sample-head .t-h2,
+    .sample-head-sub,
+    .sample-head-scroll,
+    .sample-section .step-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .sample-head-scroll-line { animation: none; }
+    .sample-pin-slot--title .sample-head {
+      opacity: 1;
+      filter: none;
+      transform: none;
+    }
+    .sample-pin-slot--title .sample-head-scroll {
+      opacity: 1;
+    }
+    .sample-section .sample-pin-slot--card .step-card {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .sample-section .wf-marker { position: static; transform: none; padding: 24px 0 0; text-align: left; }
+    .sample-hero { min-height: auto; padding: 60px 0 32px; gap: 16px; }
+    .sample-hero-cue { display: none; }
+    .sample-stage { min-height: auto; }
+    .sample-stage-sticky {
+      position: static;
+      min-height: auto;
+      padding: 8px 0 60px;
+    }
+  }
+  .sample-section::before {
+    content: '';
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    width: 900px;
+    height: 900px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at center, rgba(50, 215, 75, 0.14) 0%, transparent 62%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sample-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(183, 243, 199, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(183, 243, 199, 0.12) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: center;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 38%, #000 60%, #000 100%);
+            mask-image: linear-gradient(180deg, transparent 0%, transparent 38%, #000 60%, #000 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sample-section .container { position: relative; z-index: 1; width: 100%; }
+
+  /* §05 deep green 영역에서 step-card 외곽 텍스트/UI 가독성 보정 */
+  .sample-section .step-card {
+    background: #F8FFF9;
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 30px 80px -32px rgba(7, 27, 22, 0.55);
+  }
+  .sample-section .step-label {
+    /* WCAG AA: --brand-hover(#40a755) on white = 3.05:1 ✗ → --brand-text-on-light = 5.96:1 ✓ */
+    color: var(--brand-text-on-light, var(--brand-hover));
+  }
+  .sample-section .step-lead,
+  .sample-section .step-lead-big {
+    color: var(--ink-strong);
+  }
+  .sample-section .step-sub {
+    color: var(--ink-3);
+  }
+  .sample-section .step-counter {
+    color: var(--ink-3);
+  }
+  .sample-section .step-secondary-link {
+    color: var(--brand-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(22, 138, 53, 0.4);
+  }
+  .sample-section .step-secondary-link:hover {
+    color: var(--ink-strong);
+    text-decoration-color: var(--brand-hover);
+  }
+
+  /* Step slider card — 사수 v9: 배경 위에 떠 있는 카드 (depth shadow 강화) */
+  .step-card {
+    max-width: 1180px;
+    margin: 0 auto;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 22px;
+    background: var(--white);
+    padding: 28px 36px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-height: 660px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.85) inset,
+      0 32px 80px -32px rgba(15, 23, 42, 0.22),
+      0 80px 160px -64px rgba(22, 138, 53, 0.20);
+    animation: sample-stage-in 0.7s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes sample-stage-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .step-card { animation: none; }
+  }
+
+  /* progress dots row — 사수 v9: 검정 dot → brand green active + line muted */
+  .step-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .step-dots { display: flex; align-items: center; gap: 10px; flex: 1; }
+  .step-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 1.5px solid var(--line-strong);
+    background: var(--white);
+    flex-shrink: 0;
+    transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .step-dot.done {
+    background: var(--brand-pale);
+    border-color: var(--brand);
+    opacity: 1;
+  }
+  .step-dot.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    box-shadow: 0 0 0 4px rgba(22, 138, 53, 0.16);
+  }
+  .step-dot-line {
+    flex: 1; height: 2px;
+    background: var(--line-strong);
+    opacity: 1;
+    max-width: 48px;
+    border-radius: 1px;
+  }
+  .step-counter {
+    font-family: var(--font-base);
+    font-size: 13px;
+    color: var(--ink-2);
+    letter-spacing: -0.005em;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* slide viewport */
+  .step-viewport { position: relative; flex: 1; overflow: hidden; }
+  .step-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 280ms ease, opacity 220ms ease;
+  }
+  .step-slide[hidden] { display: none; }
+
+  .step-label {
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px;
+    color: var(--ink-3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .step-lead {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+    text-wrap: pretty; word-break: keep-all;
+  }
+  .step-lead-big {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .step-sub {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+  }
+  .step-micro {
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px;
+    color: var(--ink-3);
+    opacity: 0.75;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* unified product mock for sample */
+  .sm-mock {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--white);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 0 rgba(74,67,57,0.04), 0 12px 28px -16px rgba(74,67,57,0.18);
+  }
+  .sm-mock-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--bg-2) 0%, var(--white) 100%);
+  }
+  .sm-mock-head .pf-dots { display: flex; gap: 5px; }
+  .sm-mock-head .pf-dots span {
+    width: 7px; height: 7px; border-radius: 50%;
+    border: 1px solid var(--ink-3); background: transparent;
+  }
+  .sm-mock-head .pf-app {
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px; color: var(--ink-2); font-weight: 600;
+  }
+  .sm-mock-body { padding: 18px; }
+  .sm-motion {
+    border-top: 1px dashed var(--line-2);
+    padding: 8px 14px 9px;
+    font-family: ui-monospace, monospace;
+    font-size: 8px;
+    color: var(--ink-4);
+    opacity: 0.55;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  /* Step 1 — case cards */
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .case-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    padding: 22px 22px 20px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    transition:
+      transform var(--dur) var(--ease),
+      border-color var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease);
+    min-height: 220px;
+    text-align: left;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 1px 0 rgba(0, 0, 0, 0.02),
+      0 4px 12px -8px rgba(15, 23, 42, 0.10);
+  }
+  .case-card .cc-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .case-card .cc-cat {
+    font-family: var(--font-base);
+    font-size: 12px;
+    /* WCAG AA: --brand-hover(#40a755) on white = 3.05:1 ✗ → --brand-text-on-light = 5.96:1 ✓ */
+    color: var(--brand-text-on-light, var(--brand-hover));
+    letter-spacing: -0.005em;
+    font-weight: 600;
+    margin-top: -4px;
+  }
+  .case-card .cc-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    line-height: 1.32;
+    letter-spacing: -0.018em;
+    margin-top: 2px;
+    word-break: keep-all;
+  }
+  .case-card .cc-desc {
+    font-size: 12px;
+    color: var(--ink-3);
+    line-height: 1.5;
+  }
+  .case-card .cc-situ {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.65;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    margin-top: 4px;
+    text-wrap: pretty;
+    word-break: keep-all;
+    letter-spacing: -0.005em;
+  }
+  .case-card .cc-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 12px;
+  }
+  .case-card .cc-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 24px;
+    padding: 0 10px;
+    background: var(--bg-2);
+    border: 1px solid var(--line-warm);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-base);
+    font-size: 11px;
+    color: var(--ink-warm);
+    letter-spacing: -0.005em;
+    font-weight: 600;
+  }
+  .case-card .cc-pick-link {
+    margin-top: 10px;
+    font-family: var(--font-base);
+    font-size: 13px;
+    /* WCAG AA: --brand-hover(#40a755) on white = 3.05:1 ✗ → --brand-text-on-light = 5.96:1 ✓ */
+    color: var(--brand-text-on-light, var(--brand-hover));
+    letter-spacing: -0.008em;
+    font-weight: 700;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: gap var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+  }
+  .case-card:hover {
+    border-color: var(--brand-tint);
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 1px 0 rgba(0, 0, 0, 0.02),
+      0 12px 24px -10px rgba(50, 215, 75, 0.30);
+  }
+  .case-card:hover .cc-tag {
+    background: var(--brand-pale);
+    border-color: var(--brand-tint);
+    color: var(--brand-hover);
+  }
+  .case-card:hover .cc-pick-link {
+    color: var(--ink-strong);
+  }
+
+  /* Case card — is-selected (사용자가 클릭해서 Step 2 진입한 사례) active state */
+  .case-card.is-selected {
+    border-color: var(--brand);
+    background: linear-gradient(180deg, #f0fdf4 0%, var(--white) 60%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      0 18px 36px -16px rgba(22, 138, 53, 0.32);
+  }
+  .case-card.is-selected::after {
+    /* 우상단 작은 brand check chip */
+    content: '✓';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 4px 10px -3px rgba(22, 138, 53, 0.45);
+  }
+  .case-card.is-selected .cc-pick-link {
+    color: var(--brand-hover);
+    font-weight: 700;
+  }
+
+  /* Step 2 / Step 4 사례 컨텍스트 라인 (선택한 사례 표시) */
+  .sm-tpl-context,
+  .sm-result-context {
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    background: var(--brand-pale);
+    border: 1px solid rgba(22, 138, 53, 0.22);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--ink-2);
+    letter-spacing: -0.005em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    word-break: keep-all;
+  }
+  .sm-tpl-context strong,
+  .sm-result-context strong {
+    color: var(--ink-strong);
+    font-weight: 700;
+  }
+  .sm-tpl-context::before,
+  .sm-result-context::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(22, 138, 53, 0.18);
+  }
+
+  /* Step 4 result row stagger reveal — 활성 step일 때 */
+  @keyframes sm-result-row-rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-context {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.05s both;
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-row:nth-of-type(1) {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.14s both;
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-row:nth-of-type(2) {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.22s both;
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-row:nth-of-type(3) {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.30s both;
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-row:nth-of-type(4) {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.38s both;
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-row:nth-of-type(5) {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.46s both;
+  }
+  .step-slide[data-step="3"]:not([hidden]) .sm-result-row:nth-of-type(6) {
+    animation: sm-result-row-rise 0.5s cubic-bezier(.2,.7,.2,1) 0.54s both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .step-slide[data-step="3"]:not([hidden]) .sm-result-context,
+    .step-slide[data-step="3"]:not([hidden]) .sm-result-row {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  .step-foot-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .step-side-link {
+    background: none; border: none;
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px; color: var(--ink-3);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0;
+  }
+  .step-side-link:hover { color: var(--ink); }
+
+  /* Step 2 — flow + safety chips */
+  .sm-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .sm-flow-cell {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 16px;
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--ink-2);
+    background: var(--white);
+    min-height: 60px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sm-flow-cell.result { border-color: var(--ink); color: var(--ink); font-weight: 600; }
+  .sm-flow-arrow {
+    display: flex; align-items: center; gap: 4px;
+    color: var(--ink-3);
+  }
+  .sm-flow-arrow .fdot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3);
+    opacity: 0.4;
+  }
+  .sm-safety-row {
+    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .sm-pill {
+    display: inline-flex; align-items: center;
+    height: 26px; padding: 0 12px;
+    border: 1px solid var(--ink); border-radius: 999px;
+    font-family: ui-monospace, monospace;
+    font-size: 10px; color: var(--ink);
+    background: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  /* Step 3 — main tabs + sub cards */
+  .sm-tabs {
+    display: flex; gap: 0;
+    border: 1px solid var(--ink); border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .sm-tab {
+    flex: 1;
+    padding: 10px 14px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-3);
+    background: var(--white);
+    border-right: 1px solid var(--ink);
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .sm-tab:last-child { border-right: none; }
+  .sm-tab.active { background: var(--ink); color: var(--white); }
+  .sm-tab-pane[hidden] { display: none; }
+  .sm-tab-label {
+    margin-top: 10px;
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    color: var(--ink-4);
+    letter-spacing: 0.04em;
+  }
+
+  .sm-transcript {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    background: var(--white);
+  }
+  .sm-transcript .sp { font-weight: 600; color: var(--ink); }
+  .sm-transcript .silence { color: var(--ink-4); font-style: italic; font-size: 11px; }
+
+  .sm-soap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .sm-soap-cell {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    background: var(--white);
+    min-height: 64px;
+  }
+  .sm-soap-cell .sl {
+    font-family: ui-monospace, monospace;
+    font-size: 10px; color: var(--ink-3);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .sm-soap-cell .sln { display: flex; flex-direction: column; gap: 4px; }
+  .sm-soap-cell .sln .ln { height: 6px; background: var(--line); border-radius: 2px; }
+  .sm-soap-cell .sln .ln.s { width: 50%; }
+  .sm-soap-cell .sln .ln.m { width: 75%; }
+  .sm-soap-cell .sln .ln.l { width: 100%; }
+
+  .sm-concept {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    background: var(--white);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .sm-concept .pattern {
+    font-size: 12px; color: var(--ink-2);
+    line-height: 1.6;
+  }
+  .sm-concept .pattern .hl {
+    background: var(--line);
+    padding: 1px 4px;
+    border-radius: 2px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .sm-concept .checklist {
+    display: flex; flex-direction: column; gap: 6px;
+    border-top: 1px dashed var(--line); padding-top: 10px;
+  }
+  .sm-concept .check {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--ink-2);
+  }
+  .sm-concept .check .box {
+    width: 12px; height: 12px;
+    border: 1px solid var(--ink-3);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .sm-side-label {
+    margin-top: 18px; margin-bottom: 8px;
+    font-family: ui-monospace, monospace;
+    font-size: 10px; color: var(--ink-4);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .sm-side-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .sm-side-card {
+    border: 0.5px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    background: var(--white);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .sm-side-card .sct {
+    font-size: 11.5px; font-weight: 600; color: var(--ink);
+  }
+  .sm-side-card .scd {
+    font-size: 10.5px; color: var(--ink-3);
+    line-height: 1.5;
+  }
+
+  /* mini genogram */
+  .mini-geno {
+    height: 60px;
+    border-top: 1px dashed var(--line);
+    padding-top: 8px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .mini-geno svg { width: 100%; height: 100%; }
+
+  /* MMPI snippet */
+  .mini-mmpi {
+    height: 60px;
+    border-top: 1px dashed var(--line);
+    padding-top: 8px;
+    display: flex; flex-direction: column; gap: 4px;
+    justify-content: center;
+  }
+  .mini-mmpi .code {
+    font-family: ui-monospace, monospace;
+    font-size: 11px; color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+  .mini-mmpi .interp {
+    font-size: 10.5px; color: var(--ink-3);
+    line-height: 1.4;
+  }
+
+  /* Step 4 — final CTA */
+  .step-4 {
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 20px 0;
+  }
+  /* §05 Step 3 inline CTA wrapper · 사수 v3 피드백: mock 결과와 가깝게, 중앙 정렬, 안내 문구 제거 */
+  .step-finish-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 14px 0 4px;
+    text-align: center;
+  }
+  .step-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: var(--radius-lg);
+    background: var(--brand);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.012em;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.32),
+      0 6px 18px -6px rgba(50, 215, 75, 0.55),
+      0 1px 0 rgba(0, 0, 0, 0.02);
+    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+  }
+  .step-cta-primary:hover {
+    background: var(--brand-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 10px 24px -6px rgba(22, 138, 53, 0.65),
+      0 1px 0 rgba(0, 0, 0, 0.02);
+  }
+  .step-cta-primary-label {
+    display: inline-block;
+    line-height: 1;
+  }
+  .step-cta-primary-arrow {
+    display: inline-block;
+    line-height: 1;
+    font-size: 15px;
+    transform: translateY(-0.5px); /* 화살표 시각 보정 */
+  }
+  .step-cta-primary::after { content: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .step-cta-primary { transition: none; }
+    .step-cta-primary:hover { transform: none; }
+  }
+  /* Step 4 finish — sm-mock-finish 전용 가운데 정렬 + brand 강조 */
+  .sm-mock-finish .sm-finish-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 36px 24px 30px;
+    text-align: center;
+  }
+  .sm-finish-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    max-width: 480px;
+  }
+  .sm-finish-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px 4px;
+    background: var(--brand-pale);
+    border: 1px solid var(--brand-tint);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--brand-hover);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .sm-finish-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+  .sm-finish-quote {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-strong);
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    word-break: keep-all;
+  }
+  .sm-finish-cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .sm-finish-micro {
+    margin-top: 0;
+    color: var(--ink-3);
+    font-size: 12.5px;
+    letter-spacing: -0.005em;
+  }
+  /* pf-status done — Step 3 결과 도착 */
+  .pf-status.pf-status-done {
+    background: var(--brand-pale);
+    border: 1px solid var(--brand-tint);
+    color: var(--brand-hover);
+  }
+  .pf-status .check {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--brand);
+    position: relative;
+  }
+  .pf-status .check::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 3px;
+    width: 4px; height: 2.5px;
+    border-left: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
+    transform: rotate(-45deg);
+  }
+  /* sm-motion (wireframe annotation) — 사용자 화면 hide */
+  .sm-motion { display: none; }
+  /* 상단 wf-anno-label도 hide — §05 한정 (구조만 정리, 실제 라인은 제거됨) */
+  .step-card ~ .wf-anno-label { display: none; }
+  .step-secondary-link {
+    background: none;
+    border: none;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+    margin: 0;
+    padding: 4px 0;
+    line-height: 1.4;
+    transition: color 0.18s ease;
+  }
+  .step-secondary-link:hover { color: var(--ink); text-decoration-color: var(--ink-3); }
+  @media (max-width: 640px) {
+    .step-cta-primary { font-size: 14px; padding: 11px 22px; min-height: 44px; }
+    .step-finish-cta { gap: 8px; margin-top: 10px; padding: 10px 0 2px; }
+  }
+
+  /* card foot */
+  .step-foot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+    margin-top: auto;
+  }
+  .step-next {
+    display: inline-flex; align-items: center; gap: 6px;
+    height: 40px; padding: 0 18px;
+    border: 1.5px solid var(--ink); border-radius: 8px;
+    background: var(--white); color: var(--ink);
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+  }
+  .step-next:hover { background: var(--ink); color: var(--white); }
+
+  /* wireframe annotation label */
+  .wf-anno-label {
+    font-family: ui-monospace, monospace;
+    font-size: 8px;
+    color: var(--ink-4);
+    opacity: 0.5;
+    letter-spacing: 0.04em;
+    text-align: right;
+    padding: 4px 14px 0;
+  }
+
+  @media (max-width: 880px) {
+    .step-card { padding: 28px 20px; border-radius: 12px; min-height: 540px; }
+    .step-progress { flex-direction: column; align-items: stretch; gap: 10px; }
+    .step-dot-line { max-width: none; }
+    .step-counter { text-align: right; }
+    .case-grid { grid-template-columns: 1fr; }
+    .sm-soap { grid-template-columns: 1fr; }
+    .sm-side-grid { grid-template-columns: 1fr; }
+    .sm-flow { grid-template-columns: 1fr; }
+    .sm-flow-arrow { transform: rotate(90deg); justify-content: center; }
+    .step-foot { justify-content: stretch; }
+    .step-next { width: 100%; justify-content: center; }
+  }
+
+  /* ================================================================
+     §05 IMMERSIVE OVERRIDE — 사수 v12 (2026-04-29)
+     ─────────────────────────────────────────────────────────────────
+     사용자 피드백: "박스 안에 갇힌 preview"가 아니라 §05 자체가
+     하나의 풀스크린 체험 화면이어야 함. nested card 금지.
+       - .step-card 의 white card chrome (bg/border/radius/shadow) 제거
+       - .sm-mock 의 mac-window 프레임 (head + 흰 박스) 제거
+       - 섹션 배경 자체를 캔버스로 사용 → 모든 콘텐츠가 위에 떠 있는
+         실제 서비스 화면처럼 보임
+       - max-width 1180 → 1320 (체험 영역이 화면 폭을 넓게 사용)
+       - sticky stage: 사용자가 §05 안에 있는 동안 stage가 viewport에
+         고정되어 immersive demo 느낌
+     ================================================================ */
+  .sample-section {
+    /* 체험 존 — 격자 없는 민무늬 딥그린 무드 */
+    padding: 88px 0 112px;
+    align-items: stretch;
+    background:
+      radial-gradient(ellipse 60% 38% at 50% 18%, rgba(47, 111, 94, 0.28), transparent 70%),
+      linear-gradient(180deg,
+        #0F4A3C 0%,
+        #0A3A2F 18%,
+        #062C24 48%,
+        #062C24 70%,
+        #031A15 100%);
+  }
+  /* 격자 패턴 완전 제거 */
+  .sample-section::after { display: none !important; content: none !important; }
+  .sample-section::before { display: none !important; content: none !important; }
+  .sample-section .container {
+    max-width: 1360px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .sample-section .sample-head {
+    margin: 0 auto 48px; /* 헤더 → stage 사이 호흡 */
+    max-width: 720px;
+  }
+
+  /* === stage (구 .step-card) — 딥그린 위에 떠 있는 프리미엄 카드 === */
+  .sample-section .step-card {
+    max-width: 1180px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 28px;
+    background: #FAFFFC;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 32px 90px rgba(0, 0, 0, 0.28);
+    padding: 32px 40px 40px;
+    min-height: 640px;
+    gap: 24px;
+    overflow: hidden;
+  }
+  .sample-section .step-card[data-collapsed="false"] { animation: none; }
+
+  /* progress row — flat horizontal indicator, 폭은 stage 전체 사용 */
+  .sample-section .step-progress {
+    padding: 12px 4px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    padding-bottom: 22px;
+  }
+  .sample-section .step-dot-line {
+    max-width: 120px; /* 좀 더 길게 — 단계 사이 거리감 */
+  }
+
+  /* slide viewport — 박스 안이 아니라 캔버스 위 */
+  .sample-section .step-viewport {
+    overflow: visible;
+  }
+  .sample-section .step-slide {
+    gap: 28px;
+  }
+  /* Step 1 holds the most content (5 case cards). Tighten its spacing and render
+     the disclaimer below the cards (step-foot) so nothing clips the fixed-height
+     556px viewport. */
+  .sample-section .step-slide[data-step="1"] {
+    gap: 16px;
+  }
+  .sample-section .step-foot {
+    margin-top: 4px;
+    color: var(--ink-3);
+  }
+
+  /* === sm-mock 박스 chrome 완전 제거 === */
+  .sample-section .sm-mock {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+  /* mac-window head (traffic-light dots + Mindthos AI · …) 숨김 —
+     이게 "설명용 mock"으로 보이게 하던 가장 강한 시각적 단서였음 */
+  .sample-section .sm-mock .sm-mock-head {
+    display: none;
+  }
+  .sample-section .sm-mock .sm-mock-body {
+    padding: 0;
+    background: transparent;
+  }
+
+  /* Step 1 — case grid: 폭을 넉넉히 + 카드 사이 간격 확장 */
+  .sample-section .case-grid.case-grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+  .sample-section .case-grid-5 .case-card {
+    min-height: 260px;
+    padding: 22px 20px 20px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.6) inset,
+      0 8px 22px -14px rgba(15, 23, 42, 0.18);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+  }
+  .sample-section .case-grid-5 .case-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(22, 138, 53, 0.42);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.7) inset,
+      0 14px 32px -16px rgba(22, 138, 53, 0.28);
+    background: #fff;
+  }
+  .sample-section .case-grid-5 .case-card.is-active,
+  .sample-section .case-grid-5 .case-card[aria-pressed="true"] {
+    border-color: var(--brand);
+    box-shadow:
+      0 0 0 3px rgba(22, 138, 53, 0.16),
+      0 14px 32px -16px rgba(22, 138, 53, 0.32);
+    background: #fff;
+  }
+
+  /* Step 2 — gen list: 캔버스 위에 카드처럼 (박스 X, subtle row separators) */
+  .sample-section .sm-gen-list {
+    max-width: 720px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    padding: 14px 22px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* Step 3 — 결과 화면: 실제 상담노트 초안처럼 시원하게 펼쳐짐 */
+  .sample-section .sm-mock-result {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .sample-section .sm-result-body {
+    padding: 0 4px;
+  }
+  /* §05 사수 v55b (2026-05-04): Step 3 결과 화면을 Step 1과 동일한 흰 패널 크기 안에 강제로 가둠.
+     - step-viewport 높이 고정(556px) → 모든 step 패널 크기 동일, Step 3에서 늘어나지 않음
+     - Step 3 slide flex column → mock는 남는 공간 클립, CTA는 패널 하단 고정 */
+  .sample-section .step-viewport {
+    height: 556px;
+    min-height: 556px;
+    max-height: 556px;
+    overflow: hidden;
+  }
+  .sample-section .step-slide:not([hidden]) {
+    height: 100%;
+  }
+  .sample-section .step-slide[data-step="3"]:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 12px;
+  }
+  .sample-section .step-slide[data-step="3"] .sm-mock-result {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .sample-section .step-slide[data-step="3"] .sm-mock-result .sm-result-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    gap: 8px;
+  }
+  .sample-section .step-slide[data-step="3"] .sm-mock-result .sm-result-body.sm-result-body-fade {
+    max-height: none;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 66%, rgba(0,0,0,0.4) 90%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 66%, rgba(0,0,0,0.4) 90%, transparent 100%);
+  }
+  /* Step 3 내부 카드 padding/gap 축소 — 패널에 더 많은 항목 깔끔하게 들어가도록 */
+  .sample-section .step-slide[data-step="3"] .sm-result-row {
+    padding: 10px 14px;
+    gap: 6px;
+  }
+  .sample-section .step-slide[data-step="3"] .sm-result-context {
+    padding: 10px 16px;
+    margin-bottom: 12px;
+  }
+  /* CTA row — 항상 패널 하단에 고정 */
+  .sample-section .step-slide[data-step="3"] .sm-finish-cta-row {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 8px;
+    gap: 8px;
+  }
+  .sample-section .sm-result-context {
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* foot — center + 캔버스 톤에 맞춤 */
+  .sample-section .step-foot {
+    border-top: 1px solid rgba(15, 23, 42, 0.07);
+    padding-top: 22px;
+    justify-content: center;
+  }
+  .sample-section .sm-finish-cta-row {
+    margin-top: 12px;
+  }
+
+  @media (max-width: 1080px) {
+    .sample-section .case-grid.case-grid-5 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 880px) {
+    .sample-section { padding: 64px 0 80px; }
+    .sample-section .container { padding-left: 18px; padding-right: 18px; }
+
+    /* 카드 자체는 컴팩트한 컨테이너 — inner padding 복구 + overflow:hidden 으로
+       내부 step-viewport 의 스크롤 경계 역할. */
+    .sample-section .step-card {
+      padding: 20px 16px 22px;
+      min-height: 0;
+      gap: 16px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    /* step-viewport: 모바일에서 viewport 의 일정 비율로 고정 높이 + 내부 스크롤.
+       60vh 는 작은 화면(아이폰 SE ~568px)에서 ~340px, 큰 화면(아이폰 14 Pro Max ~932px)에서 ~559px,
+       min/max 로 양극단 클램프. overscroll-behavior: contain 으로 페이지 스크롤로 빠지지 않게. */
+    .sample-section .step-viewport {
+      height: 60vh;
+      min-height: 380px;
+      max-height: 560px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      /* 스크롤 영역 시각 hint — 상/하단 8px subtle fade */
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%);
+              mask-image: linear-gradient(to bottom, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%);
+    }
+    /* slide: 콘텐츠 높이만큼 자연스럽게 → viewport 가 스크롤 */
+    .sample-section .step-slide:not([hidden]) {
+      height: auto;
+      min-height: 0;
+      padding: 4px 2px 8px; /* mask edge 와 콘텐츠 사이 약간의 호흡 */
+    }
+    /* Step 3: PC 의 flex-column + mask 패턴은 모바일에선 풀고 — viewport 자체가 스크롤 컨테이너 */
+    .sample-section .step-slide[data-step="3"]:not([hidden]) {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      gap: 12px;
+    }
+    .sample-section .step-slide[data-step="3"] .sm-mock-result {
+      overflow: visible;
+      flex: 0 0 auto;
+    }
+    .sample-section .step-slide[data-step="3"] .sm-mock-result .sm-result-body.sm-result-body-fade {
+      max-height: none;
+      overflow: visible;
+      -webkit-mask-image: none;
+              mask-image: none;
+    }
+    .sample-section .step-slide[data-step="3"] .sm-finish-cta-row {
+      margin-top: 8px;
+    }
+
+    .sample-section .case-grid.case-grid-5 { grid-template-columns: 1fr; gap: 12px; }
+    .sample-section .case-grid-5 .case-card {
+      min-height: 0;
+      padding: 18px 18px 16px;
+    }
+    .sample-section .sm-gen-list { padding: 12px 16px; }
+
+    /* step-label: 한글이 letter-spacing/uppercase 영향으로 어색하게 벌어지는 문제 보정 */
+    .sample-section .step-label {
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* 모바일 타이포 보정 — 라인 높이/사이즈 컴팩트하게 */
+    .sample-section .step-lead,
+    .sample-section .step-lead-big {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .sample-section .step-sub {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* progress dots row — 모바일에선 가로 한 줄 유지 (column 강제 해제) */
+    .sample-section .step-progress {
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+    }
+    .sample-section .step-counter { text-align: right; flex-shrink: 0; }
+  }
+

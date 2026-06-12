@@ -1,0 +1,64 @@
+{
+  "markerName": "IA general vs Modalia AI (comparación lado a lado)",
+  "markerPurpose": "5 pares de comparación · Panel de Modalia AI destacado como la única opción de confianza",
+  "h2Line1": "Por qué Modalia AI",
+  "h2Line2": "es diferente de otras IA",
+  "generic": {
+    "ariaLabel": "Elementos de comparación de IA general",
+    "name": "IA general",
+    "sub": "Una IA de propósito general que produce respuestas dentro de una ventana de chat",
+    "rows": [
+      {
+        "key": "Preocupaciones sobre datos de entrenamiento",
+        "sub": "Los registros de sesión que introduzca pueden utilizarse para entrenar el modelo."
+      },
+      {
+        "key": "Registros dispersos entre ventanas de chat",
+        "sub": "Los registros de clientes terminan mezclados en múltiples hilos de conversación separados."
+      },
+      {
+        "key": "Las sesiones anteriores deben reintroducirse cada vez",
+        "sub": "Tiene que copiar y pegar resúmenes de sesiones anteriores y notas de progreso cada vez."
+      },
+      {
+        "key": "Sin base clínica",
+        "sub": "Sin un contexto de consejería, las respuestas pueden derivar hacia consejos genéricos."
+      },
+      {
+        "key": "Las plantillas deben especificarse cada vez",
+        "sub": "Las notas SOAP, los formularios institucionales y otras plantillas requieren un prompt nuevo en cada sesión."
+      }
+    ]
+  },
+  "mindthos": {
+    "ariaLabel": "Elementos de comparación de Modalia AI",
+    "logoAriaLabel": "Modalia AI",
+    "sub": "Un agente de IA especializado creado para consejeros y terapeutas",
+    "rows": [
+      {
+        "key": "Sin reentrenamiento de IA con sus datos",
+        "sub": "Los datos del cliente nunca se utilizan para entrenar modelos de IA."
+      },
+      {
+        "key": "Gestión de registros por cliente",
+        "sub": "Los registros de sesión se acumulan y se gestionan en carpetas dedicadas por cliente."
+      },
+      {
+        "key": "Contexto trasladado entre sesiones",
+        "sub": "Los registros de sesión acumulados fluyen naturalmente hacia la preparación de la próxima cita."
+      },
+      {
+        "key": "Conocimiento específico de consejería",
+        "sub": "Los borradores se fundamentan en la experiencia en consejería y el material clínico acumulado."
+      },
+      {
+        "key": "Plantillas de consejería integradas",
+        "sub": "Notas de sesión, formularios institucionales y plantillas de supervisión listas para usar."
+      }
+    ]
+  },
+  "bottomNote": {
+    "strong": "Modalia AI no reemplaza el juicio del terapeuta.",
+    "rest": "Mantiene los registros de sesión seguros y ayuda a trasladarlos a su próxima cita."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "logoAria": "Modalia AI home",
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "blog": "Blog"
+  },
+  "login": "Log in",
+  "signup": "Start for free",
+  "menuOpen": "Open menu",
+  "menuClose": "Close menu",
+  "promoBanner": {
+    "regionLabel": "New sign-up promotion",
+    "text": "First month free for new counselors & therapists · ",
+    "cta": "Start for free →"
+  }
+}

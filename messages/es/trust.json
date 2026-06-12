@@ -1,0 +1,68 @@
+{
+  "wfPurpose": "Debido a la sensibilidad de los datos de los clientes, demostramos la seguridad antes que las funciones",
+  "h2": "Los registros de consejería deben gestionarse de forma segura —<br></br>antes de que cualquier IA los toque",
+  "team": {
+    "title": "Principios de protección diseñados<br></br>con expertos del sector",
+    "panelAriaLabel": "Panel de expertos que co-diseña la protección de registros de consejería",
+    "be": {
+      "role": "Ingeniero de backend<br></br>del sector financiero",
+      "desc": "Estructuramos el almacenamiento y los controles de acceso para que los registros de sesión nunca se mezclen con datos no relacionados.",
+      "tags": [
+        "Arquitectura de almacenamiento",
+        "Separación de accesos"
+      ]
+    },
+    "sec": {
+      "role": "Especialista en consultoría<br></br>de seguridad",
+      "desc": "Auditamos cada punto donde la información del cliente podría quedar expuesta, contrastándolo con los estándares del sector.",
+      "tags": [
+        "Estándares de privacidad",
+        "Revisión de riesgos"
+      ]
+    },
+    "ai": {
+      "role": "Ingeniero de IA",
+      "desc": "Separamos el flujo de procesamiento para que los registros de sesión nunca se utilicen en el entrenamiento de IA.",
+      "tags": [
+        "Sin entrenamiento",
+        "Aislamiento del flujo"
+      ]
+    },
+    "conclusionLabel": "Nuestro estándar para proteger los registros de consejería",
+    "conclusion": "Cifrado antes del almacenamiento · Sin entrenamiento de IA · Controles de acceso estrictos",
+    "cta": "¿Cómo se protegen los registros? <arrow>→</arrow>"
+  },
+  "shield": {
+    "title": "3 salvaguardas que protegen sus registros de consejería",
+    "enc": {
+      "label": "Cifrado antes de ser almacenado",
+      "desc": "Los registros de sesión se cifran antes del almacenamiento y se conservan únicamente en forma protegida."
+    },
+    "noai": {
+      "label": "Los registros de sesión nunca se usan para entrenar IA",
+      "desc": "Los registros se usan únicamente para la tarea inmediata — nunca permanecen como datos de entrenamiento de IA."
+    },
+    "mask": {
+      "label": "La información sensible se enmascara antes de compartirse",
+      "desc": "La información que podría identificar a un cliente se enmascara por defecto y solo puede revelarse cuando sea necesario."
+    }
+  },
+  "encmini": {
+    "tagPlain": "Original",
+    "tagEnc": "Cifrando",
+    "tagStored": "Forma almacenada",
+    "sentence": "Las notas de la sesión de hoy han sido organizadas de forma segura."
+  },
+  "noaimini": {
+    "recordLabel": "Registro de sesión",
+    "aiLabel": "Entrenamiento de IA"
+  },
+  "maskmini": {
+    "line1": "El cliente <pii1>Jamie Carter</pii1> puede ser contactado en <pii2>+1 555-0142</pii2>.",
+    "line2": "Afiliado a: <pii3>Downtown Counseling Center</pii3>, sesión en curso.",
+    "pii1Label": "Persona 1",
+    "pii2Label": "Contacto",
+    "pii3Label": "Organización",
+    "hint": "La información sensible solo se revela cuando es necesario"
+  }
+}

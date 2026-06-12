@@ -1,0 +1,22 @@
+{
+  "h2": "The records are there —<br></br>but the interpretation is still scattered",
+  "scene1": {
+    "stageAriaLabel": "Scattered materials being connected into one person's case",
+    "title": "When you need to tie scattered notes and results into one story",
+    "quote": "\"When assessment results and session notes don't talk to each other,<br></br>pulling them into a single story is the hardest part.\"",
+    "cite": "Counselor interview"
+  },
+  "scene2": {
+    "stageAriaLabel": "A mountain of documents piling up after a session",
+    "title": "When you have to write<br></br>the same thing all over again",
+    "quote": "\"Re-documenting the same session across every form<br></br>keeps pushing my end-of-day later and later.\"",
+    "cite": "Agency counselor interview"
+  },
+  "scene3": {
+    "stageAriaLabel": "Records remain but the thread to continue the next session gets tangled",
+    "title": "When you're not sure where to pick up in the next session",
+    "quote": "\"The notes are there —<br></br>but I still have to go back and re-read everything to find my place.\"",
+    "cite": "Practicing therapist interview"
+  },
+  "motionCaption": "In every case, the pieces stay disconnected — integrating, reviewing, and linking them is still left to the counselor"
+}

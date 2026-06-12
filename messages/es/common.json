@@ -1,0 +1,15 @@
+{
+  "skipToContent": "Ir al contenido",
+  "notFoundTitle": "Página no encontrada",
+  "notFoundBody": "La página que busca no existe o ha sido movida.",
+  "backHome": "Volver al inicio",
+  "promo": {
+    "newTag": "NUEVO",
+    "bottomText": "Primer mes gratis al registrarse",
+    "cta": "Comenzar gratis",
+    "regionLabel": "Promoción para nuevos registros"
+  },
+  "langSwitcher": {
+    "label": "Cambiar idioma"
+  }
+}

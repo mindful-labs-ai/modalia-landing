@@ -1,0 +1,15 @@
+{
+  "skipToContent": "跳至內容",
+  "notFoundTitle": "找不到頁面",
+  "notFoundBody": "您要找的頁面不存在或已移除。",
+  "backHome": "返回首頁",
+  "promo": {
+    "newTag": "NEW",
+    "bottomText": "註冊即享第一個月免費",
+    "cta": "免費開始使用",
+    "regionLabel": "新用戶優惠活動"
+  },
+  "langSwitcher": {
+    "label": "切換語言"
+  }
+}

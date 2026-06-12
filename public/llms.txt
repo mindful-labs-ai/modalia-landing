@@ -1,0 +1,48 @@
+# 마음토스 (Mindthos)
+
+> 마음토스(Mindthos)는 임상심리사·심리상담사를 위한 안전한 AI 파트너입니다. 축어록 생성, 상담노트·진행노트, 사례개념화, 가계도(Genogram) 도식까지 상담 업무 전반을 한 곳에서 처리합니다. 운영사: 마인드풀랩스 주식회사 (Mindful Labs Inc.).
+
+## 서비스 정의
+
+마음토스(Mindthos)는 대한민국 서울에 본사를 둔 심리상담 전문 B2B SaaS입니다. 상담사가 회기 직후 녹음 파일이나 메모를 업로드하면, AI가 화자 분리·비식별화·축어록 생성·사례개념화 초안·기관 양식 변환을 자동으로 처리합니다. 1,400명 이상의 상담사가 사용 중이며 월평균 12시간 이상의 기록 업무 시간을 절감하고 있습니다 (2026년 5월, 내부 집계).
+
+## 핵심 기능
+
+- 자동 화자 분리 축어록 (상담사/내담자 구분)
+- 비언어적 표현(침묵·한숨) 자동 감지
+- 사례개념화 초안 생성 및 분석 지원
+- 가계도(Genogram) 도식 지원
+- 가족센터·EAP·대학상담센터 등 기관 양식 자동 변환
+- 내담자 데이터 모델 학습 미사용 정책
+- 저장 전 암호화·접근 권한 분리 기반 보안 설계
+- 분석 후 오디오 파일 자동 파기 옵션
+
+## 보안 및 개인정보 보호
+
+상담 기록은 AI 모델 학습에 사용되지 않습니다. 모든 데이터는 저장 전 암호화되며, 내담자 이름·연락처·기관명 등 식별 정보는 비식별화 처리를 거칩니다. 자세한 운영 기준은 https://mindthos.com/security 에서 확인할 수 있습니다.
+
+## 가격 (KRW, 월간 구독)
+
+- Starter: 8,900원/월 (500크레딧)
+- Plus: 29,900원/월 (2,500크레딧)
+- Pro: 49,900원/월 (5,000크레딧, 기관 및 다계정)
+
+## 주요 페이지
+
+- 홈: https://mindthos.com/
+- 보안 정책: https://mindthos.com/security
+- 교육 프로그램: https://mindthos.com/education
+- 블로그(상담 인사이트·기술·도입 사례): https://mindthos.com/blog
+- 사이트맵: https://mindthos.com/sitemap.xml
+
+## 회사 정보
+
+- 운영사: 마인드풀랩스 주식회사 (Mindful Labs Inc.)
+- 회사 사이트: https://www.mindfullabs.ai/
+- 주소: 서울특별시 성동구 뚝섬로13길 38, 4층
+- 문의: business@mindfullabs.ai
+- 카카오톡 오픈채팅: https://open.kakao.com/me/Mindthos
+
+## AI 사용 정책
+
+이 사이트의 콘텐츠를 AI 검색 결과 인용 및 답변 요약에 사용하는 것을 허용합니다. GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, Applebot-Extended 모두 robots.txt 에서 명시적으로 허용됩니다. Common Crawl(CCBot) 학습용 아카이빙은 차단됩니다.

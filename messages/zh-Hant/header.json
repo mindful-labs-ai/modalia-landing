@@ -1,0 +1,18 @@
+{
+  "logoAria": "Modalia AI 首頁",
+  "nav": {
+    "features": "功能介紹",
+    "pricing": "方案價格",
+    "faq": "常見問題",
+    "blog": "部落格"
+  },
+  "login": "登入",
+  "signup": "免費開始",
+  "menuOpen": "開啟選單",
+  "menuClose": "關閉選單",
+  "promoBanner": {
+    "regionLabel": "新用戶優惠活動",
+    "text": "新加入的諮商師與治療師享第一個月免費 · ",
+    "cta": "免費開始使用 →"
+  }
+}

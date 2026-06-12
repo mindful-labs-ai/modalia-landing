@@ -1,0 +1,64 @@
+{
+  "markerName": "General AI vs Modalia AI (side-by-side comparison)",
+  "markerPurpose": "5 comparison pairs · Modalia AI panel highlighted as single trusted choice",
+  "h2Line1": "Why Modalia AI",
+  "h2Line2": "is different from other AI",
+  "generic": {
+    "ariaLabel": "General AI comparison items",
+    "name": "General AI",
+    "sub": "A general-purpose AI that produces answers inside a chat window",
+    "rows": [
+      {
+        "key": "Training data concerns",
+        "sub": "The session records you input may be used to train the model."
+      },
+      {
+        "key": "Records scattered across chat windows",
+        "sub": "Client records end up mixed across multiple separate chat threads."
+      },
+      {
+        "key": "Past sessions must be re-entered every time",
+        "sub": "You have to copy-paste previous session summaries and progress notes each time."
+      },
+      {
+        "key": "No clinical grounding",
+        "sub": "Without a counseling context, responses can drift into generic advice."
+      },
+      {
+        "key": "Templates must be specified every time",
+        "sub": "SOAP notes, institutional forms, and other templates require a fresh prompt each session."
+      }
+    ]
+  },
+  "mindthos": {
+    "ariaLabel": "Modalia AI comparison items",
+    "logoAriaLabel": "Modalia AI",
+    "sub": "A specialized AI agent built for counselors and therapists",
+    "rows": [
+      {
+        "key": "No AI retraining on your data",
+        "sub": "Client data is never used to train AI models."
+      },
+      {
+        "key": "Per-client record management",
+        "sub": "Session records accumulate and are managed in dedicated per-client folders."
+      },
+      {
+        "key": "Context carried across sessions",
+        "sub": "Accumulated session records flow naturally into preparation for the next appointment."
+      },
+      {
+        "key": "Counseling-specific knowledge",
+        "sub": "Drafts are grounded in counseling expertise and accumulated clinical material."
+      },
+      {
+        "key": "Built-in counseling templates",
+        "sub": "Session notes, institutional forms, and supervision templates are ready to use."
+      }
+    ]
+  },
+  "bottomNote": {
+    "strong": "Modalia AI does not replace the counselor's judgment.",
+    "rest": "It keeps session records safe and helps carry them forward to your next appointment."
+  }
+}

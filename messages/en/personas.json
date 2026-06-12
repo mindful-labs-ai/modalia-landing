@@ -1,0 +1,59 @@
+{
+  "head": {
+    "h2Line1": "From falling behind on notes",
+    "h2Line2": "to hitting a wall mid-session"
+  },
+  "navPrev": "Previous situation",
+  "navNext": "Next situation",
+  "railAriaLabel": "Counselor situation cards rail",
+  "counterAriaLabel": "Current situation position",
+  "items": [
+    {
+      "cat": "The counselor drowning in documentation",
+      "sceneLine1": "Monday night, 10 p.m. —",
+      "sceneLine2": "six notes still left to write",
+      "quote": "The session is over, but the paperwork keeps slipping to the next day.",
+      "desc": "Turn session recordings and rough notes into a ready-to-review session note draft.",
+      "tag1": "Transcript",
+      "tag2": "Session notes"
+    },
+    {
+      "cat": "The counselor stuck connecting assessment to session",
+      "sceneLine1": "Assessment results and interview notes",
+      "sceneLine2": "aren't speaking to each other",
+      "quote": "I have the test scores, but I don't know how to connect them to what actually happened in the room.",
+      "desc": "Bring assessment results and session records together into a draft integrated interpretation.",
+      "tag1": "Psych assessment",
+      "tag2": "Case conceptualization"
+    },
+    {
+      "cat": "The counselor prepping for supervision",
+      "sceneLine1": "The night before supervision —",
+      "sceneLine2": "unsure which case to bring",
+      "quote": "I can't figure out what the core case question even is.",
+      "desc": "Organize case conceptualization and supervision questions from session patterns and recurring cues.",
+      "tag1": "Case conceptualization",
+      "tag2": "AI feedback"
+    },
+    {
+      "cat": "The counselor locked into institutional forms",
+      "sceneLine1": "Same content, different form",
+      "sceneLine2": "every single time",
+      "quote": "The session content is the same, but the submission template is always different.",
+      "desc": "Reformat session records to fit institutional and reporting templates.",
+      "tag1": "Session notes",
+      "tag2": "Institutional forms"
+    },
+    {
+      "cat": "The counselor mapping complex family systems",
+      "sceneLine1": "Family relationships too tangled",
+      "sceneLine2": "to see the whole picture at once",
+      "quote": "I can sense the relational dynamics, but putting them into a structure is hard.",
+      "desc": "Organize family cues and relational information into a genogram-centered summary.",
+      "tag1": "Genogram",
+      "tag2": "Relational mapping"
+    }
+  ],
+  "markerName": "Personas · Situations (5 situation cards)",
+  "markerPurpose": "Branch by the 'moment you get stuck', not job title · 5 equal-weight cards · self-matching"
+}

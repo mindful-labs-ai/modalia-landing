@@ -1,0 +1,19 @@
+{
+  "name": "mindthos-global-gen-image",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenAI gpt-image-2 이미지 생성 스크립트 — 프롬프트 → PNG/JPEG/WebP 저장",
+  "scripts": {
+    "gen": "tsx src/generate.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.0"
+  }
+}

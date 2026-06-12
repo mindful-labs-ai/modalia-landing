@@ -1,0 +1,98 @@
+{
+  "ariaLabel": "Modalia AI 數據總覽",
+  "sectionTitle": "Modalia AI 的數字與聲音",
+  "cards": [
+    {
+      "value": 2000,
+      "comma": true,
+      "unit": "+",
+      "label": "使用 Modalia AI 的諮商師"
+    },
+    {
+      "value": 10000,
+      "comma": true,
+      "unit": "+",
+      "label": "已記錄的會談次數"
+    },
+    {
+      "value": 12,
+      "comma": false,
+      "unit": "hrs+",
+      "label": "每月節省的記錄時數"
+    },
+    {
+      "value": 90,
+      "comma": false,
+      "unit": "%+",
+      "label": "訂閱續約率"
+    }
+  ],
+  "reviewsBridge": "數字背後，<br></br>是諮商師們 <mark>持續回來</mark> 的理由。",
+  "reviewsLabel": "真實諮商師的故事",
+  "reviews": [
+    {
+      "tag": "減輕記錄負擔",
+      "title": "記錄的重量輕多了",
+      "text": "在會談結束後立刻記下流程，讓我不必在下班後費力重建記憶。花在記錄上的心力少了，在會談中反而能更全神貫注在個案身上。",
+      "authorName": "K. 諮商師",
+      "authorRole": "13 年資深諮商師",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "個案整理",
+      "title": "督導前的準備輕鬆多了",
+      "text": "以前不知道該帶哪個個案，現在會談重點與討論方向已先整理好，真的幫了大忙。整理督導資料所花的時間少了很多。",
+      "authorName": "L. 實習生",
+      "authorRole": "諮商實習生",
+      "avatar": "/testimonial-05.webp"
+    },
+    {
+      "tag": "機構記錄管理",
+      "title": "機構的紀錄終於一致了",
+      "text": "就算每個中心使用不同的表單，我也能以一個連貫的流程整理同一次會談的內容。把同樣的紀錄重寫成不同格式已成過去式，行政負擔明顯下降。",
+      "authorName": "P. 中心主任",
+      "authorRole": "諮商中心主管",
+      "avatar": "/testimonial-06.webp"
+    },
+    {
+      "tag": "會談效率",
+      "title": "整理紀錄的時間縮短了",
+      "text": "會談後很快就能拉出初稿，不再需要在傍晚苦苦回憶細節。我可以回顧整個會談流程，而不會遺漏任何東西。",
+      "authorName": "J. 諮商師",
+      "authorRole": "青少年諮商師",
+      "avatar": "/testimonial-04.webp"
+    },
+    {
+      "tag": "專注於個案",
+      "title": "記錄的壓力減輕了",
+      "text": "以前我在會談中途會想：「這段我等一下怎麼寫？」現在我能在會談中更全心陪伴個案，之後只需修改草稿就好。",
+      "authorName": "Y. 諮商師",
+      "authorRole": "大學諮商中心",
+      "avatar": "/testimonial-03.webp"
+    },
+    {
+      "tag": "全新視角",
+      "title": "卡關時，我有了重新切入的方式",
+      "text": "個案概念化遇到瓶頸時，閱讀從不同角度整理出的草稿，能讓我看見原本忽略的線索。我把它當作核對自己判斷的檢查點，而不是直接使用的成品。",
+      "authorName": "H. 實習生",
+      "authorRole": "諮商心理學研究生",
+      "avatar": "/testimonial-02.webp"
+    },
+    {
+      "tag": "格式轉換",
+      "title": "不同範本，同一個完整流程",
+      "text": "為每個機構格式重複輸入相同內容的時間大幅縮短。我可以保持會談敘事的完整性，同時適應任何所需的結構。",
+      "authorName": "C. 諮商師",
+      "authorRole": "私人諮商中心",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "報告潤稿",
+      "title": "潤飾報告省時多了",
+      "text": "草稿的語氣接近我的寫作風格，不需從頭開始，只需修改需要調整的地方。就連行政報告讀起來也更自然了。",
+      "authorName": "S. 執業者",
+      "authorRole": "心理衛生福利中心",
+      "avatar": "/testimonial-04.webp"
+    }
+  ]
+}

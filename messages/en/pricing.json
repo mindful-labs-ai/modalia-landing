@@ -1,0 +1,76 @@
+{
+  "headTitle": "Start at the scale that fits your practice",
+  "recommendedBadge": "Recommended",
+  "feelLabel": "Typical usage",
+  "clientsKey": "Clients",
+  "sessionsKey": "Sessions",
+  "footNote": "Typical usage figures are examples based on average session documentation. Actual credit usage varies by task type and note length.",
+  "plans": [
+    {
+      "name": "Starter",
+      "target": "Individual counselors new to Modalia AI",
+      "price": "$9/mo",
+      "credits": "500 credits / month",
+      "clientsValue": "5 per month",
+      "sessionsValue": "8 per month",
+      "features": [
+        "Standard & advanced session transcripts",
+        "Counseling notes",
+        "Supervision prep"
+      ],
+      "ctaLabel": "Get started",
+      "ctaIntent": "signup",
+      "ctaTier": "starter"
+    },
+    {
+      "name": "Plus",
+      "target": "Established individual counselors",
+      "price": "$29/mo",
+      "credits": "2,500 credits / month",
+      "clientsValue": "15 per month",
+      "sessionsValue": "40 per month",
+      "features": [
+        "Everything in Starter",
+        "All case conceptualization note types",
+        "Supervision prep across all theoretical models"
+      ],
+      "ctaLabel": "Get started",
+      "ctaIntent": "signup",
+      "ctaTier": "plus"
+    },
+    {
+      "name": "Pro",
+      "target": "Full-time counselors or small teams",
+      "price": "$49/mo",
+      "credits": "5,000 credits / month",
+      "clientsValue": "30+ per month",
+      "sessionsValue": "80+ per month",
+      "features": [
+        "Everything in Plus",
+        "Early access to new features",
+        "Priority processing for large workloads"
+      ],
+      "ctaLabel": "Get started",
+      "ctaIntent": "signup",
+      "ctaTier": "pro"
+    },
+    {
+      "name": "Institution",
+      "target": "Centers · Hospitals · Schools",
+      "price": "Contact us",
+      "credits": "Custom credits",
+      "clientsValue": "By team size",
+      "sessionsKey": "Notes",
+      "sessionsValue": "Custom templates",
+      "features": [
+        "Multi-counselor accounts & permission management",
+        "Custom institutional note templates",
+        "Admin tools / team management",
+        "Onboarding support & security consultation"
+      ],
+      "ctaLabel": "Contact sales",
+      "ctaIntent": "institution_inquiry",
+      "ctaTier": "institution"
+    }
+  ]
+}

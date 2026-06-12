@@ -1,0 +1,18 @@
+{
+  "badge": "Coming soon",
+  "title": "Modalia AI is launching soon",
+  "subtitle": "We're putting the final touches on the global release. Leave your email and be the first to know the moment it goes live.",
+  "videoTitle": "Modalia AI product demo",
+  "perkTitle": "1 month free for early sign-ups",
+  "perkBody": "Submit your email now and we'll send you a 1-month free pass the day we launch.",
+  "emailLabel": "Email address",
+  "emailPlaceholder": "you@example.com",
+  "submit": "Get early access",
+  "submitting": "Submitting…",
+  "successTitle": "You're on the list!",
+  "successBody": "Thanks for signing up. We'll email you at launch — with your 1-month free pass included.",
+  "done": "Done",
+  "error": "Please enter a valid email address and try again.",
+  "privacy": "We'll only use your email to notify you about the launch. No spam.",
+  "close": "Close"
+}

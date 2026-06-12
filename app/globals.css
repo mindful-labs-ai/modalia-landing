@@ -1,0 +1,467 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+/* §사수 v62 (2026-05-04): SUIT Variable + Paperlogy 폰트는 app/layout.tsx의 <link>로 로드 — Tailwind v4 컴파일 결과에서 @import url() 위치가 깨지는 문제 회피 */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Font — 랜딩 hifi.css와 동일한 패밀리 체인 */
+  --font-sans:
+    'SUIT Variable', 'SUIT', var(--font-pretendard), 'Pretendard Variable',
+    Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  --font-mono:
+    var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo,
+    Consolas, 'D2Coding', monospace;
+  --font-heading:
+    'Paperlogy', 'SUIT Variable', 'SUIT', var(--font-pretendard),
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+
+  /* shadcn semantic mappings — 마음토스 토큰으로 채움 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  /* Brand color tokens (design-tokens.md v1.2 — Mindthos production green) */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-dark: var(--brand-primary-dark);
+  --color-brand-primary-soft: var(--brand-primary-soft);
+  --color-brand-primary-tint: var(--brand-primary-tint);
+  --color-brand-primary-tint-2: var(--brand-primary-tint-2);
+  --color-brand-primary-pale: var(--brand-primary-pale);
+  --color-brand-gradient-pair: var(--brand-gradient-pair);
+
+  --color-text-heading-strong: var(--text-heading-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-warm-dark: var(--text-warm-dark);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-muted-warm: var(--text-muted-warm);
+  --color-text-on-dark: var(--text-on-dark);
+
+  --color-bg-base: var(--bg-base);
+  --color-bg-warm: var(--bg-warm);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-deep: var(--bg-deep);
+
+  --color-line-1: var(--line-1);
+  --color-line-2: var(--line-2);
+  --color-line-warm: var(--line-warm);
+
+  --color-alert: var(--alert);
+
+  /* Layout — Tailwind max-w-* utilities (legacy) */
+  --max-width-container: 1120px;
+  --max-width-container-wide: 1280px;
+  --max-width-narrow: 760px;
+  --max-width-prose: 640px;
+
+  /* Container & gutter — components consume via Tailwind max-w-[var(--container-*)] / px-[var(--gutter-*)] */
+  --container-wide: 1280px;
+  --gutter-wide: 40px;
+  --container-max: 1120px;
+  --container-narrow: 760px;
+  --container-prose: 640px;
+
+  /* Spacing aliases — Tailwind generates px-/mx-/gap- utilities for these token names. */
+  --spacing-gutter: clamp(16px, 4vw, 32px);
+  --spacing-gutter-wide: 40px;
+
+  /* Typography scale — design tokens consumed by typography utilities */
+  --text-display: var(--t-display);
+  --text-display-mobile: var(--t-display-mobile);
+  --text-h2: var(--t-h2);
+  --text-h2-mobile: var(--t-h2-mobile);
+  --text-h3: var(--t-h3);
+  --text-lead: var(--t-lead);
+  --text-body-size: var(--t-body);
+  --text-small: var(--t-small);
+  --text-meta: var(--t-meta);
+  --text-eyebrow: var(--t-eyebrow);
+  --text-cta: var(--t-cta);
+
+  /* Spacing scale (sp-1…sp-9) — design-tokens.md §3.1 */
+  --spacing-1: var(--sp-1);
+  --spacing-2: var(--sp-2);
+  --spacing-3: var(--sp-3);
+  --spacing-4: var(--sp-4);
+  --spacing-5: var(--sp-5);
+  --spacing-6: var(--sp-6);
+  --spacing-7: var(--sp-7);
+  --spacing-8: var(--sp-8);
+  --spacing-9: var(--sp-9);
+}
+
+:root {
+  /* === Brand Green (mindthos.com 운영 색 — design-tokens.md v1.2 §1.4) === */
+  --brand-primary: #44ce4b;
+  --brand-primary-dark: #40a755;
+  --brand-primary-soft: #65c377;
+  --brand-primary-tint-2: #98dba5;
+  --brand-primary-tint: #b5e2bf;
+  --brand-primary-pale: #e2f6e6;
+  --brand-primary-alpha-20: rgba(101, 195, 119, 0.2);
+  --brand-gradient-pair: #eeee76;
+  /* Accessible green for text on light backgrounds — WCAG AA on white (5.96:1).
+     #40a755 fails (3.05:1); use --brand-text-on-light for inline text/labels.
+     Fills/strokes/buttons calmly stay on --brand-primary-dark. */
+  --brand-text-on-light: #2e7d3e;
+
+  /* === Text === */
+  --text-heading-strong: #0e0e0e;
+  --text-primary: #1f1f1f;
+  --text-body: #4b4b4b;
+  --text-warm-dark: #312e2a;
+  --text-secondary: #4c5058;
+  /* --text-muted 는 본문 텍스트에 흔히 쓰여 WCAG AA(4.5:1) 통과 필요.
+     이전 #808791 (3.62:1 on white) → #6b7280 (4.83:1 on white). 2026-05-08. */
+  --text-muted: #6b7280;
+  --text-muted-warm: #6b6763;
+  --ink-disabled: #afb3bb;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.72);
+
+  /* === Background === */
+  --bg-base: #ffffff;
+  --bg-warm: #f7f5f1;
+  --bg-elevated: #f7f7f7;
+  --bg-deep: #181819;
+
+  /* === Line / Border === */
+  --line-1: #e1e3e7;
+  --line-2: #e7e7e7;
+  --line-warm: #e1dbd6;
+
+  /* === Status === */
+  --alert: #e7906d;
+
+  /* === shadcn theme — 마음토스 토큰으로 매핑 === */
+  --background: #ffffff;
+  --foreground: #1f1f1f;
+  --card: #ffffff;
+  --card-foreground: #1f1f1f;
+  --popover: #ffffff;
+  --popover-foreground: #1f1f1f;
+  --primary: #44ce4b;
+  --primary-foreground: #1f1f1f;
+  --secondary: #f7f5f1;
+  --secondary-foreground: #312e2a;
+  --muted: #f7f7f7;
+  --muted-foreground: #4c5058;
+  --accent: #e2f6e6;
+  --accent-foreground: #1f1f1f;
+  --destructive: #e7906d;
+  --border: #e1e3e7;
+  --input: #e1e3e7;
+  --ring: #40a755;
+  --radius: 0.75rem;
+
+  /* === Spacing scale (design-tokens.md §3.1) === */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 80px;
+  --sp-9: 120px;
+
+  /* === Container === */
+  /* `--container-wide` / `--gutter-wide` 는 hifi.css 의 `.container` (1280/40) 와
+     동일 — 홈/블로그 등 GNB 너비 기준 페이지에서 사용. */
+  --container-wide: 1280px;
+  --gutter-wide: 40px;
+  --container-max: 1120px;
+  --container-narrow: 760px;
+  --container-prose: 640px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --section-py-desktop: 120px;
+  --section-py-tablet: 80px;
+  --section-py-mobile: 56px;
+
+  /* === Type scale (design-tokens.md §2.3) === */
+  --t-display: 56px;
+  --t-display-mobile: 38px;
+  --t-h2: 36px;
+  --t-h2-mobile: 26px;
+  --t-h3: 19px;
+  --t-lead: 17px;
+  --t-body: 16px;
+  --t-body-tight: 15px;
+  --t-small: 14px;
+  --t-meta: 12.5px;
+  --t-eyebrow: 11.5px;
+  --t-mono: 11px;
+  --t-cta: 14.5px;
+
+  /* === Motion === */
+  --m-fast: 160ms;
+  --m-base: 280ms;
+  --m-slow: 480ms;
+  --m-rise: 620ms;
+  --ease-out-soft: cubic-bezier(0.32, 0.72, 0.24, 1);
+  --ease-in-out-calm: cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--t-body);
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
+  }
+  :focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+  }
+
+  /* Type scale */
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--t-display-mobile);
+    line-height: 1.22;
+    font-weight: 700;
+    letter-spacing: -0.018em;
+    color: var(--text-heading-strong);
+    text-wrap: balance;
+  }
+  @media (min-width: 720px) {
+    h1 {
+      font-size: var(--t-display);
+      line-height: 1.18;
+    }
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--t-h2-mobile);
+    line-height: 1.34;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text-heading-strong);
+    text-wrap: balance;
+  }
+  @media (min-width: 720px) {
+    h2 {
+      font-size: var(--t-h2);
+      line-height: 1.32;
+    }
+  }
+  h3 {
+    font-size: var(--t-h3);
+    line-height: 1.45;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    color: var(--text-heading-strong);
+  }
+
+  /* Tabular numbers */
+  .t-num {
+    font-feature-settings: 'tnum' 1, 'ss01' 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Eyebrow / mono labels */
+  .eyebrow {
+    font-size: var(--t-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* Blog prose */
+  .prose {
+    color: var(--text-body);
+    line-height: 1.8;
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  .prose h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-heading-strong);
+  }
+  .prose h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-heading-strong);
+  }
+  .prose blockquote {
+    border-left: 4px solid var(--brand-primary);
+    background: var(--bg-warm);
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+  .prose ul,
+  .prose ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  /* Tailwind Preflight 가 ol,ul 의 list-style 을 none 으로 리셋하므로 prose 본문에서 마커를 복구한다. */
+  .prose ul {
+    list-style: disc;
+  }
+  .prose ol {
+    list-style: decimal;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  .prose li::marker {
+    color: var(--text-muted);
+  }
+  .prose a {
+    color: var(--brand-primary-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose a:hover {
+    color: var(--brand-primary);
+  }
+  .prose h2[id],
+  .prose h3[id] {
+    scroll-margin-top: 5rem;
+  }
+  .prose img {
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+  }
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  .prose th {
+    background: var(--bg-elevated);
+    text-align: left;
+    padding: 0.75rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--line-1);
+  }
+  .prose td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--line-2);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* === Language switcher (글로벌 전용 — GNB 우측) === */
+  .lang-switch {
+    position: relative;
+    display: inline-flex;
+  }
+  .lang-switch-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 38px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line, #e6e3dd);
+    background: transparent;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .lang-switch-toggle:hover {
+    border-color: var(--brand-primary, #44ce4b);
+  }
+  .gnb[data-transparent='true'] .lang-switch-toggle {
+    border-color: rgba(255, 255, 255, 0.55);
+    color: #fff;
+  }
+  .lang-switch-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 60;
+    min-width: 150px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: #fff;
+    border: 1px solid var(--line, #e6e3dd);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+  .lang-switch-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ink, #1f1f1f);
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+  }
+  .lang-switch-option:hover,
+  .lang-switch-option[aria-selected='true'] {
+    background: var(--bg-warm, #f7f5f1);
+    color: var(--brand-primary-dark, #40a755);
+  }
+}

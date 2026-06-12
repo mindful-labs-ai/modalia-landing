@@ -1,0 +1,15 @@
+{
+  "skipToContent": "Zum Inhalt springen",
+  "notFoundTitle": "Seite nicht gefunden",
+  "notFoundBody": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+  "backHome": "Zurück zur Startseite",
+  "promo": {
+    "newTag": "NEU",
+    "bottomText": "Erster Monat kostenlos bei der Anmeldung",
+    "cta": "Kostenlos starten",
+    "regionLabel": "Neuanmeldungs-Aktion"
+  },
+  "langSwitcher": {
+    "label": "Sprache ändern"
+  }
+}

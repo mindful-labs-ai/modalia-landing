@@ -1,0 +1,18 @@
+{
+  "logoAria": "Modalia AI Startseite",
+  "nav": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "blog": "Blog"
+  },
+  "login": "Anmelden",
+  "signup": "Kostenlos starten",
+  "menuOpen": "Menü öffnen",
+  "menuClose": "Menü schließen",
+  "promoBanner": {
+    "regionLabel": "Neuanmeldungs-Aktion",
+    "text": "Erster Monat kostenlos für neue Berater:innen & Therapeut:innen · ",
+    "cta": "Kostenlos starten →"
+  }
+}

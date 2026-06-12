@@ -1,0 +1,76 @@
+{
+  "headTitle": "選擇最適合您執業規模的方案",
+  "recommendedBadge": "推薦方案",
+  "feelLabel": "典型使用情境",
+  "clientsKey": "個案數",
+  "sessionsKey": "每月會談次數",
+  "footNote": "典型使用情境數據僅供參考，以平均會談記錄量為基準估算。實際點數消耗因任務類型與紀錄長度而異。",
+  "plans": [
+    {
+      "name": "Starter",
+      "target": "初次使用 Modalia AI 的個人諮商師",
+      "price": "請洽詢我們",
+      "credits": "500 點 / 月",
+      "clientsValue": "每月最多 5 位",
+      "sessionsValue": "每月約 8 次",
+      "features": [
+        "標準與進階會談逐字稿",
+        "諮商紀錄",
+        "AI 督導"
+      ],
+      "ctaLabel": "立即開始",
+      "ctaIntent": "signup",
+      "ctaTier": "starter"
+    },
+    {
+      "name": "Plus",
+      "target": "資深個人諮商師",
+      "price": "請洽詢我們",
+      "credits": "2,500 點 / 月",
+      "clientsValue": "每月最多 15 位",
+      "sessionsValue": "每月約 40 次",
+      "features": [
+        "包含 Starter 所有功能",
+        "全部個案概念化紀錄類型",
+        "全部理論取向 AI 督導模式"
+      ],
+      "ctaLabel": "立即開始",
+      "ctaIntent": "signup",
+      "ctaTier": "plus"
+    },
+    {
+      "name": "Pro",
+      "target": "全職諮商師或小型團隊",
+      "price": "請洽詢我們",
+      "credits": "5,000 點 / 月",
+      "clientsValue": "每月 30 位以上",
+      "sessionsValue": "每月約 80 次以上",
+      "features": [
+        "包含 Plus 所有功能",
+        "新功能搶先體驗",
+        "大量工作負載優先處理"
+      ],
+      "ctaLabel": "立即開始",
+      "ctaIntent": "signup",
+      "ctaTier": "pro"
+    },
+    {
+      "name": "機構方案",
+      "target": "諮商中心 · 醫院 · 公共機構 · 學校",
+      "price": "請洽詢我們",
+      "credits": "客製點數",
+      "clientsValue": "依團隊規模調整",
+      "sessionsKey": "紀錄",
+      "sessionsValue": "客製機構專屬範本",
+      "features": [
+        "多諮商師帳號及權限管理",
+        "客製機構專屬紀錄範本",
+        "管理工具 / 團隊管理",
+        "導入支援與資安諮詢"
+      ],
+      "ctaLabel": "洽詢機構導入方案",
+      "ctaIntent": "institution_inquiry",
+      "ctaTier": "institution"
+    }
+  ]
+}

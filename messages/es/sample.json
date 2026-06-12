@@ -1,0 +1,142 @@
+{
+  "slot1": {
+    "heading": "Antes de comenzar,\nrevise los resultados primero",
+    "sub": "Elija una sesión de muestra y vea el borrador de nota de sesión que Modalia AI preparó."
+  },
+  "step1": {
+    "label": "Paso 1 / 3 — Elija un caso de muestra",
+    "lead": "Primero, elija un caso de muestra para explorar",
+    "sub": "Estos son casos de ejemplo para experimentar Modalia AI — no son datos reales de clientes.",
+    "mockAppTitle": "Modalia AI · Selección de caso de muestra",
+    "cases": {
+      "01": {
+        "eyebrow": "CASO 01",
+        "cat": "Ansiedad · Depresión",
+        "title": "Profesional de 20 años,\nautoculpa",
+        "situ": "Un caso de primera sesión de un cliente que reporta preocupación por errores en el trabajo y rumiación repetitiva antes de dormir.",
+        "tag1": "Nota de sesión",
+        "tag2": "Conceptualización del caso",
+        "pickLink": "Ver resultados con este caso →"
+      },
+      "02": {
+        "eyebrow": "CASO 02",
+        "cat": "Conflicto de pareja",
+        "title": "Ruptura de comunicación\ny conflicto de coparentalidad",
+        "situ": "Un caso de consejería de pareja donde la ruptura comunicativa recurrente y los estilos de crianza divergentes han profundizado el conflicto.",
+        "tag1": "Nota de sesión",
+        "tag2": "Patrón relacional",
+        "pickLink": "Ver resultados con este caso →"
+      },
+      "03": {
+        "eyebrow": "CASO 03",
+        "cat": "Ajuste adolescente",
+        "title": "Dificultades en las\nrelaciones con pares",
+        "situ": "Un caso de consejería con adolescentes que implica retirada social en la escuela y ansiedad en las relaciones con pares.",
+        "tag1": "Nota de sesión",
+        "tag2": "Respuesta emocional",
+        "pickLink": "Ver resultados con este caso →"
+      },
+      "04": {
+        "eyebrow": "CASO 04",
+        "cat": "Relaciones familiares",
+        "title": "Comunicación en familia\nde 3 generaciones",
+        "situ": "Un caso de consejería familiar que aborda estilos de comunicación y conflictos recurrentes a través de tres generaciones.",
+        "tag1": "Genograma",
+        "tag2": "Estructura relacional",
+        "pickLink": "Ver resultados con este caso →"
+      },
+      "05": {
+        "eyebrow": "CASO 05",
+        "cat": "Entrevista de ingreso",
+        "title": "Evaluación en profundidad\nde nuevo cliente",
+        "situ": "Un caso que captura la queja principal, la historia familiar, los factores de riesgo y los objetivos de consejería en una entrevista inicial de ingreso.",
+        "tag1": "Entrevista de ingreso",
+        "tag2": "Evaluación inicial",
+        "pickLink": "Ver resultados con este caso →"
+      }
+    }
+  },
+  "step2": {
+    "label": "Paso 2 / 3 — Procesamiento seguro",
+    "lead": "Procesando de forma segura,\nluego generando resultados.",
+    "sub": "Son datos de muestra, pero el procesamiento sigue los mismos pasos que una sesión real.",
+    "mockAppTitle": "Modalia AI · Procesando",
+    "mockStatusLabel": "Procesamiento en 4 pasos",
+    "stages": {
+      "1": { "num": "01", "name": "Datos de entrada", "desc": "Registro de sesión" },
+      "2": { "num": "02", "name": "Procesamiento de seguridad", "desc": "Cifrado · Desidentificación" },
+      "3": { "num": "03", "name": "Organización con IA", "desc": "No se usa para entrenamiento" },
+      "4": { "num": "04", "name": "Generación de salida", "desc": "Borrador de nota de sesión" }
+    },
+    "pills": {
+      "1": "No se usa para entrenamiento",
+      "2": "Cifrado antes del almacenamiento",
+      "3": "Datos personales desidentificados",
+      "4": "Registro de sesión estructurado",
+      "5": "Tarjeta de resultado generada"
+    }
+  },
+  "step3": {
+    "label": "Paso 3 / 3 — Resultados de la nota de sesión",
+    "lead": "Así queda el borrador de su nota de sesión",
+    "mockAppTitle": "Modalia AI · Nota de sesión",
+    "mockStatusDone": "Generado",
+    "selectedCasePrefix": "Caso seleccionado · ",
+    "ctaLabel": "Comenzar mis sesiones así",
+    "ctaArrow": "→",
+    "restartLabel": "Probar otro caso"
+  },
+  "stepCounter": "Paso {n} / {total}",
+  "caseData": {
+    "01": {
+      "name": "Ansiedad · Depresión — Profesional de 20 años, autoculpa",
+      "rows": [
+        { "label": "Tema de la consejería", "type": "text", "value": "Ansiedad anticipatoria recurrente y autoculpa en situaciones de evaluación del desempeño, que se extienden a la alteración del sueño y la reducción del funcionamiento diario." },
+        { "label": "Objetivos de la sesión", "type": "text", "value": "Identificar el ciclo específico de pensamientos automáticos activados en situaciones laborales y establecer un punto de partida para el trabajo de defusión cognitiva que reduzca la rumiación antes de dormir." },
+        { "label": "Resumen de la sesión", "type": "text", "value": "Tres pensamientos automáticos centrales — 'la embarré / todos se dieron cuenta / perdí su confianza' — se repiten en un ciclo de cuatro etapas: post-reunión → autoculpa → rumiación → alteración del sueño. Hacia el final de la sesión se intentó un breve ejercicio de autoafirmación 'una cosa que hice bien hoy'…" },
+        { "label": "Dirección principal de la intervención", "type": "text", "value": "Preguntas de reestructuración cognitiva para separar hechos de interpretaciones. Aplicar progresivamente el trabajo de distanciamiento de los pensamientos automáticos y desarrollar la conciencia metacognitiva de cómo la autoculpa mantiene la ansiedad." },
+        { "label": "Plan para la próxima sesión", "type": "text", "value": "Seleccionar un momento reciente en que el cliente sintió que había cometido un error, examinar los pensamientos, reacciones físicas y conductas posteriores, y realizar un ejercicio de ampliación de perspectiva comparando con el punto de vista de un colega." }
+      ]
+    },
+    "02": {
+      "name": "Conflicto de pareja — Ruptura de comunicación, conflicto de coparentalidad",
+      "rows": [
+        { "label": "Tema de la consejería", "type": "text", "value": "Conflicto de pareja impulsado por la ruptura comunicativa recurrente y los enfoques parentales divergentes" },
+        { "label": "Objetivos de la sesión", "type": "text", "value": "Identificar los patrones de interacción recurrentes durante el conflicto y examinar por separado las respuestas emocionales de cada miembro de la pareja." },
+        { "label": "Resumen de la sesión", "type": "text", "value": "La frecuencia del conflicto en torno a la crianza ha aumentado en los últimos seis meses, con una comunicación atrapada en un ciclo de culpa–defensividad–evitación." },
+        { "label": "Puntos para revisión del terapeuta", "type": "text", "value": "Más allá del contenido superficial del conflicto, los estilos de comunicación recurrentes y la distancia emocional deben examinarse conjuntamente en la próxima sesión." },
+        { "label": "Plan para la próxima sesión", "type": "text", "value": "Reconstruir en detalle una escena de conflicto reciente y explorar las emociones, necesidades y respuestas defensivas de cada miembro de la pareja." }
+      ]
+    },
+    "03": {
+      "name": "Ajuste adolescente — Dificultades en las relaciones con pares",
+      "rows": [
+        { "label": "Tema de la consejería", "type": "text", "value": "Ansiedad en las relaciones con pares y retirada escolar. El cliente reporta una interpretación automática — 'deben caerles mal' — activada incluso por pequeños cambios en la expresión de un par." },
+        { "label": "Objetivos de la sesión", "type": "text", "value": "Examinar la retirada que se intensifica durante los recreos y el almuerzo, y explorar el patrón de evitación recurrente en las relaciones con pares junto con pequeños pasos hacia la conexión." },
+        { "label": "Resumen de la sesión", "type": "text", "value": "Se identificó un ciclo repetitivo de conciencia de la mirada del par → rechazo anticipado → tensión física (hombros, abdomen) → evitación (auriculares, salir del área); el breve alivio tras la evitación actúa como factor reforzador…" },
+        { "label": "Dirección principal de la intervención", "type": "text", "value": "Practicar imaginar las conductas de acercamiento más pequeñas posibles ('hola' / '¿quieres caminar juntos?') y anticipar los sentimientos tras intentarlas. Guiar a los padres hacia una conversación centrada en la verificación emocional." },
+        { "label": "Plan para la próxima sesión", "type": "text", "value": "Elegir un momento en la escuela que resulte más tenso, examinar la reacción física y los pensamientos en ese momento, y pedir al cliente que intente una breve conversación de verificación emocional con un padre/madre durante la semana." }
+      ]
+    },
+    "04": {
+      "name": "Relaciones familiares — Comunicación en familia de 3 generaciones",
+      "rows": [
+        { "label": "Tema de la consejería", "type": "text", "value": "Rol de mediador recurrente dentro de una familia de tres generaciones y conflicto de comunicación intergeneracional. El cliente reporta agotamiento emocional y culpa por servir de traductor emocional entre padres y abuelos." },
+        { "label": "Objetivos de la sesión", "type": "text", "value": "Identificar el rol de mediador que el cliente asume dentro de la familia y encontrar un primer punto de apoyo para redefinir los límites de responsabilidad." },
+        { "label": "Resumen de la sesión", "type": "text", "value": "Se mapeó conjuntamente una estructura de comunicación de tres etapas — abuelos (expresión directa) → cliente (mediación/amortiguación) → padres (entrega indirecta). Se confirmó repetidamente un patrón en que el conflicto estalla directamente cuando el cliente da un paso atrás…" },
+        { "label": "Dirección principal de la intervención", "type": "text", "value": "Distinguir la creencia 'tengo que hacer esto' del área real de responsabilidad del cliente. Explorar el origen de la culpa que surge cuando se retira del rol de mediador." },
+        { "label": "Plan para la próxima sesión", "type": "text", "value": "Diferenciar las cosas de las que el cliente se siente responsable de las que no, y registrar las emociones sentidas y las reacciones de la familia durante la semana cuando el cliente se abstuvo de mediar." }
+      ]
+    },
+    "05": {
+      "name": "Entrevista de ingreso — Evaluación en profundidad de nuevo cliente",
+      "rows": [
+        { "label": "Tema de la consejería", "type": "text", "value": "Evaluación inicial en profundidad centrada en la ansiedad reciente y el estrés interpersonal. Estrés acumulado desde un cambio de rol hace seis meses, que afecta el sueño, el apetito y la regulación emocional." },
+        { "label": "Objetivos de la sesión", "type": "text", "value": "Organizar la queja principal y el contexto vital, e identificar las áreas que requieren seguimiento en regulación emocional, relaciones interpersonales e historia familiar." },
+        { "label": "Resumen de la sesión", "type": "text", "value": "La queja principal se rastreó cronológicamente; se examinaron la dificultad con la regulación emocional y el conflicto interpersonal recurrente. La alteración del sueño, el aislamiento social y la autodenigración se identificaron como señales de riesgo; la motivación clara para la consejería y el apoyo de familiares y amigos se señalaron como factores protectores…" },
+        { "label": "Dirección principal de la intervención", "type": "text", "value": "Acordar la dirección de la consejería a corto y mediano plazo. Se necesita evaluación adicional de la historia de trauma y los síntomas físicos; también puede considerarse una derivación médica si está justificada." },
+        { "label": "Plan para la próxima sesión", "type": "text", "value": "Diferenciar los objetivos de consejería a corto y largo plazo, acordar la primera área prioritaria y abordar la historia de trauma y los síntomas físicos como elementos adicionales de la agenda." }
+      ]
+    }
+  }
+}

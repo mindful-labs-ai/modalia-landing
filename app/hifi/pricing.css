@@ -1,0 +1,383 @@
+  /* ============== §09 PRICING — hi-fi v7 (2026-04-28) ==============
+     사수 v7 보정 (요금 섹션 재정리):
+       - 카드: 흰 배경 중심 · neutral line · 추천 카드만 brand border + 옅은 shadow
+       - 추천 카드 pale-green tint 제거 → 쇼핑몰 가격표 톤 회피
+       - 크레딧: 박스/좌측 라인 제거 · 한 줄 정보로 위계 단순화
+       - 체크: stroke svg 14px (둥근 chip 반복 제거)
+       - 체감 사용량: 옅은 warm neutral 한 박스 (추천 카드도 동일 — 초록 X)
+       - eyebrow: 15.5px sans + 작은 dot · 40대 가독성 확보
+       - CTA: 스타터/플러스/프로 "체험해보기", 기관 "기관 도입 상담"
+       - 톤: 차분한 전문 도구의 pricing — 행정 사이트 X · 쇼핑몰 X */
+
+  /* Section head — eyebrow 가독성 강화 */
+  .pricing-head {
+    max-width: 760px;
+    margin: 0 0 44px;
+  }
+  .pricing-head .t-eyebrow {
+    font-family: inherit;
+    font-size: 15.5px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--brand-hover);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .pricing-head .t-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--brand);
+    border-radius: 50%;
+  }
+  .pricing-head .t-h2 {
+    margin-bottom: 14px;
+  }
+  .pricing-head .t-sub {
+    font-size: 16.5px;
+    color: var(--ink-2);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    align-items: stretch;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .price-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 32px 26px 28px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+  }
+  .price-card:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 14px 32px -24px rgba(15, 23, 42, 0.18);
+    transform: translateY(-2px);
+  }
+
+  /* Featured (Plus) — 차분한 brand border + 옅은 shadow, 흰 배경 유지 (pale-green tint X) */
+  .price-card.featured {
+    border: 1.5px solid var(--brand);
+    background: var(--white);
+    box-shadow: 0 18px 38px -26px rgba(22, 138, 53, 0.32);
+  }
+  .price-card.featured:hover {
+    border-color: var(--brand-hover);
+    box-shadow: 0 24px 46px -24px rgba(22, 138, 53, 0.36);
+    transform: translateY(-4px);
+  }
+
+  /* Recommend badge — 좌상단 pill (BEST/HOT 쇼핑몰 톤 X)
+     CLAUDE.md: --brand 위 흰 텍스트 대비 부족(2.06:1) → #1f1f1f */
+  .price-badge {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--brand);
+    color: #1f1f1f;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    box-shadow: 0 6px 14px -8px rgba(50, 215, 75, 0.55);
+    white-space: nowrap;
+  }
+
+  /* Plan icon — 또렷한 line icon (44px) · dark neutral 기본 + brand green 1 포인트 (사수 v8.1) */
+  .price-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 4px;
+    color: var(--ink-strong);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .price-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+  /* 그린 포인트 — 카드별 단일 accent (도배 방지) */
+  .price-icon .accent-fill {
+    fill: var(--brand);
+    stroke: none;
+  }
+  .price-icon .accent-stroke {
+    stroke: var(--brand);
+  }
+
+  /* Plan name + tagline (한 줄 설명) — icon이 head 안으로 들어와 시각 묶음 */
+  .price-head {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .price-head .price-icon {
+    margin-bottom: 6px;
+  }
+  /* v8.x cleanup — 가격 카드 장식 아이콘 숨김 (가격/플랜명 위계 강화) */
+  .price-card .price-icon { display: none; }
+  .price-name {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--ink-strong);
+    letter-spacing: -0.022em;
+    line-height: 1.2;
+  }
+  .price-target {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin: 0;
+    line-height: 1.55;
+    word-break: keep-all;
+  }
+
+  /* Price block — 가격을 가장 강하게, 크레딧을 짧게 바로 아래 */
+  .price-money {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  /* 사수 v15.2 (2026-04-30): 가격 숫자 타이포 — 섹션 H2(--font-heading)와 동일 패밀리 +
+     단단한 weight/letter-spacing 으로 통일. 단위 "원/월"도 같은 패밀리 안에서 작게. */
+  .price-amt {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.034em;
+    line-height: 1;
+    color: var(--ink-strong);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-feature-settings: 'ss01' 1, 'kern' 1, 'tnum' 1;
+  }
+  .price-amt .per {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--ink-3);
+    font-weight: 600;
+    margin-left: 5px;
+    letter-spacing: -0.012em;
+  }
+  .price-amt-custom {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--ink-strong);
+    line-height: 1;
+    letter-spacing: -0.034em;
+    font-feature-settings: 'ss01' 1, 'kern' 1;
+  }
+
+  /* Credits — 한 줄 정보 (박스/좌측 라인 제거 — 정보 위계만) */
+  .price-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+  .price-credits strong {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.012em;
+  }
+  .price-credits-sub {
+    font-size: 12.5px;
+    color: var(--ink-3);
+    line-height: 1.55;
+    word-break: keep-all;
+  }
+
+  /* Features — 절제된 stroke check svg (둥근 초록 chip 반복 X) */
+  .price-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .price-ul li {
+    font-size: 13.5px;
+    color: var(--ink-2);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+  }
+  .price-ul li::before {
+    content: '';
+    flex-shrink: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 4px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'><path d='M2.5 7.4 L5.5 10.2 L11.4 3.8' stroke='%2340a755' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+  }
+
+  /* 체감 사용량 — 옅은 warm neutral 한 박스 (추천 카드도 동일 톤, 초록 X) */
+  .price-feel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .price-feel-label {
+    font-family: inherit;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--ink-4);
+    font-weight: 600;
+  }
+  .price-feel-summary {
+    background: var(--bg-2);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* 추천 대상 (헤더) — 옅은 가로 구분선 1개만 */
+  .price-feel-target {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    word-break: keep-all;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  }
+  .price-feel-target .price-feel-k {
+    font-family: inherit;
+    font-size: 11px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: var(--ink-4);
+    font-weight: 600;
+  }
+  .price-feel-target-v {
+    font-size: 13px;
+    color: var(--ink-strong);
+    font-weight: 700;
+    letter-spacing: -0.012em;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+
+  /* 3 stat key/value — label | value */
+  .price-feel-stats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .price-feel-stats li {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 10px;
+    align-items: baseline;
+    min-width: 0;
+  }
+  .price-feel-stats .price-feel-k {
+    font-family: inherit;
+    font-size: 11px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: var(--ink-4);
+    font-weight: 600;
+  }
+  .price-feel-stats .price-feel-v {
+    font-size: 13px;
+    color: var(--ink-2);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+
+  /* CTA — 카드별 동일 위치 · 동일 height/width */
+  .price-card .btn {
+    margin-top: auto;
+    width: 100%;
+    height: 46px;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  /* 사수 v11 (2026-04-29) — 플러스 플랜 CTA만 마음토스 시그니처 그라디언트 */
+  .pricing-head--lean { margin-bottom: 56px; }
+  .price-card.featured .btn.primary {
+    background:
+      linear-gradient(105deg, #3FD34A 0%, #6DDA55 38%, #BFEA5D 68%, #F0F36A 100%) !important;
+    /* CLAUDE.md: 밝은 brand 그라디언트 위 흰 텍스트는 대비 부족 → #1f1f1f */
+    color: #1f1f1f !important;
+    border: 0 !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.18);
+    box-shadow:
+      0 6px 16px -8px rgba(50, 215, 75, 0.45),
+      0 2px 6px -2px rgba(15, 23, 42, 0.12);
+    transition: filter .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  .price-card.featured .btn.primary:hover {
+    filter: brightness(1.04) saturate(1.05);
+    box-shadow:
+      0 10px 22px -8px rgba(50, 215, 75, 0.55),
+      0 4px 10px -3px rgba(15, 23, 42, 0.16);
+    transform: translateY(-1px);
+  }
+
+  /* Footer note — 가격 오해 방지, 너무 숨기지 말기 */
+  .price-foot {
+    max-width: 880px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-3);
+    line-height: 1.7;
+    word-break: keep-all;
+    letter-spacing: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .price-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  }
+  @media (max-width: 560px) {
+    .price-grid { grid-template-columns: 1fr; gap: 18px; }
+    .price-card { padding: 26px 22px 22px; }
+    .price-amt, .price-amt-custom { font-size: 34px; }
+  }
+

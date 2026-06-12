@@ -1,0 +1,20 @@
+{
+  "home": {
+    "title": "Modalia AI — Ein sicherer KI-Partner für Berater:innen",
+    "description": "Ein sicherer KI-Partner für Berater:innen. Von Sitzungstranskripten über Fallkonzeptualisierung bis hin zu Genogrammen — Modalia AI verwaltet Ihren gesamten Beratungsablauf an einem sicheren Ort."
+  },
+  "schema": {
+    "orgDescription": "Modalia AI ist ein sicherer KI-Partner für Berater:innen, entwickelt von Mindful Labs Inc. Es organisiert Beratungsunterlagen sicher und trägt die Arbeit bis zur nächsten Sitzung weiter.",
+    "softwareDescription": "Ein sicherer KI-Partner für Berater:innen. Von Sitzungstranskripten über Fallkonzeptualisierung bis hin zu Genogrammen — Modalia AI verwaltet Ihren gesamten Beratungsablauf an einem sicheren Ort."
+  },
+  "featureList": [
+    "Automatische Sprechertrennung für Berater:in und Klient:in",
+    "Hochauflösende KI-generierte Sitzungstranskripte",
+    "Erkennung nonverbaler Signale wie Stille und Seufzen",
+    "Unterstützung für Fallkonzeptualisierung und Sitzungsanalyse",
+    "Automatische Konvertierung in institutionelle Formate (Familienzentren, EAP und mehr)",
+    "Security by Design: Verschlüsselung vor der Speicherung und getrennte Zugriffsberechtigungen",
+    "Klientendaten werden niemals zum Training von KI-Modellen genutzt",
+    "Optionale automatische Löschung von Audiodateien nach der Analyse"
+  ]
+}

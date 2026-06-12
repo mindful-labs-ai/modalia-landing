@@ -1,0 +1,64 @@
+{
+  "markerName": "Allgemeine KI vs. Modalia AI (Vergleich nebeneinander)",
+  "markerPurpose": "5 Vergleichspaare · Modalia AI-Panel als einzige vertrauenswürdige Wahl hervorgehoben",
+  "h2Line1": "Warum Modalia AI",
+  "h2Line2": "sich von anderer KI unterscheidet",
+  "generic": {
+    "ariaLabel": "Vergleichspunkte für allgemeine KI",
+    "name": "Allgemeine KI",
+    "sub": "Eine Allzweck-KI, die Antworten in einem Chat-Fenster erzeugt",
+    "rows": [
+      {
+        "key": "Bedenken bei Trainingsdaten",
+        "sub": "Die von Ihnen eingegebenen Sitzungsunterlagen können zum Training des Modells genutzt werden."
+      },
+      {
+        "key": "Unterlagen verstreut über Chat-Fenster",
+        "sub": "Klientenunterlagen landen vermischt in mehreren separaten Chat-Threads."
+      },
+      {
+        "key": "Vergangene Sitzungen müssen jedes Mal neu eingegeben werden",
+        "sub": "Sie müssen frühere Sitzungszusammenfassungen und Verlaufsnotizen jedes Mal kopieren und einfügen."
+      },
+      {
+        "key": "Keine klinische Fundierung",
+        "sub": "Ohne Beratungskontext können Antworten in allgemeine Ratschläge abdriften."
+      },
+      {
+        "key": "Vorlagen müssen jedes Mal neu angegeben werden",
+        "sub": "SOAP-Notizen, institutionelle Formulare und andere Vorlagen erfordern jede Sitzung einen neuen Prompt."
+      }
+    ]
+  },
+  "mindthos": {
+    "ariaLabel": "Vergleichspunkte für Modalia AI",
+    "logoAriaLabel": "Modalia AI",
+    "sub": "Ein spezialisierter KI-Assistent, entwickelt für Berater:innen und Therapeut:innen",
+    "rows": [
+      {
+        "key": "Kein KI-Nachtraining mit Ihren Daten",
+        "sub": "Klientendaten werden niemals zum Training von KI-Modellen genutzt."
+      },
+      {
+        "key": "Klientenweise Unterlagenverwaltung",
+        "sub": "Sitzungsunterlagen werden in dedizierten klientenspezifischen Ordnern akkumuliert und verwaltet."
+      },
+      {
+        "key": "Kontext über Sitzungen hinweg",
+        "sub": "Akkumulierte Sitzungsunterlagen fließen natürlich in die Vorbereitung des nächsten Termins ein."
+      },
+      {
+        "key": "Beratungsspezifisches Wissen",
+        "sub": "Entwürfe sind in Beratungsexpertise und akkumuliertem klinischem Material verankert."
+      },
+      {
+        "key": "Integrierte Beratungsvorlagen",
+        "sub": "Sitzungsnotizen, institutionelle Formulare und Supervisionsvorlagen sind sofort einsatzbereit."
+      }
+    ]
+  },
+  "bottomNote": {
+    "strong": "Modalia AI ersetzt nicht das Urteil der Berater:in.",
+    "rest": "Es hält Sitzungsunterlagen sicher und hilft, sie bis zu Ihrem nächsten Termin weiterzutragen."
+  }
+}

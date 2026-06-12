@@ -1,0 +1,20 @@
+{
+  "home": {
+    "title": "Modalia AI — A Safe AI Partner for Counselors",
+    "description": "A safe AI partner for counselors. From session transcripts to case conceptualization and genograms, Modalia AI handles your whole counseling workflow in one secure place."
+  },
+  "schema": {
+    "orgDescription": "Modalia AI is a safe AI partner for counselors, built by Mindful Labs Inc. It organizes counseling records securely and carries the work forward to the next session.",
+    "softwareDescription": "A safe AI partner for counselors. From session transcripts to case conceptualization and genograms, Modalia AI handles your whole counseling workflow in one secure place."
+  },
+  "featureList": [
+    "Automatic speaker separation for counselor and client",
+    "High-resolution AI-generated session transcripts",
+    "Detection of non-verbal cues such as silence and sighs",
+    "Support for case conceptualization and session analysis",
+    "Automatic conversion into institutional formats (family centers, EAP, and more)",
+    "Security by design: encryption before storage and separated access permissions",
+    "Client data is never used to train AI models",
+    "Optional automatic deletion of audio files after analysis"
+  ]
+}

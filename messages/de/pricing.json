@@ -1,0 +1,76 @@
+{
+  "headTitle": "Starten Sie in dem Umfang, der zu Ihrer Praxis passt",
+  "recommendedBadge": "Empfohlen",
+  "feelLabel": "Typische Nutzung",
+  "clientsKey": "Klient:innen",
+  "sessionsKey": "Sitzungen/Monat",
+  "footNote": "Angaben zur typischen Nutzung sind Beispielwerte basierend auf durchschnittlicher Sitzungsdokumentation. Die tatsächliche Kreditnutzung variiert je nach Aufgabentyp und Notizlänge.",
+  "plans": [
+    {
+      "name": "Starter",
+      "target": "Einzelne Berater:innen, neu bei Modalia AI",
+      "price": "Auf Anfrage",
+      "credits": "500 Credits / Monat",
+      "clientsValue": "Bis zu 5 pro Monat",
+      "sessionsValue": "Bis zu ~8 pro Monat",
+      "features": [
+        "Standard- und erweiterte Sitzungstranskripte",
+        "Beratungsnotizen",
+        "KI-Supervision"
+      ],
+      "ctaLabel": "Jetzt starten",
+      "ctaIntent": "signup",
+      "ctaTier": "starter"
+    },
+    {
+      "name": "Plus",
+      "target": "Etablierte Einzelberater:innen",
+      "price": "Auf Anfrage",
+      "credits": "2.500 Credits / Monat",
+      "clientsValue": "Bis zu 15 pro Monat",
+      "sessionsValue": "Bis zu ~40 pro Monat",
+      "features": [
+        "Alles aus Starter",
+        "Alle Typen von Fallkonzeptualisierungsnotizen",
+        "Alle theoretischen KI-Supervisionsmodi"
+      ],
+      "ctaLabel": "Jetzt starten",
+      "ctaIntent": "signup",
+      "ctaTier": "plus"
+    },
+    {
+      "name": "Pro",
+      "target": "Vollzeit-Berater:innen oder kleine Teams",
+      "price": "Auf Anfrage",
+      "credits": "5.000 Credits / Monat",
+      "clientsValue": "30+ pro Monat",
+      "sessionsValue": "~80+ pro Monat",
+      "features": [
+        "Alles aus Plus",
+        "Frühzeitiger Zugang zu neuen Funktionen",
+        "Vorrangige Verarbeitung bei großen Arbeitslasten"
+      ],
+      "ctaLabel": "Jetzt starten",
+      "ctaIntent": "signup",
+      "ctaTier": "pro"
+    },
+    {
+      "name": "Institution",
+      "target": "Zentren · Kliniken · Behörden · Schulen",
+      "price": "Auf Anfrage",
+      "credits": "Individuelle Credits",
+      "clientsValue": "Angepasst an Teamgröße",
+      "sessionsKey": "Notizen",
+      "sessionsValue": "Individuelle institutionelle Vorlagen",
+      "features": [
+        "Mehrere Berater:innen-Konten & Rechteverwaltung",
+        "Individuelle institutionelle Notizvorlagen",
+        "Admin-Tools / Teamverwaltung",
+        "Onboarding-Support & Sicherheitsberatung"
+      ],
+      "ctaLabel": "Institutionsplan anfragen",
+      "ctaIntent": "institution_inquiry",
+      "ctaTier": "institution"
+    }
+  ]
+}

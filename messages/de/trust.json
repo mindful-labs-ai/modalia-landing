@@ -1,0 +1,68 @@
+{
+  "wfPurpose": "Aufgrund der Sensibilität von Klientendaten stellen wir Sicherheit vor Funktionen",
+  "h2": "Beratungsunterlagen müssen sicher gehandhabt werden —<br></br>bevor KI sie jemals berührt",
+  "team": {
+    "title": "Schutzprinzipien, entwickelt<br></br>mit Fachexpert:innen",
+    "panelAriaLabel": "Expertengremium zur Mitgestaltung des Schutzes von Beratungsunterlagen",
+    "be": {
+      "role": "Backend-Ingenieur<br></br>aus dem Finanzdienstleistungsbereich",
+      "desc": "Wir haben Speicherung und Zugangskontrollen so strukturiert, dass Sitzungsunterlagen niemals mit fremden Daten vermischt werden.",
+      "tags": [
+        "Speicherarchitektur",
+        "Zugriffstrennung"
+      ]
+    },
+    "sec": {
+      "role": "Spezialist:in für<br></br>Sicherheitsberatung",
+      "desc": "Wir haben jeden Punkt, an dem Klienteninformationen offengelegt werden könnten, anhand von Branchenstandards geprüft.",
+      "tags": [
+        "Datenschutzstandards",
+        "Risikobewertung"
+      ]
+    },
+    "ai": {
+      "role": "KI-Ingenieur:in",
+      "desc": "Wir haben die Verarbeitungspipeline so getrennt, dass Sitzungsunterlagen niemals für das KI-Training verwendet werden.",
+      "tags": [
+        "Kein Training",
+        "Pipeline-Isolation"
+      ]
+    },
+    "conclusionLabel": "Unser Standard für den Schutz von Beratungsunterlagen",
+    "conclusion": "Verschlüsselt vor der Speicherung · Kein KI-Training · Strenge Zugriffskontrollen",
+    "cta": "Wie werden Unterlagen geschützt? <arrow>→</arrow>"
+  },
+  "shield": {
+    "title": "3 Schutzmaßnahmen für Ihre Beratungsunterlagen",
+    "enc": {
+      "label": "Verschlüsselt, bevor es gespeichert wird",
+      "desc": "Sitzungsunterlagen werden vor der Speicherung verschlüsselt und ausschließlich in geschützter Form aufbewahrt."
+    },
+    "noai": {
+      "label": "Sitzungsunterlagen werden niemals zum KI-Training genutzt",
+      "desc": "Unterlagen werden nur für die unmittelbare Aufgabe verwendet — sie verbleiben niemals als KI-Trainingsdaten."
+    },
+    "mask": {
+      "label": "Sensible Informationen werden vor der Weitergabe maskiert",
+      "desc": "Informationen, die eine Klientin oder einen Klienten identifizieren könnten, werden standardmäßig maskiert und können nur bei Bedarf eingesehen werden."
+    }
+  },
+  "encmini": {
+    "tagPlain": "Original",
+    "tagEnc": "Verschlüsselung",
+    "tagStored": "Gespeicherte Form",
+    "sentence": "Die heutigen Sitzungsnotizen wurden sicher organisiert."
+  },
+  "noaimini": {
+    "recordLabel": "Sitzungsunterlage",
+    "aiLabel": "KI-Training"
+  },
+  "maskmini": {
+    "line1": "Klient:in <pii1>Jamie Carter</pii1> ist erreichbar unter <pii2>+1 555-0142</pii2>.",
+    "line2": "Zugehörig zu: <pii3>Downtown Counseling Center</pii3>, Sitzung läuft.",
+    "pii1Label": "Person 1",
+    "pii2Label": "Kontakt",
+    "pii3Label": "Organisation",
+    "hint": "Sensible Informationen werden nur bei Bedarf angezeigt"
+  }
+}

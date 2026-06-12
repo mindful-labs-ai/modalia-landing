@@ -1,0 +1,20 @@
+{
+  "home": {
+    "title": "Modalia AI — Un aliado de IA seguro para terapeutas",
+    "description": "Un aliado de IA seguro para terapeutas. Desde transcripciones de sesión hasta la conceptualización del caso y genogramas, Modalia AI gestiona todo su flujo de trabajo de consejería en un lugar seguro."
+  },
+  "schema": {
+    "orgDescription": "Modalia AI es un aliado de IA seguro para terapeutas, creado por Mindful Labs Inc. Organiza los registros de consejería de forma segura y traslada el trabajo a la siguiente sesión.",
+    "softwareDescription": "Un aliado de IA seguro para terapeutas. Desde transcripciones de sesión hasta la conceptualización del caso y genogramas, Modalia AI gestiona todo su flujo de trabajo de consejería en un lugar seguro."
+  },
+  "featureList": [
+    "Separación automática de hablantes para terapeuta y cliente",
+    "Transcripciones de sesión de alta resolución generadas por IA",
+    "Detección de señales no verbales como silencios y suspiros",
+    "Soporte para la conceptualización del caso y el análisis de sesiones",
+    "Conversión automática a formatos institucionales (centros familiares, EAP y más)",
+    "Seguridad por diseño: cifrado antes del almacenamiento y permisos de acceso separados",
+    "Los datos del cliente nunca se usan para entrenar modelos de IA",
+    "Eliminación automática opcional de archivos de audio tras el análisis"
+  ]
+}

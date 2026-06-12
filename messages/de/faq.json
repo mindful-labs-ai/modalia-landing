@@ -1,0 +1,41 @@
+{
+  "markerName": "FAQ (letzte Fragen vor dem Einstieg)",
+  "markerPurpose": "Letzte Bedenken ausräumen — Credits, Sicherheit, Berater:innen-Überprüfung, institutionelle Einführung",
+  "heading": "Häufig gestellte Fragen",
+  "items": [
+    {
+      "question": "Werden Klientendaten zum Training der KI genutzt?",
+      "answer": "Nein. Modalia AI basiert auf dem Grundsatz, dass Klientendaten niemals für das KI-Training verwendet werden. Sitzungsunterlagen werden zur Erstellung von Ergebnissen verarbeitet, aber nicht als Nachtrainingsdaten des Modells genutzt."
+    },
+    {
+      "question": "Wie werden Sitzungsunterlagen gespeichert?",
+      "answer": "Sitzungsunterlagen werden vor der Speicherung verschlüsselt. Der Zugang ist auf das notwendige Minimum beschränkt, und sensible Informationen können von der Nutzer:in jederzeit anonymisiert werden."
+    },
+    {
+      "question": "Kann ich Unterlagen löschen?",
+      "answer": "Ja. Berater:innen können die Löschung von Unterlagen anfordern oder direkt verwalten. Für institutionelle Konten können Aufbewahrungsfristen, Löschrichtlinien und Zugriffskontrollrichtlinien durch eine gesonderte Vereinbarung festgelegt werden."
+    },
+    {
+      "question": "Erhalte ich Credits beim kostenlosen Einstieg?",
+      "answer": "Ob Starter-Credits enthalten sind und wie viele, wird nach Abschluss unserer Betriebsrichtlinien bekannt gegeben. Vorerst können Sie den Ausgabeablauf über Beispiel-Demos und ausgewählte Funktionen erkunden."
+    },
+    {
+      "question": "Wie werden Credits abgezogen?",
+      "answer": "Die Kreditnutzung variiert je nach Aufgabentyp und Länge der Sitzungsunterlage. Aufgaben mit unterschiedlichem Verarbeitungsumfang — wie Transkripte, Sitzungsnotizen, Fallkonzeptualisierungen und psychologische Testinterpretationen — können unterschiedliche Mengen verwenden.\n\nCredits eines monatlichen Abonnementplans werden monatlich erneuert und innerhalb des jeweiligen Abrechnungszeitraums genutzt. Nicht verbrauchte Credits werden nicht auf den nächsten Monat übertragen; sie werden mit dem nächsten Abrechnungszeitraum zurückgesetzt.\n\nDie genaue Abzugsstruktur wird nach Abschluss unserer Betriebsrichtlinien bekannt gegeben."
+    },
+    {
+      "question": "Ist es einfach, meinen Plan zu wechseln oder zu kündigen?",
+      "answer": "Planwechsel und Kündigungen werden von den Nutzer:innen selbst verwaltet. Bei institutionellen Plänen kann je nach Vertragsbedingungen ein gesondertes Verfahren erforderlich sein."
+    },
+    {
+      "question": "Welche Sitzungsnotizformate sind verfügbar?",
+      "answer": "Wir bereiten Vorlagen vor, die auf Beratungsabläufe zugeschnitten sind — darunter Standard-Sitzungsnotizen, SOAP, Fallkonzeptualisierungen, institutionelle Formate und Supervisionsvorbereitung. Einrichtungsspezifische Formate können im Laufe der Zeit hinzugefügt werden."
+    },
+    {
+      "question": "Kann ich Modalia AI ohne Transkript nutzen?",
+      "answer": "Ja. Auch ohne Aufzeichnung oder Transkript können Sie bestimmte Funktionen auf Basis von Berater:innen-Notizen, Interviewprotokollen oder Assessmentergebnissen nutzen. Dennoch führen reichhaltigere und spezifischere Eingabedaten in der Regel zu einem detaillierteren Ausgabe-Entwurf."
+    }
+  ],
+  "footerText": "Haben Sie die gesuchte Antwort nicht gefunden?<br></br>Wir begleiten Sie in einem Einführungsgespräch.",
+  "footerCta": "Institutionelle Einführung besprechen"
+}

@@ -1,0 +1,16 @@
+/* hifi.css — modular aggregator (re-exports the 13 hifi modules in original order)
+   Source of truth lives in `./hifi/*.css`. Do not add styles here. */
+
+@import './hifi/tokens.css';
+@import './hifi/base.css';
+@import './hifi/chrome.css';
+@import './hifi/pain.css';
+@import './hifi/features.css';
+@import './hifi/sample.css';
+@import './hifi/personas.css';
+@import './hifi/vs.css';
+@import './hifi/evidence.css';
+@import './hifi/pricing.css';
+@import './hifi/faq.css';
+@import './hifi/final.css';
+@import './hifi/footer.css';

@@ -1,0 +1,98 @@
+{
+  "ariaLabel": "Modalia AI en cifras",
+  "sectionTitle": "Modalia AI en cifras y voces",
+  "cards": [
+    {
+      "value": 2000,
+      "comma": true,
+      "unit": "+",
+      "label": "Terapeutas que usan Modalia AI"
+    },
+    {
+      "value": 10000,
+      "comma": true,
+      "unit": "+",
+      "label": "Sesiones documentadas"
+    },
+    {
+      "value": 12,
+      "comma": false,
+      "unit": "hrs+",
+      "label": "Horas de documentación ahorradas al mes"
+    },
+    {
+      "value": 90,
+      "comma": false,
+      "unit": "%+",
+      "label": "Tasa de renovación de suscripción"
+    }
+  ],
+  "reviewsBridge": "Detrás de las cifras,<br></br>hay razones por las que los terapeutas <mark>siguen volviendo</mark>.",
+  "reviewsLabel": "Historias de terapeutas reales",
+  "reviews": [
+    {
+      "tag": "Menos carga de documentación",
+      "title": "La carga de documentación se siente mucho más ligera",
+      "text": "Anotar el flujo de la sesión justo después de que termina significa que ya no reconstruyo recuerdos después del trabajo. Con menos esfuerzo mental dedicado a las notas, puedo estar más presente durante la sesión.",
+      "authorName": "K. Terapeuta",
+      "authorRole": "Veterana con 13 años en consejería",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "Organización del caso",
+      "title": "Preparar la supervisión se volvió más fácil",
+      "text": "Cuando no estaba segura de qué presentar, tener los puntos destacados de la sesión y los temas de discusión ya organizados es de gran ayuda. Preparar los materiales para mi supervisor me lleva mucho menos tiempo ahora.",
+      "authorName": "L. Residente",
+      "authorRole": "Terapeuta en formación",
+      "avatar": "/testimonial-05.webp"
+    },
+    {
+      "tag": "Registro institucional",
+      "title": "Los registros de nuestra institución son finalmente coherentes",
+      "text": "Aunque cada centro use una plantilla diferente, puedo organizar el mismo contenido de la sesión en un flujo único y cohesionado. Reescribir las mismas notas para cada formulario es cosa del pasado — la carga administrativa bajó notablemente.",
+      "authorName": "P. Directora del centro",
+      "authorRole": "Directora de centro de consejería",
+      "avatar": "/testimonial-06.webp"
+    },
+    {
+      "tag": "Eficiencia de la sesión",
+      "title": "El tiempo dedicado a organizar registros se ha reducido",
+      "text": "Un primer borrador se prepara en poco tiempo justo después de la sesión, así que ya no paso las tardes luchando con detalles a medio recordar. Puedo revisar el flujo de la sesión sin perder nada.",
+      "authorName": "J. Terapeuta",
+      "authorRole": "Terapeuta juvenil",
+      "avatar": "/testimonial-04.webp"
+    },
+    {
+      "tag": "Enfoque en los clientes",
+      "title": "La presión de tomar notas ha disminuido",
+      "text": "Antes pensaba a mitad de la sesión: '¿Cómo voy a escribir esto después?' Ahora estoy más presente con los clientes durante la sesión y luego simplemente refino el borrador.",
+      "authorName": "Y. Terapeuta",
+      "authorRole": "Centro de consejería universitario",
+      "avatar": "/testimonial-03.webp"
+    },
+    {
+      "tag": "Nueva perspectiva",
+      "title": "Ahora tengo una forma de replantear cuando me bloqueo",
+      "text": "Cuando la conceptualización del caso choca con una pared, leer un borrador organizado desde un ángulo diferente saca a la luz pistas que había pasado por alto. Lo uso menos como un producto terminado y más como un punto de revisión para mi propio juicio.",
+      "authorName": "H. Residente",
+      "authorRole": "Estudiante de posgrado en psicología de la consejería",
+      "avatar": "/testimonial-02.webp"
+    },
+    {
+      "tag": "Conversión de formato",
+      "title": "Formatos distintos, un flujo cohesionado",
+      "text": "El tiempo empleado en reintroducir el mismo contenido para cada formato institucional ha bajado. Puedo mantener la narrativa de la sesión intacta mientras la adapto a la estructura que sea necesaria.",
+      "authorName": "C. Terapeuta",
+      "authorRole": "Centro de consejería privado",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "Pulido de informes",
+      "title": "Pulir los informes lleva mucho menos tiempo",
+      "text": "El borrador sale en un tono cercano a mi forma de escribir, así que en lugar de empezar desde cero solo corrijo lo que necesita cambios. Incluso los informes administrativos fluyen con más naturalidad ahora.",
+      "authorName": "S. Profesional",
+      "authorRole": "Centro de bienestar de salud mental",
+      "avatar": "/testimonial-04.webp"
+    }
+  ]
+}

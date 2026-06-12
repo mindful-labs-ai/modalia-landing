@@ -1,0 +1,98 @@
+{
+  "ariaLabel": "Modalia AI in Zahlen",
+  "sectionTitle": "Modalia AI in Zahlen und Stimmen",
+  "cards": [
+    {
+      "value": 2000,
+      "comma": true,
+      "unit": "+",
+      "label": "Berater:innen, die Modalia AI nutzen"
+    },
+    {
+      "value": 10000,
+      "comma": true,
+      "unit": "+",
+      "label": "Dokumentierte Sitzungen"
+    },
+    {
+      "value": 12,
+      "comma": false,
+      "unit": "hrs+",
+      "label": "Eingesparte Dokumentationsstunden pro Monat"
+    },
+    {
+      "value": 90,
+      "comma": false,
+      "unit": "%+",
+      "label": "Abonnementverlängerungsrate"
+    }
+  ],
+  "reviewsBridge": "Hinter den Zahlen<br></br>stehen Gründe, warum Berater:innen <mark>immer wiederkommen</mark>.",
+  "reviewsLabel": "Berichte von echten Berater:innen",
+  "reviews": [
+    {
+      "tag": "Weniger Dokumentationsbelastung",
+      "title": "Die Dokumentationslast fühlt sich viel leichter an",
+      "text": "Den Sitzungsablauf direkt nach dem Ende aufzuschreiben bedeutet, dass ich nach der Arbeit keine Erinnerungen mehr rekonstruieren muss. Mit weniger mentalem Aufwand für Notizen kann ich während der Sitzung selbst präsenter bleiben.",
+      "authorName": "K. Berater:in",
+      "authorRole": "13 Jahre Beratungserfahrung",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "Fallorganisation",
+      "title": "Die Vorbereitung auf Supervision ist einfacher geworden",
+      "text": "Wenn ich unsicher war, was ich mitbringen soll, ist es eine echte Hilfe, die Sitzungshöhepunkte und Diskussionspunkte bereits ausgearbeitet zu haben. Das Zusammenstellen von Materialien für meine Supervisor:in braucht jetzt viel weniger Zeit.",
+      "authorName": "L. Praktikant:in",
+      "authorRole": "Beratungspraktikant:in",
+      "avatar": "/testimonial-05.webp"
+    },
+    {
+      "tag": "Institutionelle Aktenführung",
+      "title": "Die Unterlagen unserer Einrichtung sind endlich konsistent",
+      "text": "Auch wenn jedes Zentrum eine andere Vorlage verwendet, kann ich denselben Sitzungsinhalt in einem einzigen kohärenten Ablauf strukturieren. Das Umschreiben derselben Notizen für jedes Formular gehört der Vergangenheit an — der Verwaltungsaufwand ist spürbar gesunken.",
+      "authorName": "P. Zentrumsleiter:in",
+      "authorRole": "Beratungszentrums-Manager:in",
+      "avatar": "/testimonial-06.webp"
+    },
+    {
+      "tag": "Sitzungseffizienz",
+      "title": "Die Zeit für die Unterlagenorganisation ist geschrumpft",
+      "text": "Ein erster Entwurf entsteht in einem kurzen Zeitfenster direkt nach der Sitzung, sodass ich keine Abende mehr damit verbringe, halb erinnerte Details zu ringen. Ich kann den Sitzungsablauf überprüfen, ohne etwas zu verlieren.",
+      "authorName": "J. Berater:in",
+      "authorRole": "Jugendberater:in",
+      "avatar": "/testimonial-04.webp"
+    },
+    {
+      "tag": "Fokus auf Klient:innen",
+      "title": "Der Druck beim Notizenmachen hat nachgelassen",
+      "text": "Früher dachte ich mitten in der Sitzung: 'Wie werde ich das später aufschreiben?' Jetzt bleibe ich während der Sitzung präsenter bei den Klient:innen und überarbeite anschließend einfach den Entwurf.",
+      "authorName": "Y. Berater:in",
+      "authorRole": "Universitätsberatungszentrum",
+      "avatar": "/testimonial-03.webp"
+    },
+    {
+      "tag": "Neue Perspektive",
+      "title": "Ich habe jetzt einen Weg, wenn ich feststecke",
+      "text": "Wenn die Fallkonzeptualisierung an eine Wand stößt, offenbart das Lesen eines aus einem anderen Blickwinkel strukturierten Entwurfs Hinweise, die ich übersehen hatte. Ich nutze es weniger als fertiges Produkt und mehr als Checkpoint für mein eigenes Urteil.",
+      "authorName": "H. Praktikant:in",
+      "authorRole": "Beratungspsychologie-Doktorand:in",
+      "avatar": "/testimonial-02.webp"
+    },
+    {
+      "tag": "Formatkonvertierung",
+      "title": "Verschiedene Vorlagen, ein kohärenter Ablauf",
+      "text": "Die Zeit, dieselben Inhalte für jedes institutionelle Format neu einzugeben, ist gesunken. Ich kann die Sitzungserzählung intakt halten und sie gleichzeitig an die benötigte Struktur anpassen.",
+      "authorName": "C. Berater:in",
+      "authorRole": "Privates Beratungszentrum",
+      "avatar": "/testimonial-01.webp"
+    },
+    {
+      "tag": "Berichtsverfeinerung",
+      "title": "Das Verfeinern von Berichten kostet viel weniger Zeit",
+      "text": "Der Entwurf kommt in einem Ton heraus, der meiner Schreibweise nahekommt, sodass ich statt von Null anzufangen nur überarbeite, was geändert werden muss. Auch Verwaltungsberichte fließen jetzt natürlicher.",
+      "authorName": "S. Praktiker:in",
+      "authorRole": "Psychosoziales Wohlfahrtszentrum",
+      "avatar": "/testimonial-04.webp"
+    }
+  ]
+}

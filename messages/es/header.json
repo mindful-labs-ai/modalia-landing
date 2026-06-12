@@ -1,0 +1,18 @@
+{
+  "logoAria": "Inicio de Modalia AI",
+  "nav": {
+    "features": "Funciones",
+    "pricing": "Precios",
+    "faq": "Preguntas frecuentes",
+    "blog": "Blog"
+  },
+  "login": "Iniciar sesión",
+  "signup": "Comenzar gratis",
+  "menuOpen": "Abrir menú",
+  "menuClose": "Cerrar menú",
+  "promoBanner": {
+    "regionLabel": "Promoción para nuevos registros",
+    "text": "Primer mes gratis para nuevos terapeutas y consejeros · ",
+    "cta": "Comenzar gratis →"
+  }
+}

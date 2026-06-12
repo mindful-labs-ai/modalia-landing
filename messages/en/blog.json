@@ -1,0 +1,41 @@
+{
+  "eyebrow": "Modalia AI Blog",
+  "title": "Blog",
+  "subtitle": "Field insights, security, technology, and customer stories for counselors and therapists — all in one place.",
+  "categorySubtitle": "Articles in this category.",
+  "headerAria": "Modalia AI blog — page header",
+  "all": "All",
+  "categoriesAria": "Blog categories",
+  "minRead": "min read",
+  "prevPage": "Previous page",
+  "nextPage": "Next page",
+  "paginationAria": "Pagination",
+  "pageN": "Page {n}",
+  "empty": {
+    "title": "Articles coming soon",
+    "body": "We're preparing our first high-quality articles for this language. Check back shortly.",
+    "cta": "Browse all posts"
+  },
+  "related": "Related articles",
+  "breadcrumbHome": "Home",
+  "breadcrumbAria": "Breadcrumb",
+  "backToList": "Back to blog",
+  "author": {
+    "role": "Clinical & Counseling Team"
+  },
+  "keyTakeaway": "Key takeaway",
+  "contents": "Contents",
+  "references": "References",
+  "refType": {
+    "academic": "Academic",
+    "government": "Government",
+    "industry": "Industry"
+  },
+  "faqTitle": "Frequently asked questions",
+  "disclosure": "This article was written and reviewed using Modalia AI's clinical guidelines, with professional human review before publication.",
+  "cta": {
+    "title": "Bring a secure AI partner into your practice",
+    "body": "Modalia AI helps counselors with transcription, case conceptualization, and documentation — built security-first.",
+    "button": "Start for free"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "badge": "即將推出",
+  "title": "Modalia AI 即將上線",
+  "subtitle": "我們正在為全球版做最後的準備。留下你的電子郵件，搶先在上線的第一刻收到通知。",
+  "videoTitle": "Modalia AI 產品示範影片",
+  "perkTitle": "搶先註冊享 1 個月免費",
+  "perkBody": "現在留下你的電子郵件，上線當天我們就會寄給你 1 個月免費使用券。",
+  "emailLabel": "電子郵件",
+  "emailPlaceholder": "you@example.com",
+  "submit": "搶先體驗",
+  "submitting": "送出中…",
+  "successTitle": "你已成功登記！",
+  "successBody": "感謝你的登記。上線時我們會寄信通知你，並附上 1 個月免費使用券。",
+  "done": "完成",
+  "error": "請輸入有效的電子郵件後再試一次。",
+  "privacy": "我們只會用你的電子郵件通知上線消息，絕不寄送垃圾郵件。",
+  "close": "關閉"
+}

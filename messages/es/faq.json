@@ -1,0 +1,41 @@
+{
+  "markerName": "Preguntas frecuentes (últimas preguntas antes de comenzar)",
+  "markerPurpose": "Resolver dudas finales — créditos, seguridad, revisión del terapeuta, adopción institucional",
+  "heading": "Preguntas frecuentes",
+  "items": [
+    {
+      "question": "¿Se usan los datos del cliente para entrenar la IA?",
+      "answer": "No. Modalia AI se basa en el principio de que los datos del cliente nunca se utilizan para el entrenamiento de IA. Los registros de sesión se procesan para generar resultados, pero no se usan como datos de reentrenamiento del modelo."
+    },
+    {
+      "question": "¿Cómo se almacenan los registros de sesión?",
+      "answer": "Los registros de sesión se cifran antes del almacenamiento. El acceso está restringido al alcance mínimo necesario, y la información sensible puede ser desidentificada por el usuario en cualquier momento."
+    },
+    {
+      "question": "¿Puedo eliminar los registros?",
+      "answer": "Sí. Los terapeutas podrán solicitar o gestionar directamente la eliminación de registros. Para las cuentas institucionales, los períodos de retención, las políticas de eliminación y las directrices de control de acceso pueden acordarse mediante un acuerdo separado."
+    },
+    {
+      "question": "¿Recibo créditos cuando comienzo gratis?",
+      "answer": "Si se incluyen créditos iniciales y cuántos serán anunciados una vez que nuestras políticas operativas estén finalizadas. Por ahora, puede explorar el flujo de resultados a través de demostraciones de muestra y funciones seleccionadas."
+    },
+    {
+      "question": "¿Cómo se descuentan los créditos?",
+      "answer": "El uso de créditos varía según el tipo de tarea y la extensión del registro de sesión. Por ejemplo, las tareas con diferentes alcances de procesamiento — como transcripciones, notas de sesión, conceptualizaciones del caso e interpretaciones de pruebas psicológicas — pueden usar cantidades distintas.\n\nLos créditos de un plan de suscripción mensual se renuevan cada mes y se usan dentro de ese ciclo de facturación. Los créditos no utilizados no se acumulan para el mes siguiente; se reinician con el próximo ciclo de facturación.\n\nLa estructura de descuento exacta se anunciará una vez que nuestras políticas operativas estén finalizadas."
+    },
+    {
+      "question": "¿Es fácil cambiar o cancelar mi plan?",
+      "answer": "Los cambios de plan y las cancelaciones serán gestionados directamente por los usuarios. Los planes institucionales pueden requerir un proceso separado según los términos del contrato."
+    },
+    {
+      "question": "¿Qué formatos de notas de sesión están disponibles?",
+      "answer": "Estamos preparando plantillas adaptadas a los flujos de trabajo de consejería — incluidas notas de sesión estándar, SOAP, conceptualizaciones del caso, formatos institucionales y preparación para supervisión. Los formatos específicos de cada institución pueden añadirse con el tiempo."
+    },
+    {
+      "question": "¿Puedo usar Modalia AI sin transcripción?",
+      "answer": "Sí. Incluso sin una grabación o transcripción, puede usar ciertas funciones basadas en notas del terapeuta, registros de entrevistas o resultados de evaluaciones. Dicho esto, unos datos de entrada más ricos y específicos generalmente producirán un borrador de salida más detallado."
+    }
+  ],
+  "footerText": "¿No encontró la respuesta que buscaba?<br></br>Le guiaremos a través de una consulta de adopción.",
+  "footerCta": "Hable con nosotros sobre la adopción institucional"
+}

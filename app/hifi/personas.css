@@ -1,0 +1,1135 @@
+  /* ============== §06 PERSONA — hi-fi v7 (사수 v7 · 2026-04-28) ==============
+     v6 → v7 다듬기 (구조·문구 변경 0건, 시각 임팩트만):
+       - persona-head: gap 18 / margin-bottom 64 → 16 / 36 (헤드라인-카드 흐름 끊김 ↓)
+       - eyebrow: 11px caps `--ink-4` → 16px regular weight 700 + agent green dot (§08/§11과 통일)
+       - sub: 15 → 16.5px line-height 1.7
+       - tl-label: 11px caps `--ink-4` → 13px regular `--ink-3`
+       - 카드 width 280→296 / gap 18→22 / radius 8→12 / padding 22-24→24-26 / warm 그라데이션 bg
+       - 양옆 카드(slot ±2): opacity 0.32→0.5 / blur 0.6→0.3 / scale 0.84→0.9 (잘림 X)
+       - 중앙 카드(slot 0): 검정 두꺼운 border 제거 → brand-tint border + brand-tinted shadow + scale 1.04 + 좌측 3px brand 띠
+       - cat 12px caps `--ink-3` → 14px sans `--ink-2` weight 600
+       - quote 13.5 → 17px weight 600 `--ink-strong` + 3px brand left rule
+       - art height 108 → 124px / 모든 SVG 강조색 terracotta `#168A35` → brand `#168A35` (브랜드 일관성)
+       - nav 32→44px circle / `--ink-3`→`--ink-strong` / hover brand
+       - foot label 10px caps mono → 13px sans `--ink-2`
+       - page indicator (1/5 + 5 dots) 신규 추가 */
+  .persona-head {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .persona-head .t-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--brand-hover);
+    font-family: var(--font-base);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    text-transform: none;
+  }
+  .persona-head .t-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow:
+      0 0 0 4px rgba(22, 138, 53, 0.18),
+      0 0 0 9px rgba(22, 138, 53, 0.06);
+    flex-shrink: 0;
+  }
+  .persona-head .t-h2 {
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.18;
+    color: var(--ink-strong);
+    margin: 0;
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+  .persona-head .t-sub {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+
+  /* Editorial grid · 1 large + 2 medium + 2 small, with intentional rhythm via column spans */
+  .persona-edgrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(0, auto);
+    gap: 24px;
+  }
+  .persona-card-ed {
+    border: 1px solid var(--ink);
+    border-radius: 12px;
+    background: var(--white);
+    padding: 28px 28px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    transition: box-shadow 0.12s ease;
+  }
+  .persona-card-ed:hover { box-shadow: inset 0 0 0 0.5px var(--ink); }
+  /* Row 1 — feature scene (large) + medium · 7+5 */
+  .persona-card-ed.size-l { grid-column: span 7; padding: 36px 36px 28px; gap: 22px; }
+  .persona-card-ed.size-m { grid-column: span 5; }
+  /* Row 2 — small + medium-wide + small · 4+5+3 (rhythm; not hierarchy) */
+  .persona-card-ed.size-s { grid-column: span 4; padding: 24px 24px 20px; gap: 14px; }
+  .persona-card-ed.size-mw { grid-column: span 5; }
+  .persona-card-ed.size-s3 { grid-column: span 3; padding: 24px 22px 20px; gap: 14px; }
+
+  .persona-corner {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    color: var(--ink-4);
+    font-family: ui-monospace, monospace;
+  }
+
+  .persona-cat {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-family: ui-monospace, monospace;
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .persona-scene {
+    font-size: 22px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+  .persona-card-ed.size-l .persona-scene { font-size: 28px; line-height: 1.3; }
+  .persona-card-ed.size-s .persona-scene,
+  .persona-card-ed.size-s3 .persona-scene { font-size: 18px; line-height: 1.4; }
+
+  .persona-quote {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    word-break: keep-all;
+    text-wrap: pretty;
+    padding-left: 14px;
+    border-left: 2px solid var(--ink-3);
+  }
+  .persona-card-ed.size-l .persona-quote { font-size: 16px; }
+  .persona-card-ed.size-s .persona-quote,
+  .persona-card-ed.size-s3 .persona-quote { font-size: 13.5px; padding-left: 12px; }
+
+  .persona-help {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-3);
+    margin: 0;
+    word-break: keep-all;
+  }
+  .persona-help::before {
+    content: '마음토스가 덜어주는 일 — ';
+    color: var(--ink-4);
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .persona-cue {
+    margin: 2px 0 0;
+    padding: 14px 14px;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 11.5px;
+    color: var(--ink-2);
+    font-family: var(--font-body);
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .persona-cue-grp {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .persona-cue-arr {
+    display: inline-flex;
+    align-items: center;
+    width: 14px;
+    height: 1px;
+    background: var(--ink-3);
+    position: relative;
+    flex-shrink: 0;
+    margin: 0 2px;
+  }
+  .persona-cue-arr::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid var(--ink-3);
+    border-right: 1px solid var(--ink-3);
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .persona-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid var(--ink-3);
+    border-radius: 4px;
+    background: var(--white);
+    font-size: 11.5px;
+    color: var(--ink);
+    font-family: var(--font-body);
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+  .persona-chip.solid { background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .persona-chip.dim { background: var(--bg-2); border-style: dashed; color: var(--ink-3); }
+
+  .persona-foot {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .persona-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .persona-tag {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 10px;
+    border: 1px solid var(--ink-3);
+    border-radius: 999px;
+    font-size: 10.5px;
+    color: var(--ink-2);
+    font-family: ui-monospace, monospace;
+    letter-spacing: 0.02em;
+    background: var(--white);
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+  .persona-motion {
+    margin: 0;
+    font-size: 9.5px;
+    line-height: 1.5;
+    color: var(--ink-4);
+    opacity: 0.6;
+    font-family: ui-monospace, monospace;
+    letter-spacing: 0.02em;
+  }
+  .persona-motion::before { content: 'motion — '; margin-right: 2px; }
+
+  @media (max-width: 1024px) {
+    .persona-edgrid { grid-template-columns: repeat(6, 1fr); gap: 18px; }
+    .persona-card-ed.size-l,
+    .persona-card-ed.size-m,
+    .persona-card-ed.size-mw { grid-column: span 6; }
+    .persona-card-ed.size-s,
+    .persona-card-ed.size-s3 { grid-column: span 3; }
+  }
+  @media (max-width: 640px) {
+    .persona-head .t-h2 { font-size: 26px; }
+    .persona-edgrid { grid-template-columns: 1fr; gap: 14px; padding: 0 16px; }
+    .persona-card-ed.size-l,
+    .persona-card-ed.size-m,
+    .persona-card-ed.size-mw,
+    .persona-card-ed.size-s,
+    .persona-card-ed.size-s3 { grid-column: span 1; padding: 24px 22px 20px; gap: 14px; }
+    .persona-card-ed.size-l .persona-scene { font-size: 22px; }
+    .persona-scene { font-size: 19px; }
+  }
+
+  /* ============== PERSONA (B&W editorial scene timeline · sequence of work moments) ============== */
+  .persona-tl-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 8px 0 4px;
+  }
+  .persona-tl-label {
+    margin: 0 0 32px;
+    padding-left: 0;
+    font-size: 13px;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    color: var(--ink-3);
+    font-weight: 500;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  /* ---------- §06 Persona horizontal rail (사수 v7 — 5 카드 동시 노출 · 중앙 3 선명 + 양옆 2 살짝 옅게 · brand-tint 강조) ---------- */
+  /* §06 사수 v60 (2026-05-04): 화살표를 grid layout으로 카드 클러스터 바깥에 강제 배치
+     - prev | rail | next 3-col grid → 버튼이 절대 카드를 침범하지 못함
+     - foot은 전체 col span으로 하단 별도 row */
+  .persona-rail-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8px 0 12px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    align-items: center;
+  }
+  .persona-rail-wrap .persona-nav-side.persona-nav-prev { grid-column: 1; grid-row: 1; }
+  .persona-rail-wrap .persona-rail { grid-column: 2; grid-row: 1; }
+  .persona-rail-wrap .persona-nav-side.persona-nav-next { grid-column: 3; grid-row: 1; }
+  .persona-rail-wrap .persona-rail-foot { grid-column: 1 / -1; grid-row: 2; }
+
+  /* v61: 화살표 버튼 더 차분하게 — 단일 얇은 border, 흰 배경 */
+  .persona-rail-wrap .persona-nav-side {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 42, 34, 0.16);
+    color: var(--brand-hover);
+    box-shadow: 0 2px 8px -4px rgba(15, 42, 34, 0.18);
+    transform: translateX(0);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .persona-rail-wrap .persona-nav-side:hover {
+    background: var(--brand-pale);
+    color: var(--brand-hover);
+    border-color: rgba(15, 42, 34, 0.28);
+    box-shadow: 0 6px 14px -8px rgba(15, 42, 34, 0.28);
+  }
+  .persona-rail-wrap .persona-nav-side.persona-nav-prev:hover { transform: translateX(-2px); }
+  .persona-rail-wrap .persona-nav-side.persona-nav-next:hover { transform: translateX(2px); }
+  @media (max-width: 1080px) {
+    .persona-rail-wrap .persona-nav-side { width: 40px; height: 40px; }
+    .persona-rail-wrap { column-gap: 10px; }
+  }
+  @media (max-width: 720px) {
+    .persona-rail-wrap {
+      display: block;
+    }
+    .persona-rail-wrap .persona-nav-side { display: none; }
+  }
+  .persona-rail-wrap .persona-tl-label {
+    margin-bottom: 24px;
+  }
+
+  /* Rail viewport — fixed-height ferris-wheel · 사수 v12 (2026-04-29):
+     5 카드 → 중앙 1 + 좌우 1 preview 구조 (slot ±2 숨김)로 카드 폭 ↑ 가독성 ↑ */
+  .persona-rail {
+    --p-card-w: 440px;
+    --p-card-gap: 28px;
+    --p-step: calc(var(--p-card-w) + var(--p-card-gap));
+    position: relative;
+    width: 100%;
+    height: 540px;
+    margin: 0 auto;
+    /* §06 사수 v68 (2026-05-04): mask-image는 가로/세로 양쪽으로 클립되어 카드 하단 shadow를 잘라냄.
+       overflow-x: clip로 가로만 자르고, 좌우 fade는 ::before/::after로 재구현 → 세로 shadow 자연 노출 */
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  .persona-rail::before,
+  .persona-rail::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .persona-rail::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-2) 0%, rgba(246, 248, 247, 0) 100%);
+  }
+  .persona-rail::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-2) 0%, rgba(246, 248, 247, 0) 100%);
+  }
+
+  .persona-rail .persona-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--p-card-w);
+    height: 470px;
+    margin: 0;
+    /* §06 사수 v56 (2026-05-04): §03 공감 섹션(.pain-stage-scatter)의 딥그린과 동일 톤으로 통일 */
+    background: linear-gradient(180deg, #0f2a22 0%, #10251f 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    /* §06 사수 v67 (2026-05-04): 하단 텍스트 잘림 방지 — padding 하단 축소 + gap 압축 */
+    padding: 22px 26px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: none;
+    z-index: 2;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 28px -16px rgba(7, 27, 22, 0.55);
+    transition: transform 0.55s cubic-bezier(0.32, 0.72, 0.24, 1),
+                opacity 0.5s ease,
+                filter 0.5s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+
+  /* Slot 매핑 — JS가 data-slot 속성을 -2..+2 범위로 갱신
+     사수 v12: ±2는 화면에서 숨김, ±1은 일부만 보이는 preview로 동작 */
+  .persona-rail .persona-card[data-slot="-2"] {
+    transform: translate(calc(-50% - var(--p-step) * 2), -50%) scale(0.85);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .persona-rail .persona-card[data-slot="-1"] {
+    transform: translate(calc(-50% - var(--p-step)), -50%) scale(0.98);
+    opacity: 0.78;
+    z-index: 2;
+  }
+  /* Active (slot 0) — 검정 두꺼운 border 폐기 → brand-tint border + brand-tinted shadow + 살짝 scale up + 좌측 3px brand 띠 */
+  .persona-rail .persona-card[data-slot="0"] {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 1;
+    z-index: 3;
+    border-color: rgba(245, 240, 226, 0.32);
+    /* active 카드도 §03 공감 섹션 톤 — 살짝 더 밝게만 */
+    background: linear-gradient(180deg, #14352c 0%, #10251f 60%, #0f2a22 100%);
+    box-shadow:
+      0 26px 52px -22px rgba(15, 42, 34, 0.55),
+      0 10px 22px -10px rgba(7, 27, 22, 0.45);
+  }
+  /* §06 사수 v58 (2026-05-04): 활성 카드 좌측 세로 띠 제거 — 강조는 shadow/border/scale로만 */
+  .persona-rail .persona-card[data-slot="0"]::before {
+    display: none;
+  }
+  .persona-rail .persona-card[data-slot="1"] {
+    transform: translate(calc(-50% + var(--p-step)), -50%) scale(0.98);
+    opacity: 0.78;
+    z-index: 2;
+  }
+  .persona-rail .persona-card[data-slot="2"] {
+    transform: translate(calc(-50% + var(--p-step) * 2), -50%) scale(0.85);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Card inner styles */
+  .persona-card-num {
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+  /* 상황 라벨 — 작은 mono caps */
+  .persona-card-cat {
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    color: rgba(189, 248, 208, 0.78);
+    margin: 0;
+    text-transform: uppercase;
+    font-family: ui-monospace, monospace;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .persona-card-scene {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.45;
+    letter-spacing: -0.016em;
+    margin: 0;
+    word-break: keep-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* 제목 영역 최소 2줄 확보 — 잘림 방지 */
+    min-height: calc(20px * 1.45 * 2);
+  }
+  .persona-rail .persona-card[data-slot="0"] .persona-card-scene {
+    font-size: 22px;
+    line-height: 1.42;
+    min-height: calc(22px * 1.42 * 2);
+  }
+  .persona-card-tags {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+  }
+  /* §06 사수 v61 (2026-05-04): 칩 — 박스 느낌 더 줄임. 거의 plain 라벨 */
+  .persona-card-tags li {
+    font-family: ui-monospace, monospace;
+    font-size: 10.5px;
+    padding: 2px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.65);
+    background: transparent;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+  .persona-rail .persona-card[data-slot="0"] .persona-card-tags li {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  /* Bottom nav — 44px 또렷한 버튼 + page indicator (dots + counter) */
+  .persona-rail-foot {
+    /* §06 사수 v68 (2026-05-04): 카드 하단 shadow가 자연스럽게 퍼져 보이도록 dot row 위 여백 확보 */
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+  }
+  .persona-nav {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    background: var(--white);
+    color: var(--ink-strong);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 10px -8px rgba(15, 23, 42, 0.18);
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .persona-nav:hover {
+    border-color: var(--brand);
+    color: var(--brand-hover);
+    background: var(--brand-pale);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px -8px rgba(22, 138, 53, 0.30);
+  }
+  .persona-nav:focus-visible {
+    outline: 2px solid var(--brand-hover);
+    outline-offset: 2px;
+  }
+  .persona-rail-foot-label {
+    font-family: var(--font-base);
+    font-size: 13px;
+    letter-spacing: -0.005em;
+    color: var(--ink-2);
+    text-transform: none;
+    font-weight: 500;
+  }
+
+  /* Page indicator — 5 dots + "current/total" counter */
+  .persona-rail-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 4px;
+  }
+  .persona-rail-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .persona-rail-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--line-strong);
+    transition: background 0.25s ease, transform 0.25s ease, width 0.3s ease;
+  }
+  .persona-rail-dot[aria-current="true"] {
+    background: var(--brand);
+    width: 22px;
+    border-radius: 999px;
+  }
+  .persona-rail-counter-text {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    font-weight: 600;
+    min-width: 32px;
+    text-align: center;
+  }
+  .persona-rail-counter-text strong {
+    color: var(--ink-strong);
+    font-weight: 800;
+  }
+
+  /* 상황 SVG art — 사수 v12 (2026-04-29): 카드가 넓어짐에 따라 art height 미세 조정 */
+  /* §06 사수 v63 (2026-05-04): 그래픽 박스 — border 제거 + radial mask로 가장자리를 카드 배경에 자연 블렌드.
+     이미지는 여전히 카드 메인 비주얼로 크지만, 박스에 갇힌 느낌은 사라짐 */
+  .persona-card-art {
+    /* §06 사수 v67 (2026-05-04): art 높이 175 → 158 — 하단 desc/tags 잘림 방지.
+       여전히 slice 모드로 frame 폭 100% 꽉 채움 (이미지 임팩트 유지). */
+    margin: 0;
+    background: linear-gradient(180deg, rgba(216, 226, 219, 0.5) 0%, rgba(170, 184, 174, 0.35) 100%);
+    border: 0;
+    border-radius: 14px;
+    width: 100%;
+    height: 158px;
+    display: block;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: none;
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+  .persona-card-art svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: saturate(0.5) brightness(0.95);
+  }
+  /* PNG art (raster image) — fills the card art frame, with the same gentle filter
+     as the legacy SVG art so PNG-based cards match the wireframe-friendly tonal
+     treatment. */
+  .persona-card-art-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(0.85) brightness(0.99);
+    transition: filter var(--dur-fast) var(--ease);
+  }
+  /* 활성 카드는 1.04 scale 로 자연스럽게 강조 — frame dimensions 는 동일 */
+  .persona-rail .persona-card[data-slot="0"] .persona-card-art svg {
+    filter: saturate(0.65) brightness(0.97);
+  }
+  .persona-rail .persona-card[data-slot="0"] .persona-card-art-img {
+    filter: saturate(1) brightness(1);
+  }
+
+  /* §06 사수 v66 (2026-05-04): 5개 카드 내부 구조 완전 통일 —
+     슬롯이 바뀌어도 cat → scene → art → quote → desc → tags 순서가 절대 변하지 않도록
+     order 와 quote 박스 스타일을 슬롯 구분 없이 전역으로 적용. */
+  .persona-head--lean { gap: 0; margin-bottom: 36px; }
+  .persona-card-cat   { order: 1; }
+  .persona-card-scene { order: 2; }
+  .persona-card-art   { order: 3; }
+  .persona-card-quote { order: 4; }
+  .persona-card-desc  { order: 5; }
+  .persona-card-tags  { order: 6; margin-top: 4px; }
+
+  /* §06 사수 v67 (2026-05-04): 따옴표 박스 — padding 압축으로 카드 하단 여백 확보 */
+  .persona-card-quote {
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 2px 0 0;
+    padding: 7px 12px;
+    background: rgba(231, 241, 236, 0.72);
+    border: 1px solid rgba(80, 160, 120, 0.22);
+    border-radius: 10px;
+    color: #10251f;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+    font-style: normal;
+  }
+  .persona-card-quote::before {
+    content: '\201C';
+    color: rgba(16, 37, 31, 0.45);
+    font-family: Georgia, serif;
+    font-weight: 600;
+    margin-right: 2px;
+  }
+  .persona-card-quote::after {
+    content: '\201D';
+    color: rgba(16, 37, 31, 0.45);
+    font-family: Georgia, serif;
+    font-weight: 600;
+    margin-left: 1px;
+  }
+
+  .persona-card-desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Laptop tweaks — 사수 v12: 좁은 화면에서도 카드 폭/가독성 유지 */
+  @media (max-width: 1180px) {
+    .persona-rail { --p-card-w: 380px; --p-card-gap: 22px; height: 520px; }
+    .persona-card { height: 450px; padding: 22px 24px 18px; gap: 8px; }
+    .persona-card-scene { font-size: 18.5px; min-height: calc(18.5px * 1.45 * 2); }
+    .persona-rail .persona-card[data-slot="0"] .persona-card-scene { font-size: 21px; min-height: calc(21px * 1.42 * 2); }
+    .persona-card-art { height: 132px; }
+    .persona-card-quote { font-size: 12.5px; padding: 7px 12px; }
+    .persona-card-desc { font-size: 13.5px; }
+  }
+  @media (max-width: 900px) {
+    .persona-rail { --p-card-w: 340px; --p-card-gap: 18px; height: 510px; }
+    .persona-card-scene { font-size: 17.5px; min-height: calc(17.5px * 1.45 * 2); }
+    .persona-rail .persona-card[data-slot="0"] .persona-card-scene { font-size: 19.5px; min-height: calc(19.5px * 1.42 * 2); }
+  }
+
+  /* Mobile — scroll-snap rail · absolute slot 해제 */
+  @media (max-width: 720px) {
+    .persona-rail {
+      height: auto;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      display: flex;
+      gap: 14px;
+      padding: 8px 16px 12px;
+      margin: 0 -16px;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+              mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+    }
+    /* 모바일 scroll-snap 캐러셀에서는 좌/우 light(--bg-2) gradient overlay 제거.
+       - mask-image (line above) 가 이미 edge fade 역할 수행
+       - ::before/::after 는 light 색을 dark 카드 위에 칠해 washed-out 띠가 생김 */
+    .persona-rail::before,
+    .persona-rail::after {
+      display: none;
+    }
+    .persona-rail .persona-card,
+    .persona-rail .persona-card[data-slot="-2"],
+    .persona-rail .persona-card[data-slot="-1"],
+    .persona-rail .persona-card[data-slot="0"],
+    .persona-rail .persona-card[data-slot="1"],
+    .persona-rail .persona-card[data-slot="2"] {
+      position: relative;
+      top: auto;
+      left: auto;
+      flex: 0 0 78%;
+      transform: none;
+      opacity: 1;
+      filter: none;
+      pointer-events: auto;
+      scroll-snap-align: center;
+      height: 470px;
+      min-height: 470px;
+      box-shadow: 0 10px 22px -14px rgba(7, 27, 22, 0.55);
+      border-color: rgba(255, 255, 255, 0.08);
+      z-index: auto;
+    }
+    .persona-rail .persona-card[data-slot="0"] {
+      border-color: rgba(189, 248, 208, 0.32);
+      box-shadow: 0 16px 32px -16px rgba(7, 27, 22, 0.65);
+    }
+    .persona-rail-foot { display: none; }
+    .persona-card-scene { font-size: 18px; }
+    .persona-card-art { height: 160px; }
+    .persona-card-quote { font-size: 12.5px; padding: 8px 12px; }
+    .persona-card-desc { font-size: 13px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .persona-rail .persona-card { transition: none; }
+  }
+  .persona-tl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .persona-tl::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+  .persona-tl-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    column-gap: 40px;
+    padding: 0 0 64px;
+  }
+  .persona-tl-item:last-child { padding-bottom: 0; }
+
+  .persona-tl-rail {
+    position: relative;
+    grid-column: 1;
+    padding-top: 6px;
+  }
+  .persona-tl-num {
+    display: block;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    color: var(--ink-4);
+    line-height: 1;
+  }
+  .persona-tl-node {
+    position: absolute;
+    top: 8px;
+    right: -1px;
+    width: 9px;
+    height: 9px;
+    background: var(--white);
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .persona-tl-body {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 0;
+    max-width: 640px;
+  }
+  .persona-tl-cat {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    font-weight: 500;
+  }
+  .persona-tl-scene {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.28;
+    letter-spacing: -0.014em;
+    font-weight: 600;
+    color: var(--ink);
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+  .persona-tl-quote {
+    margin: 6px 0 0;
+    padding: 0 0 0 14px;
+    border-left: 2px solid var(--ink-3);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    font-style: normal;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .persona-tl-help {
+    margin: 6px 0 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    word-break: keep-all;
+  }
+  .persona-tl-help-label {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    font-weight: 500;
+    vertical-align: 1px;
+  }
+  .persona-tl-help-label::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: var(--line);
+    margin: 0 0 3px 8px;
+    vertical-align: middle;
+  }
+
+  .persona-tl-cue {
+    margin: 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    letter-spacing: 0.01em;
+    color: var(--ink-3);
+    word-break: keep-all;
+  }
+  .persona-tl-cue-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .persona-tl-cue-row span {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--white, #fff);
+    color: var(--ink-2);
+    font-size: 12.5px;
+    line-height: 1.3;
+  }
+  .persona-tl-cue-row span.strong {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+    font-weight: 600;
+  }
+  .persona-tl-cue-row em {
+    font-style: normal;
+    color: var(--ink-4);
+    font-size: 12.5px;
+    padding: 0 2px;
+  }
+  .persona-tl-cue-arrow {
+    color: var(--ink-4);
+    font-size: 13px;
+    line-height: 1;
+    padding: 2px 0 2px 10px;
+    user-select: none;
+  }
+
+  .persona-tl-tags {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .persona-tl-tags li {
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    padding: 3px 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--white);
+    word-break: keep-all;
+  }
+  .persona-tl-motion {
+    margin: 8px 0 0;
+    font-size: 9px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--ink-4);
+    font-style: italic;
+    opacity: 0.45;
+  }
+  .persona-tl-motion::before {
+    content: 'motion — ';
+    margin-right: 2px;
+    font-style: normal;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============== §06 motion · subtle B&W wireframe only ============== */
+  /* Scene block enter — staggered fade + lift on first paint */
+  @keyframes persona-tl-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .persona-tl-item {
+    animation: persona-tl-enter 0.55s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .persona-tl-item:nth-child(1) { animation-delay: 0.05s; }
+  .persona-tl-item:nth-child(2) { animation-delay: 0.12s; }
+  .persona-tl-item:nth-child(3) { animation-delay: 0.19s; }
+  .persona-tl-item:nth-child(4) { animation-delay: 0.26s; }
+  .persona-tl-item:nth-child(5) { animation-delay: 0.33s; }
+
+  /* Shared hover transitions on scene-affected elements */
+  .persona-tl-num,
+  .persona-tl-scene,
+  .persona-tl-quote,
+  .persona-tl-cue-row span,
+  .persona-tl-cue-arrow {
+    transition: color .25s ease, border-color .25s ease, background-color .25s ease, transform .25s ease, opacity .25s ease, box-shadow .25s ease;
+  }
+  /* Node already has translateX(50%) — preserve it on transitions/hover */
+  .persona-tl-node {
+    transition: transform .25s ease, background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+
+  /* Cue arrow baseline a bit dim so hover bump is visible */
+  .persona-tl-cue-arrow { opacity: 0.6; }
+
+  /* Scene hover — node grows (preserve translateX) and fills */
+  .persona-tl-item:hover .persona-tl-node {
+    transform: translateX(50%) scale(1.45);
+    background: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .persona-tl-item:hover .persona-tl-num { color: var(--ink-2); }
+  .persona-tl-item:hover .persona-tl-scene { color: #000; }
+  .persona-tl-item:hover .persona-tl-quote { border-left-color: var(--ink); }
+  .persona-tl-item:hover .persona-tl-cue-row span { border-color: var(--ink-3); }
+  .persona-tl-item:hover .persona-tl-cue-arrow { opacity: 1; color: var(--ink-2); }
+
+  /* Result chip — subtle lift + stronger anchor on scene hover */
+  .persona-tl-item:hover .persona-tl-cue-row span.strong {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 0 var(--ink);
+  }
+  /* Direct hover on result chip alone — same lift */
+  .persona-tl-cue-row span.strong:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 0 var(--ink);
+  }
+
+  /* Reduced motion — disable enter animation, transitions, and hover transforms */
+  @media (prefers-reduced-motion: reduce) {
+    .persona-tl-item,
+    .persona-tl-node,
+    .persona-tl-num,
+    .persona-tl-scene,
+    .persona-tl-quote,
+    .persona-tl-cue-row span,
+    .persona-tl-cue-arrow {
+      animation: none !important;
+      transition: none !important;
+    }
+    .persona-tl-item:hover .persona-tl-node { transform: translateX(50%) !important; }
+    .persona-tl-item:hover .persona-tl-cue-row span.strong,
+    .persona-tl-cue-row span.strong:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .persona-tl-label { padding-left: 0; margin-bottom: 28px; }
+    .persona-tl::before { left: 14px; }
+    .persona-tl-item {
+      grid-template-columns: 14px 1fr;
+      column-gap: 22px;
+      padding-bottom: 48px;
+    }
+    .persona-tl-rail { padding-top: 8px; }
+    .persona-tl-num {
+      position: absolute;
+      top: -2px;
+      left: 36px;
+    }
+    .persona-tl-node { top: 8px; right: auto; left: 50%; }
+    .persona-tl-body { padding-top: 22px; }
+    .persona-tl-scene { font-size: 22px; }
+    .persona-tl-quote { font-size: 16px; }
+    .persona-tl-cue-row span { font-size: 12px; padding: 3px 8px; }
+  }
+
+  /* ============== PERSONA (legacy tabs · unused) ============== */
+  .persona-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: var(--white);
+  }
+  .persona-tab {
+    padding: 14px 12px;
+    border-right: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--ink-2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg);
+    border-bottom: 2px solid transparent;
+  }
+  .persona-tab:last-child { border-right: none; }
+  .persona-tab.active {
+    background: var(--white);
+    color: var(--ink);
+    font-weight: 600;
+    border-bottom: 2px solid var(--ink);
+  }
+  .persona-tab .tn { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-4); }
+
+  .persona-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    background: var(--white);
+    overflow: hidden;
+    min-height: 280px;
+  }
+  .persona-left { padding: 24px; border-right: 1px solid var(--ink); }
+  .persona-right { padding: 24px; background: var(--bg); }
+  .persona-quote {
+    border-left: 2px solid var(--ink-3);
+    padding: 4px 14px;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-2);
+    margin: 12px 0;
+  }
+  .persona-feats { display: flex; flex-direction: column; gap: 10px; }
+  .persona-feat { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--white); }
+

@@ -1,0 +1,15 @@
+{
+  "skipToContent": "Skip to content",
+  "notFoundTitle": "Page not found",
+  "notFoundBody": "The page you are looking for doesn't exist or has moved.",
+  "backHome": "Back to home",
+  "promo": {
+    "newTag": "NEW",
+    "bottomText": "First month free when you sign up",
+    "cta": "Start for free",
+    "regionLabel": "New sign-up promotion"
+  },
+  "langSwitcher": {
+    "label": "Change language"
+  }
+}

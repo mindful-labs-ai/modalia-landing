@@ -1,0 +1,142 @@
+{
+  "slot1": {
+    "heading": "Before you start,\ncheck the results first",
+    "sub": "Pick a sample session and see the session note draft Modalia AI prepared."
+  },
+  "step1": {
+    "label": "Step 1 / 3 — Choose a sample case",
+    "lead": "First, choose a sample case to explore",
+    "sub": "These are example cases for experiencing Modalia AI — not real client data.",
+    "mockAppTitle": "Modalia AI · Sample case selection",
+    "cases": {
+      "01": {
+        "eyebrow": "CASE 01",
+        "cat": "Anxiety · Depression",
+        "title": "20s professional,\nself-blame",
+        "situ": "A first-session case of a client who reports worry about work mistakes and repetitive pre-sleep rumination.",
+        "tag1": "Session Note",
+        "tag2": "Case Conceptualization",
+        "pickLink": "See results →"
+      },
+      "02": {
+        "eyebrow": "CASE 02",
+        "cat": "Couples Conflict",
+        "title": "Communication &\nparenting clashes",
+        "situ": "A couples counseling case where poor communication and differing parenting styles deepen conflict.",
+        "tag1": "Session Note",
+        "tag2": "Relational Pattern",
+        "pickLink": "See results →"
+      },
+      "03": {
+        "eyebrow": "CASE 03",
+        "cat": "Adolescent Adjustment",
+        "title": "Peer relationship\ndifficulties",
+        "situ": "An adolescent counseling case involving social withdrawal in school and peer relationship anxiety.",
+        "tag1": "Session Note",
+        "tag2": "Emotional Response",
+        "pickLink": "See results →"
+      },
+      "04": {
+        "eyebrow": "CASE 04",
+        "cat": "Family Relationships",
+        "title": "3-generation family\ncommunication",
+        "situ": "A family counseling case dealing with communication styles and recurring conflict across three generations.",
+        "tag1": "Genogram",
+        "tag2": "Relational Structure",
+        "pickLink": "See results →"
+      },
+      "05": {
+        "eyebrow": "CASE 05",
+        "cat": "Intake Interview",
+        "title": "New client\nin-depth assessment",
+        "situ": "A case that captures chief complaint, family history, risk factors, and counseling goals in an initial intake interview.",
+        "tag1": "Intake Interview",
+        "tag2": "Initial Assessment",
+        "pickLink": "See results →"
+      }
+    }
+  },
+  "step2": {
+    "label": "Step 2 / 3 — Secure processing",
+    "lead": "Processing securely,\nthen generating results.",
+    "sub": "Sample data, but the processing follows the same steps as a real session.",
+    "mockAppTitle": "Modalia AI · Processing",
+    "mockStatusLabel": "4-step processing",
+    "stages": {
+      "1": { "num": "01", "name": "Input data", "desc": "Session record" },
+      "2": { "num": "02", "name": "Security processing", "desc": "Encryption · De-identification" },
+      "3": { "num": "03", "name": "AI organization", "desc": "Not used for training" },
+      "4": { "num": "04", "name": "Output generation", "desc": "Session note draft" }
+    },
+    "pills": {
+      "1": "Not used for training",
+      "2": "Encrypted before storage",
+      "3": "Personal data de-identified",
+      "4": "Session record structured",
+      "5": "Result card generated"
+    }
+  },
+  "step3": {
+    "label": "Step 3 / 3 — Session note results",
+    "lead": "Here's how your session note draft comes out",
+    "mockAppTitle": "Modalia AI · Session Note",
+    "mockStatusDone": "Generated",
+    "selectedCasePrefix": "Selected case · ",
+    "ctaLabel": "Start my sessions like this",
+    "ctaArrow": "→",
+    "restartLabel": "Try another case"
+  },
+  "stepCounter": "Step {n} / {total}",
+  "caseData": {
+    "01": {
+      "name": "Anxiety · Depression — 20s professional, self-blame",
+      "rows": [
+        { "label": "Counseling Topic", "type": "text", "value": "Recurring anticipatory anxiety and self-blame in performance evaluation situations, extending to sleep disruption and reduced daily functioning." },
+        { "label": "Session Goals", "type": "text", "value": "Identify the specific cycle of automatic thoughts triggered in work situations, and establish a starting point for cognitive defusion work to reduce pre-sleep rumination." },
+        { "label": "Session Summary", "type": "text", "value": "Three core automatic thoughts — 'I messed up / Everyone noticed / I've lost their trust' — repeat in a four-stage cycle: post-meeting → self-blame → rumination → sleep disruption. Toward the end of the session, a brief 'one thing I did well today' self-affirmation exercise was attempted…" },
+        { "label": "Main Intervention Direction", "type": "text", "value": "Cognitive restructuring questions to separate facts from interpretations. Progressively applying distancing work from automatic thoughts, and building metacognitive awareness of how self-blame maintains anxiety." },
+        { "label": "Next Session Plan", "type": "text", "value": "Select one recent moment the client felt they had made a mistake, examine the thoughts, physical reactions, and subsequent behaviors, and conduct a perspective-broadening exercise by comparing with a colleague's viewpoint." }
+      ]
+    },
+    "02": {
+      "name": "Couples Conflict — Communication breakdown, co-parenting conflict",
+      "rows": [
+        { "label": "Counseling Topic", "type": "text", "value": "Couples conflict driven by recurring communication breakdown and differing parenting approaches" },
+        { "label": "Session Goals", "type": "text", "value": "Identify recurring interaction patterns during conflict and examine each partner's emotional responses separately." },
+        { "label": "Session Summary", "type": "text", "value": "Conflict frequency around parenting has increased over the past six months, with communication becoming entrenched in a blame–defensiveness–avoidance cycle." },
+        { "label": "Points for Counselor Review", "type": "text", "value": "Beyond the surface content of conflict, recurring communication styles and emotional distance need to be examined together in the next session." },
+        { "label": "Next Session Plan", "type": "text", "value": "Reconstruct one recent conflict scene in detail, and explore each partner's emotions, needs, and defensive responses." }
+      ]
+    },
+    "03": {
+      "name": "Adolescent Adjustment — Peer relationship difficulties",
+      "rows": [
+        { "label": "Counseling Topic", "type": "text", "value": "Peer relationship anxiety and school withdrawal. The client reports an automatic interpretation — 'they must dislike me' — triggered by even small changes in a peer's expression." },
+        { "label": "Session Goals", "type": "text", "value": "Examine the withdrawal that intensifies during breaks and lunchtime, and explore the recurring avoidance pattern in peer relationships alongside small steps toward connection." },
+        { "label": "Session Summary", "type": "text", "value": "A repeating cycle of peer gaze awareness → anticipated rejection → physical tension (shoulders, abdomen) → avoidance (earphones, leaving the area) was identified, with the brief relief after avoidance acting as a reinforcing factor…" },
+        { "label": "Main Intervention Direction", "type": "text", "value": "Practice imagining the smallest possible approach behaviors ('hi' / 'want to walk together?') and anticipating feelings after trying them. Guide the parent toward emotion-checking-centered conversation." },
+        { "label": "Next Session Plan", "type": "text", "value": "Pick one moment in school that feels most tense, examine the physical reaction and thoughts at that time, and have the client try a short emotion-checking conversation with a parent during the week." }
+      ]
+    },
+    "04": {
+      "name": "Family Relationships — 3-generation family communication",
+      "rows": [
+        { "label": "Counseling Topic", "type": "text", "value": "Recurring mediator role within a three-generation family and intergenerational communication conflict. The client reports emotional exhaustion and guilt from serving as an emotional translator between parents and grandparents." },
+        { "label": "Session Goals", "type": "text", "value": "Identify the mediator role the client assumes within the family, and find a first foothold for redrawn responsibility boundaries." },
+        { "label": "Session Summary", "type": "text", "value": "A three-stage communication structure — grandparents (direct expression) → client (mediation/buffer) → parents (indirect delivery) — was mapped together. A pattern in which conflict erupts directly whenever the client steps back was repeatedly confirmed…" },
+        { "label": "Main Intervention Direction", "type": "text", "value": "Distinguish the belief 'I have to do this' from the client's actual area of responsibility. Explore the source of the guilt that arises when stepping back from the mediator role." },
+        { "label": "Next Session Plan", "type": "text", "value": "Differentiate things the client feels responsible for from those they do not, and record the emotions felt and the family's reactions during the week when the client withheld mediation." }
+      ]
+    },
+    "05": {
+      "name": "Intake Interview — New client in-depth assessment",
+      "rows": [
+        { "label": "Counseling Topic", "type": "text", "value": "Initial in-depth assessment focused on recent anxiety and interpersonal stress. Accumulated stress since a role change six months ago, affecting sleep, appetite, and emotional regulation." },
+        { "label": "Session Goals", "type": "text", "value": "Organize the chief complaint and life context, and identify areas requiring follow-up in emotional regulation, interpersonal relationships, and family history." },
+        { "label": "Session Summary", "type": "text", "value": "Chief complaint was traced chronologically; difficulty with emotional regulation and recurring interpersonal conflict were examined. Sleep disruption, social isolation, and self-deprecation were identified as risk signals; clear counseling motivation and support from family and friends were noted as protective factors…" },
+        { "label": "Main Intervention Direction", "type": "text", "value": "Agree on short- and medium-term counseling direction. Additional evaluation of trauma history and physical symptoms is needed; a medical referral may also be considered if warranted." },
+        { "label": "Next Session Plan", "type": "text", "value": "Differentiate short-term and long-term counseling goals, agree on the first priority area, and address trauma history and physical symptoms as additional agenda items." }
+      ]
+    }
+  }
+}

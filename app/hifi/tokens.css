@@ -1,0 +1,117 @@
+  /* -------- Hi-fi base tokens & primitives. Section styles untouched. --------
+     Body 폰트는 app/layout.tsx 의 next/font/local (Pretendard) + next/font/google (IBM Plex Mono) 로 자체 호스팅.
+     이전엔 jsdelivr/Pretendard + Google Fonts(@import) 중복 로드로 ~4MB 추가 + CSP 위반 — 2026-05-08 제거.
+     SUIT/Paperlogy CDN(@v2/sun-typeface, innei/Paperlogy) — 404 응답으로 제거 (2026-05-04).
+     font-family stack 끝의 Pretendard·시스템 fallback이 자연스럽게 흡수. */
+
+  /* Gyeonggi Title (경기천년제목) Medium — 사수 v11 (2026-04-29)
+     타이틀 전용 한글 디스플레이 폰트. Medium 1종으로 모든 heading weight를 커버
+     (font-weight 100~900 매핑 → 합성 굵기 비활성화, 본문/버튼은 SUIT 유지) */
+  @font-face {
+    font-family: 'GyeonggiTitleM';
+    src: url('/fonts/gyeonggi/Title_Medium.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    /* === Brand · Mindthos Production Green (CLAUDE.md / design-tokens.md v1.2 · canonical) ===
+       hifi.css 의 짧은 alias(--brand 등) 는 globals.css 의 canonical token(--brand-primary 등) 으로
+       alias 처리하여 단일 진실 원본을 globals.css 가 갖도록 함. */
+    --brand:           var(--brand-primary, #44ce4b);
+    --brand-hover:     var(--brand-primary-dark, #40a755);
+    --brand-soft:      var(--brand-primary-soft, #65c377);
+    --brand-tint:      var(--brand-primary-tint, #b5e2bf);
+    --brand-pale:      var(--brand-primary-pale, #e2f6e6);
+    --brand-alpha:     rgba(68, 206, 75, 0.18);
+
+    /* === Text · Cool Slate === */
+    --ink:             #0f172a;   /* primary text (slate-900) */
+    --ink-2:           #334155;   /* body (slate-700) */
+    /* Lighthouse a11y(2026-05-08): slate-500 #64748b on bg-2(#f6f8f7) = 4.46:1 ✗ → #5b6573 = 4.65:1 ✓
+       slate-400 #94a3b8 on white = 2.85:1 ✗ → #6b7280 = 4.83:1 ✓ (소문자 라벨까지 통과). */
+    --ink-3:           #5b6573;   /* muted (was slate-500 #64748b) */
+    --ink-4:           #6b7280;   /* disabled (was slate-400 #94a3b8) */
+    --ink-strong:      #0f172a;   /* heading-strong (slate-900) */
+    --ink-warm:        #1A3025;   /* deep cool green-black (was warm dark text) */
+    --on-dark:         #ffffff;
+    --on-dark-muted:   rgba(255, 255, 255, 0.72);
+
+    /* === Surface · Cool Neutral === */
+    --bg:              #ffffff;   /* base */
+    --bg-2:            #f6f8f7;   /* cool offwhite alt */
+    --bg-3:            #f1f5f9;   /* slate-100 elevated */
+    --ph:              #e2e8f0;   /* slate-200 placeholder */
+    --white:           #ffffff;
+
+    /* === Line · Cool === */
+    --line:            #e2e8f0;   /* slate-200 */
+    /* --line-2 / --line-warm 는 globals.css canonical 토큰으로 alias — 시각 차이 미미 */
+    --line-2:          var(--line-1, #e7e7e7);
+    --line-warm:       var(--line-1, #e1dbd6);
+    --line-strong:     #cbd5e1;   /* slate-300 */
+
+    /* === Status ===
+       --alert 는 globals.css canonical (#e7906d terracotta) 사용 — refactor-deferred §2 reconcile (2026-05-06). */
+    --success:         var(--brand);
+
+    /* === Section role tokens (사수 v12 · 2026-04-29 · section rhythm)
+       전체 톤은 쿨그린 통일이지만 섹션 역할별로 배경 대비를 줘서 랜딩 흐름 살림.
+       --bg-page          : default (흰 배경)
+       --bg-section-light : 살짝 cool slate-50 (§03 Pain — 딥그린 그래픽 위한 베이스)
+       --bg-section-cool  : slate-100 (§06 Persona / §10 FAQ alt — 가벼운 분리감)
+       --bg-section-dark  : 딥 차콜 (§08 정량+후기 — 풀스크린 임팩트)
+       --bg-section-dark-2: dark 내부 살짝 lift (logos 영역 등) */
+    --bg-page:           #ffffff;
+    --bg-section-light:  #f8fafc;            /* slate-50 */
+    --bg-section-cool:   var(--bg-3);        /* slate-100 alias */
+    --bg-section-dark:   #07110e;            /* deep cool charcoal-green */
+    --bg-section-dark-2: #0b1812;
+    --green-primary:     var(--brand);
+    --green-soft:        var(--brand-soft);
+    --green-mint:        #6ee7b7;            /* 다크 배경 위 mint accent */
+    --green-glow:        rgba(50, 215, 75, 0.32);
+    /* --text-primary 는 globals.css canonical (#1f1f1f warm) — refactor-deferred §2 reconcile (2026-05-06). */
+    --text-on-dark:      #ffffff;
+    --text-on-dark-muted: rgba(255, 255, 255, 0.64);
+    --text-on-dark-dim:   rgba(255, 255, 255, 0.42);
+    --border-cool:       var(--line);
+    --border-on-dark:    rgba(255, 255, 255, 0.10);
+
+    /* === Radius ===
+       --radius 는 globals.css canonical (0.75rem = 12px) — refactor-deferred §2 reconcile (2026-05-06).
+       hifi 의 --radius-xs/lg/xl/2xl 는 hifi 내부 단계 유지. */
+    --radius-xs:       4px;
+    --radius-lg:       8px;
+    --radius-xl:       12px;
+    --radius-2xl:      20px;
+    --radius-pill:     999px;
+
+    /* === Shadow === */
+    --shadow-paper:    0 1px 0 rgba(0, 0, 0, 0.04);
+    --shadow-card:     0 6px 24px -16px rgba(15, 23, 42, 0.18);
+    --shadow-elev:     0 18px 48px -28px rgba(15, 23, 42, 0.28);
+    --shadow-deep:     0 14px 36px -20px rgba(0, 0, 0, 0.45);
+
+    /* === Type · 사수 v11 (2026-04-29) — heading 계열만 경기천년제목(Medium)으로 교체 ============
+       --font-title  : GyeonggiTitleM (한글 타이틀 디스플레이) → Paperlogy → Pretendard fallback
+       --font-heading: --font-title alias (전역 h1-h4 + .t-h*에 자동 적용)
+       --font-body   : SUIT Variable (본문/버튼/라벨 — 그대로 유지)
+       --font-base   : legacy alias → body 기준 (기존 참조 호환)
+       --font-mono   : IBM Plex Mono (라벨 / 배지 / 캡션 / 숫자) */
+    --font-title: 'GyeonggiTitleM', 'Paperlogy', 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans KR', sans-serif;
+    --font-heading: var(--font-title);
+    --font-body: 'SUIT Variable', 'SUIT', 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans KR', sans-serif;
+    --font-base: var(--font-body);
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    /* === Layout ===
+       --gutter 는 globals.css canonical (clamp(16px, 4vw, 32px) — 모바일 친화) — refactor-deferred §2 reconcile (2026-05-06). */
+    --container:       1280px;
+
+    /* === Motion === */
+    --ease:            cubic-bezier(0.4, 0.2, 0.2, 1);
+    --dur-fast:        0.16s;
+    --dur:             0.22s;
+  }

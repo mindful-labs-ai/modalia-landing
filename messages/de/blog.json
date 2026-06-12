@@ -1,0 +1,41 @@
+{
+  "eyebrow": "Modalia AI Blog",
+  "title": "Blog",
+  "subtitle": "Praxiseinblicke, Sicherheit, Technologie und Berichte von Kund:innen für Berater:innen und Therapeut:innen — alles an einem Ort.",
+  "categorySubtitle": "Artikel in dieser Kategorie.",
+  "headerAria": "Modalia AI Blog — Seitenheader",
+  "all": "Alle",
+  "categoriesAria": "Blog-Kategorien",
+  "minRead": "Min. Lesezeit",
+  "prevPage": "Vorherige Seite",
+  "nextPage": "Nächste Seite",
+  "paginationAria": "Seitennavigation",
+  "pageN": "Seite {n}",
+  "empty": {
+    "title": "Artikel demnächst verfügbar",
+    "body": "Wir bereiten unsere ersten hochwertigen Artikel für diese Sprache vor. Schauen Sie bald wieder vorbei.",
+    "cta": "Alle Beiträge ansehen"
+  },
+  "related": "Verwandte Artikel",
+  "breadcrumbHome": "Startseite",
+  "breadcrumbAria": "Brotkrümelnavigation",
+  "backToList": "Zurück zum Blog",
+  "author": {
+    "role": "Klinisches & Beratungsteam"
+  },
+  "keyTakeaway": "Wichtigste Erkenntnis",
+  "contents": "Inhalt",
+  "references": "Quellen",
+  "refType": {
+    "academic": "Wissenschaftlich",
+    "government": "Behördlich",
+    "industry": "Branche"
+  },
+  "faqTitle": "Häufig gestellte Fragen",
+  "disclosure": "Dieser Artikel wurde unter Verwendung der klinischen Richtlinien von Modalia AI verfasst und überprüft, mit professioneller menschlicher Kontrolle vor der Veröffentlichung.",
+  "cta": {
+    "title": "Einen sicheren KI-Partner in Ihre Praxis integrieren",
+    "body": "Modalia AI unterstützt Berater:innen bei Transkription, Fallkonzeptualisierung und Dokumentation — von Grund auf sicherheitsorientiert entwickelt.",
+    "button": "Kostenlos starten"
+  }
+}

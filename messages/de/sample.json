@@ -1,0 +1,142 @@
+{
+  "slot1": {
+    "heading": "Bevor Sie starten,\nschauen Sie sich zuerst die Ergebnisse an",
+    "sub": "Wählen Sie eine Beispielsitzung und sehen Sie den Sitzungsnotiz-Entwurf, den Modalia AI vorbereitet hat."
+  },
+  "step1": {
+    "label": "Schritt 1 / 3 — Beispielfall auswählen",
+    "lead": "Wählen Sie zunächst einen Beispielfall zum Erkunden",
+    "sub": "Dies sind Beispielfälle zum Erleben von Modalia AI — keine echten Klientendaten.",
+    "mockAppTitle": "Modalia AI · Beispielfall-Auswahl",
+    "cases": {
+      "01": {
+        "eyebrow": "FALL 01",
+        "cat": "Angst · Depression",
+        "title": "20er Berufstätige:r,\nSelbstvorwürfe",
+        "situ": "Ein Erstgesprächsfall einer Klientin/eines Klienten, der Sorgen über Arbeitsfehler und wiederkehrendes Grübeln vor dem Schlafen berichtet.",
+        "tag1": "Sitzungsnotiz",
+        "tag2": "Fallkonzeptualisierung",
+        "pickLink": "Ergebnisse mit diesem Fall ansehen →"
+      },
+      "02": {
+        "eyebrow": "FALL 02",
+        "cat": "Paarkonflikt",
+        "title": "Kommunikationsabbruch\n& Co-Elternschaftskonflikt",
+        "situ": "Ein Paarberatungsfall, bei dem wiederkehrender Kommunikationsabbruch und unterschiedliche Erziehungsstile den Konflikt vertieft haben.",
+        "tag1": "Sitzungsnotiz",
+        "tag2": "Beziehungsmuster",
+        "pickLink": "Ergebnisse mit diesem Fall ansehen →"
+      },
+      "03": {
+        "eyebrow": "FALL 03",
+        "cat": "Jugendliche Anpassung",
+        "title": "Schwierigkeiten in\nPeer-Beziehungen",
+        "situ": "Ein Jugendberatungsfall mit sozialem Rückzug in der Schule und Angst vor Peer-Beziehungen.",
+        "tag1": "Sitzungsnotiz",
+        "tag2": "Emotionale Reaktion",
+        "pickLink": "Ergebnisse mit diesem Fall ansehen →"
+      },
+      "04": {
+        "eyebrow": "FALL 04",
+        "cat": "Familienbeziehungen",
+        "title": "3-Generationen-Familie\nKommunikation",
+        "situ": "Ein Familienberatungsfall, der sich mit Kommunikationsstilen und wiederkehrenden Konflikten über drei Generationen befasst.",
+        "tag1": "Genogramm",
+        "tag2": "Beziehungsstruktur",
+        "pickLink": "Ergebnisse mit diesem Fall ansehen →"
+      },
+      "05": {
+        "eyebrow": "FALL 05",
+        "cat": "Erstgespräch",
+        "title": "Neue Klientin/\nneuer Klient — Tiefenassessment",
+        "situ": "Ein Fall, der Hauptbeschwerde, Familiengeschichte, Risikofaktoren und Beratungsziele in einem ersten Erstgespräch erfasst.",
+        "tag1": "Erstgespräch",
+        "tag2": "Erstassessment",
+        "pickLink": "Ergebnisse mit diesem Fall ansehen →"
+      }
+    }
+  },
+  "step2": {
+    "label": "Schritt 2 / 3 — Sichere Verarbeitung",
+    "lead": "Sicher verarbeiten,\ndann Ergebnisse generieren.",
+    "sub": "Beispieldaten, aber die Verarbeitung folgt denselben Schritten wie bei einer echten Sitzung.",
+    "mockAppTitle": "Modalia AI · Verarbeitung",
+    "mockStatusLabel": "4-stufige Verarbeitung",
+    "stages": {
+      "1": { "num": "01", "name": "Eingabedaten", "desc": "Sitzungsunterlage" },
+      "2": { "num": "02", "name": "Sicherheitsverarbeitung", "desc": "Verschlüsselung · Anonymisierung" },
+      "3": { "num": "03", "name": "KI-Organisation", "desc": "Nicht für Training genutzt" },
+      "4": { "num": "04", "name": "Ausgabegenerierung", "desc": "Sitzungsnotiz-Entwurf" }
+    },
+    "pills": {
+      "1": "Nicht für Training genutzt",
+      "2": "Vor der Speicherung verschlüsselt",
+      "3": "Personendaten anonymisiert",
+      "4": "Sitzungsunterlage strukturiert",
+      "5": "Ergebniskarte generiert"
+    }
+  },
+  "step3": {
+    "label": "Schritt 3 / 3 — Ergebnisse der Sitzungsnotiz",
+    "lead": "So sieht Ihr Sitzungsnotiz-Entwurf aus",
+    "mockAppTitle": "Modalia AI · Sitzungsnotiz",
+    "mockStatusDone": "Generiert",
+    "selectedCasePrefix": "Ausgewählter Fall · ",
+    "ctaLabel": "Meine Sitzungen so starten",
+    "ctaArrow": "→",
+    "restartLabel": "Anderen Fall ausprobieren"
+  },
+  "stepCounter": "Schritt {n} / {total}",
+  "caseData": {
+    "01": {
+      "name": "Angst · Depression — 20er Berufstätige:r, Selbstvorwürfe",
+      "rows": [
+        { "label": "Beratungsthema", "type": "text", "value": "Wiederkehrende Erwartungsangst und Selbstvorwürfe in Leistungsbewertungssituationen, die sich auf Schlafstörungen und eingeschränkte Alltagsfunktion ausweiten." },
+        { "label": "Sitzungsziele", "type": "text", "value": "Den spezifischen Zyklus automatischer Gedanken identifizieren, die in Arbeitssituationen ausgelöst werden, und einen Ausgangspunkt für kognitive Defusion zur Reduzierung des Grübelns vor dem Schlafen etablieren." },
+        { "label": "Sitzungszusammenfassung", "type": "text", "value": "Drei zentrale automatische Gedanken — 'Ich habe Mist gebaut / Alle haben es bemerkt / Ich habe ihr Vertrauen verloren' — wiederholen sich in einem vierstufigen Zyklus: nach dem Meeting → Selbstvorwürfe → Grübeln → Schlafstörung. Gegen Ende der Sitzung wurde eine kurze Selbstbestätigungsübung 'eine Sache, die ich heute gut gemacht habe' versucht…" },
+        { "label": "Hauptinterventionsrichtung", "type": "text", "value": "Kognitive Umstrukturierungsfragen zur Trennung von Fakten und Interpretationen. Schrittweise Anwendung von Distanzierungsarbeit von automatischen Gedanken und Aufbau metakognitiver Bewusstheit darüber, wie Selbstvorwürfe Angst aufrechterhalten." },
+        { "label": "Plan für die nächste Sitzung", "type": "text", "value": "Einen kürzlichen Moment auswählen, in dem die Klientin/der Klient das Gefühl hatte, einen Fehler gemacht zu haben, Gedanken, körperliche Reaktionen und Folgeverhaltensweisen untersuchen und eine Perspektiverweiterungsübung durch Vergleich mit dem Standpunkt einer Kollegin/eines Kollegen durchführen." }
+      ]
+    },
+    "02": {
+      "name": "Paarkonflikt — Kommunikationsabbruch, Co-Elternschaftskonflikt",
+      "rows": [
+        { "label": "Beratungsthema", "type": "text", "value": "Paarkonflikt durch wiederkehrenden Kommunikationsabbruch und unterschiedliche Erziehungsansätze" },
+        { "label": "Sitzungsziele", "type": "text", "value": "Wiederkehrende Interaktionsmuster während des Konflikts identifizieren und die emotionalen Reaktionen jedes Partners getrennt untersuchen." },
+        { "label": "Sitzungszusammenfassung", "type": "text", "value": "Die Konflikthäufigkeit rund um die Elternschaft hat sich in den letzten sechs Monaten erhöht, wobei die Kommunikation in einem Schuld–Abwehr–Vermeidungs-Zyklus festgefahren ist." },
+        { "label": "Punkte zur Überprüfung durch die Berater:in", "type": "text", "value": "Neben dem oberflächlichen Konfliktinhalt müssen wiederkehrende Kommunikationsstile und emotionale Distanz in der nächsten Sitzung gemeinsam untersucht werden." },
+        { "label": "Plan für die nächste Sitzung", "type": "text", "value": "Eine kürzliche Konfliktsituation im Detail rekonstruieren und die Emotionen, Bedürfnisse und Abwehrreaktionen jedes Partners erkunden." }
+      ]
+    },
+    "03": {
+      "name": "Jugendliche Anpassung — Schwierigkeiten in Peer-Beziehungen",
+      "rows": [
+        { "label": "Beratungsthema", "type": "text", "value": "Angst vor Peer-Beziehungen und schulischer Rückzug. Die Klientin/der Klient berichtet von einer automatischen Interpretation — 'die mögen mich bestimmt nicht' — die durch selbst kleine Veränderungen im Gesichtsausdruck einer Gleichaltrigen/eines Gleichaltrigen ausgelöst wird." },
+        { "label": "Sitzungsziele", "type": "text", "value": "Den Rückzug untersuchen, der sich in den Pausen und zur Mittagszeit verstärkt, und das wiederkehrende Vermeidungsmuster in Peer-Beziehungen sowie kleine Schritte zur Verbindung erkunden." },
+        { "label": "Sitzungszusammenfassung", "type": "text", "value": "Ein sich wiederholender Zyklus aus Bewusstsein für den Blick von Gleichaltrigen → antizipierte Ablehnung → körperliche Anspannung (Schultern, Bauch) → Vermeidung (Kopfhörer, den Bereich verlassen) wurde identifiziert, wobei die kurze Erleichterung nach der Vermeidung als verstärkender Faktor wirkt…" },
+        { "label": "Hauptinterventionsrichtung", "type": "text", "value": "Das Vorstellen kleinstmöglicher Annäherungsverhaltensweisen ('Hallo' / 'Sollen wir zusammen gehen?') und das Antizipieren von Gefühlen nach dem Versuch üben. Die Eltern zu einem gefühlsorientierten Gespräch anleiten." },
+        { "label": "Plan für die nächste Sitzung", "type": "text", "value": "Einen Moment in der Schule auswählen, der sich am angespanntesten anfühlt, die körperliche Reaktion und die Gedanken in dem Moment untersuchen und die Klientin/den Klienten ein kurzes gefühlsorientiertes Gespräch mit einem Elternteil in der Woche versuchen lassen." }
+      ]
+    },
+    "04": {
+      "name": "Familienbeziehungen — 3-Generationen-Familie Kommunikation",
+      "rows": [
+        { "label": "Beratungsthema", "type": "text", "value": "Wiederkehrende Mediator:innen-Rolle innerhalb einer Drei-Generationen-Familie und intergenerationeller Kommunikationskonflikt. Die Klientin/der Klient berichtet von emotionaler Erschöpfung und Schuldgefühlen durch die Rolle als emotionale:r Übersetzer:in zwischen Eltern und Großeltern." },
+        { "label": "Sitzungsziele", "type": "text", "value": "Die Mediator:innen-Rolle identifizieren, die die Klientin/der Klient innerhalb der Familie einnimmt, und einen ersten Ansatzpunkt für neu gezogene Verantwortungsgrenzen finden." },
+        { "label": "Sitzungszusammenfassung", "type": "text", "value": "Eine dreistufige Kommunikationsstruktur — Großeltern (direkte Äußerung) → Klientin/Klient (Vermittlung/Puffer) → Eltern (indirekte Weitergabe) — wurde gemeinsam kartiert. Ein Muster, bei dem Konflikte direkt eskalieren, sobald die Klientin/der Klient zurückweicht, wurde wiederholt bestätigt…" },
+        { "label": "Hauptinterventionsrichtung", "type": "text", "value": "Den Glauben 'Ich muss das tun' von dem tatsächlichen Verantwortungsbereich der Klientin/des Klienten unterscheiden. Die Quelle der Schuldgefühle erkunden, die beim Zurückweichen aus der Mediator:innen-Rolle entstehen." },
+        { "label": "Plan für die nächste Sitzung", "type": "text", "value": "Dinge, für die die Klientin/der Klient sich verantwortlich fühlt, von denen trennen, für die sie/er es nicht tut, und in der Woche die empfundenen Gefühle und die Reaktionen der Familie festhalten, wenn die Klientin/der Klient die Vermittlung zurückhielt." }
+      ]
+    },
+    "05": {
+      "name": "Erstgespräch — Neue Klientin/Neuer Klient — Tiefenassessment",
+      "rows": [
+        { "label": "Beratungsthema", "type": "text", "value": "Erstes Tiefenassessment mit Fokus auf kürzliche Angst und interpersonellen Stress. Angesammelter Stress seit einem Rollenwechsel vor sechs Monaten, der Schlaf, Appetit und emotionale Regulation beeinträchtigt." },
+        { "label": "Sitzungsziele", "type": "text", "value": "Die Hauptbeschwerde und den Lebenskontext strukturieren und Bereiche identifizieren, die bei emotionaler Regulation, interpersonellen Beziehungen und Familiengeschichte Nachverfolgung erfordern." },
+        { "label": "Sitzungszusammenfassung", "type": "text", "value": "Die Hauptbeschwerde wurde chronologisch nachverfolgt; Schwierigkeiten mit emotionaler Regulation und wiederkehrende interpersonelle Konflikte wurden untersucht. Schlafstörungen, soziale Isolation und Selbstabwertung wurden als Risikosignale identifiziert; klare Beratungsmotivation und Unterstützung von Familie und Freunden wurden als Schutzfaktoren vermerkt…" },
+        { "label": "Hauptinterventionsrichtung", "type": "text", "value": "Kurz- und mittelfristige Beratungsrichtung vereinbaren. Zusätzliche Auswertung von Traumageschichte und körperlichen Symptomen ist erforderlich; eine medizinische Überweisung kann bei Bedarf ebenfalls in Betracht gezogen werden." },
+        { "label": "Plan für die nächste Sitzung", "type": "text", "value": "Kurz- und langfristige Beratungsziele differenzieren, den ersten Prioritätsbereich vereinbaren und Traumageschichte sowie körperliche Symptome als zusätzliche Tagesordnungspunkte ansprechen." }
+      ]
+    }
+  }
+}

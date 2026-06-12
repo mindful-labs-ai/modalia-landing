@@ -1,0 +1,38 @@
+{
+  "_note": "Brand + clinical term map for ko→en transcreation. Brand is Modalia AI on the global site (NOT Mindthos).",
+  "brand": {
+    "마음토스": "Modalia AI",
+    "Mindthos": "Modalia AI"
+  },
+  "terms": {
+    "사례개념화": "case conceptualization",
+    "축어록": "session transcript",
+    "진행기록": "progress note",
+    "슈퍼비전": "supervision",
+    "슈퍼바이저": "supervisor",
+    "내담자": "client",
+    "상담자": "counselor",
+    "상담사": "counselor",
+    "작업동맹": "working alliance",
+    "치료동맹": "therapeutic alliance",
+    "역전이": "countertransference",
+    "전이": "transference",
+    "사례개념화 가설": "case conceptualization hypothesis",
+    "인지행동치료": "cognitive behavioral therapy (CBT)",
+    "수용전념치료": "acceptance and commitment therapy (ACT)",
+    "변증법적행동치료": "dialectical behavior therapy (DBT)",
+    "노출 반응방지": "exposure and response prevention (ERP)",
+    "정신건강": "mental health",
+    "심리평가": "psychological assessment",
+    "방어기제": "defense mechanism",
+    "소진": "burnout",
+    "자기돌봄": "self-care",
+    "탈융합": "defusion",
+    "정상화": "normalization"
+  },
+  "preserve_verbatim": [
+    "WISC", "WISC-V", "MMPI", "MMPI-2", "TAT", "TCI", "DSM-5", "DSM-5-TR",
+    "Winnicott", "Salkovskis", "Rachman", "Berry", "Murray", "Jung", "Freud", "Vaillant",
+    "DOI", "PsycINFO", "PubMed"
+  ]
+}

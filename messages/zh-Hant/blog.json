@@ -1,0 +1,41 @@
+{
+  "eyebrow": "Modalia AI 部落格",
+  "title": "部落格",
+  "subtitle": "為諮商師與治療師整理的實務洞見、資安知識、技術解析與用戶故事，盡在此處。",
+  "categorySubtitle": "此分類的文章。",
+  "headerAria": "Modalia AI 部落格 — 頁面標題",
+  "all": "全部",
+  "categoriesAria": "部落格分類",
+  "minRead": "分鐘閱讀",
+  "prevPage": "上一頁",
+  "nextPage": "下一頁",
+  "paginationAria": "分頁導覽",
+  "pageN": "第 {n} 頁",
+  "empty": {
+    "title": "文章即將上線",
+    "body": "我們正在為此語言精心準備第一批優質文章，請稍後再來查看。",
+    "cta": "瀏覽所有文章"
+  },
+  "related": "相關文章",
+  "breadcrumbHome": "首頁",
+  "breadcrumbAria": "麵包屑導覽",
+  "backToList": "返回部落格",
+  "author": {
+    "role": "臨床與諮商團隊"
+  },
+  "keyTakeaway": "重點摘要",
+  "contents": "目錄",
+  "references": "參考資料",
+  "refType": {
+    "academic": "學術",
+    "government": "政府",
+    "industry": "產業"
+  },
+  "faqTitle": "常見問題",
+  "disclosure": "本文依據 Modalia AI 臨床指引撰寫與審閱，並在發布前經過專業人員的人工審核。",
+  "cta": {
+    "title": "將安全的 AI 夥伴引入您的執業實務",
+    "body": "Modalia AI 協助諮商師完成逐字稿轉錄、個案概念化與文件記錄，以安全優先的理念設計而成。",
+    "button": "免費開始使用"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "h2": "Los registros están ahí —<br></br>pero la interpretación sigue dispersa",
+  "scene1": {
+    "stageAriaLabel": "Materiales dispersos que se conectan en la historia de una persona",
+    "title": "Cuando necesita integrar materiales dispersos en la historia de una persona",
+    "quote": "\"Cuando los resultados de la evaluación y las notas de sesión no se comunican entre sí,<br></br>integrarlos en una sola historia es la parte más difícil.\"",
+    "cite": "Entrevista con terapeuta"
+  },
+  "scene2": {
+    "stageAriaLabel": "Una montaña de documentos que se acumula tras una sesión",
+    "title": "Cuando tiene que escribir<br></br>lo mismo una y otra vez",
+    "quote": "\"Volver a documentar la misma sesión en cada formato<br></br>hace que mi jornada se extienda cada vez más.\"",
+    "cite": "Entrevista con terapeuta de institución"
+  },
+  "scene3": {
+    "stageAriaLabel": "Los registros existen pero el hilo para continuar la próxima sesión se enreda",
+    "title": "Cuando no está seguro de dónde retomar en la próxima sesión",
+    "quote": "\"Las notas están ahí —<br></br>pero igual tengo que releerlo todo para encontrar mi lugar.\"",
+    "cite": "Entrevista con terapeuta en ejercicio"
+  },
+  "motionCaption": "Los materiales de cada escena siguen desconectados; la tarea de integrarlos, revisarlos y vincularlos permanece en manos del terapeuta"
+}
