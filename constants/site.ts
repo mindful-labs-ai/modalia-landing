@@ -1,5 +1,5 @@
 /**
- * Shared config for global.mindthos.com — locale-independent values only.
+ * Shared config for modalia.ai (Modalia AI global site) — locale-independent values only.
  * Per-locale copy (name, tagline, description) lives in messages/<locale>/metadata.json.
  */
 export const SITE_CONFIG = {
@@ -7,8 +7,8 @@ export const SITE_CONFIG = {
   name: 'Modalia AI',
   legalName: 'Mindful Labs Inc.',
   legalUrl: 'https://www.mindfullabs.ai/',
-  /** Global site origin (subdomain). Base for hreflang/canonical. */
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://global.mindthos.com',
+  /** Global site origin. Base for hreflang/canonical. */
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://modalia.ai',
   /** Korean site origin — target for cross-domain hreflang(ko) + x-default */
   koUrl: process.env.NEXT_PUBLIC_KO_SITE_URL || 'https://mindthos.com',
   /** Product app — entry point for all "Start for free / Login" CTAs */

@@ -51,7 +51,7 @@ Source of truth: `mindthos-landing/scripts/publish-blog/` + `scripts/seo-analysi
 
 ## Part B — Global pipeline (mirrors A, adds two tracks)
 
-The global blog has **two content tracks**. We reuse the KR pipeline's shape (cron-able orchestrator → topic/candidate stage → Claude generation → verify → publish.ts-style step) and the existing `global-web/scripts/publish-global-post.mjs` as the final publish stage.
+The global blog has **two content tracks**. We reuse the KR pipeline's shape (cron-able orchestrator → topic/candidate stage → Claude generation → verify → publish.ts-style step) and the existing `modalia-landing/scripts/publish-global-post.mjs` as the final publish stage.
 
 | Track | KR analog | Global stage |
 |---|---|---|
@@ -105,17 +105,18 @@ CREATE INDEX IF NOT EXISTS idx_posts_global_eligibility
 ```jsonc
 { "score":86, "verdict":"global", "reason":"...",
   "region_flags":["crisis_line:109"], "target_locales":["en","es","zh-Hant","de"],
-  "suggested_category":"insights",
+  "suggested_category":"case-conceptualization",
   "transcreation_notes":"Generalize 109; strip /blog internal links." }
 ```
 - Verdict mapping: `global` (≥70, no hard markers) · `review` (40–69, or ≥70 w/ soft KR examples needing transcreation) · `kr_only` (<40 or structural hard marker).
+- `suggested_category` is emitted from the six global categories: **case-conceptualization, assessment, clinical-skills, therapist-wellbeing, ethics-practice, professional-development**. `transcreate-post.mjs` maps any legacy value (e.g. `insights`, `technology`, `guides`, `case-studies`) to the best-fit new slug.
 - Flags: `--unscored` (default), `--all`, `--since=DATE`, `--limit=N`, `--reclassify`.
 
 `scripts/list-candidates.mjs --verdict=review` exports buckets to markdown/CSV; reviewer sets `global_review_override`. Only **effective=global** proceeds.
 
 ### B.3 translate — the Track-1 analog of content generation
 
-`scripts/translate-post.mjs <source-slug> --locale en` (Claude CLI, `claude-opus-4-8`):
+`scripts/translate-post.mjs --locale es|zh-Hant|de [--slug <en-slug> | --limit N] [--dry-run] [--force]` (Claude CLI, `claude-opus-4-8`) — transcreates the published English canonical into the target locale:
 - **Transcreate, not literal**: preserve structure/headings/tables/blockquotes and **academic citations**; strip KR internal `/blog/...` links to plain text (or map if a global equivalent exists); apply `transcreation_notes`; apply glossary + per-locale style guide.
 - Writes `scripts/content/<slug>.<locale>.json` (`reviewed:false`, `source_post_id` + shared `translation_group_id` pre-filled, **thumbnail copied from KR source**).
 
@@ -143,9 +144,9 @@ Already does UPSERT(locale,slug) + `reviewed` gate + revalidate + IndexNow. Exte
 ### B.7 Orchestration & assets
 
 - **Now: on-demand CLI** (decided). Each stage is an `npm` script run with `node --env-file=.env.local`. A thin `daily-global-publish.sh` can chain classify→translate→verify→publish per batch, mirroring KR's phases + exit codes + lock + Slack — **promotable to PM2 cron later** (same `ecosystem.config.js` pattern) once trust is established.
-- **Shared assets to add** under `global-web/scripts/`: `glossary.json` (brand+clinical terms per locale), `style-guide.<locale>.md`, `target-keywords-en.md`, and (for net-new fact-check) `fact-master-en/*.md`.
+- **Shared assets to add** under `modalia-landing/scripts/`: `glossary.json` (brand+clinical terms per locale), `style-guide.<locale>.md`, `target-keywords-en.md`, and (for net-new fact-check) `fact-master-en/*.md`. Per-locale assets now exist: `scripts/style-guide.{es,zh-Hant,de}.md` and `scripts/glossary.{es,zh-Hant,de}.json` (en→target term maps).
 - **LLM**: Anthropic **Claude CLI** (`claude -p … --output-format json`), mirroring KR — classify `claude-sonnet-4-6`, translate/draft `claude-opus-4-8`. Image gen reuses Gemini (`NANOBANANA_API_KEY`) for net-new EN only.
-- **Env** (`global-web/.env.local`, server-only): `ANTHROPIC` via the `claude` CLI login (no key needed) or `ANTHROPIC_API_KEY`; existing `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `INDEXNOW_KEY`; optional `NANOBANANA_API_KEY`.
+- **Env** (`modalia-landing/.env.local`, server-only): `ANTHROPIC` via the `claude` CLI login (no key needed) or `ANTHROPIC_API_KEY`; existing `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `INDEXNOW_KEY`; optional `NANOBANANA_API_KEY`.
 
 ---
 
@@ -170,7 +171,7 @@ Already does UPSERT(locale,slug) + `reviewed` gate + revalidate + IndexNow. Exte
 1. Migration `012_posts_global_eligibility.sql`.
 2. Copy `lib/claude-cli.ts`; write `classify-kr-posts.mjs`; classify all 988 posts (sonnet) → eligibility.
 3. `list-candidates.mjs` → human approves first ~10–20 `global` clinical posts.
-4. `translate-post --locale en` → localization-leak + fidelity verify → human review → `publish-global-post` (type A). (We already shipped 2 such posts by hand — this automates that exact flow.)
+4. `translate-post.mjs --locale es|zh-Hant|de [--slug <en-slug>]` → localization-leak + fidelity verify → human review → `publish-global-post` (type A). (We already shipped 2 such posts by hand — this automates that exact flow.)
 5. Parallel: author `target-keywords-en.md` + `fact-master-en/` → `select-en-topics` + `draft-en-post` (US first) → verify → publish (type B).
 6. Stabilize en → expand reuse to es/zh-Hant/de; promote strong net-new EN to type C; consider PM2 cron.
 

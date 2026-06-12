@@ -1,6 +1,6 @@
 # Global Blog — Publishing Guide
 
-Single source of truth for publishing posts to `global.mindthos.com/{locale}/blog/*`.
+Single source of truth for publishing posts to `modalia.ai/{locale}/blog/*`.
 Design rationale lives in `../../global-blog-plan.md`.
 
 ## Data model (recap)
@@ -70,7 +70,7 @@ The script:
 ## After publish
 
 - ISR: pages revalidate every hour automatically; the pipeline also triggers on-demand revalidation of `/{locale}/blog`, the post path, and `/sitemap.xml`.
-- Verify the post at `https://global.mindthos.com/{locale}/blog/{slug}`.
+- Verify the post at `https://modalia.ai/{locale}/blog/{slug}`.
 - Verify hreflang: view source → `<link rel="alternate" hreflang=...>` should list every published sibling language (+ `ko` only for type A).
 - `sitemap.xml` includes the post with per-URL `alternates`.
 

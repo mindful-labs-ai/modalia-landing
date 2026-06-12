@@ -54,10 +54,16 @@ Read the FULL content and judge SEMANTICALLY (not by keywords) whether the topic
 - "review": mostly universal BUT has meaningful Korea-specific scaffolding needing real adaptation (KR statistics/law as the core, KR institutional workflow, KR-only examples), OR genuinely ambiguous.
 - "kr_only": fundamentally about the Korean system — licensure/exams (상담심리사 1급, 임상심리사 수련), Korean law/policy, KR institutions/contracts/tax, KR-only tools/services, KR job market. Not reusable without a rewrite.
 
-suggested_category: clinical theory/skills/case-conceptualization/self-care → "insights"; security/AI/infra/product/tech → "technology"; how-to/workflow/training concepts → "guides"; adoption stories → "case-studies".
+suggested_category — choose the single best fit:
+- "case-conceptualization": clinical formulation; theory applied to cases (attachment, developmental, psychodynamic, trauma).
+- "assessment": psychological testing & differential diagnosis (MMPI, Rorschach, WISC, TAT, BGT, DSM dx).
+- "clinical-skills": in-session techniques & interventions (active listening, crisis intervention, exposure, CBT/ACT/DBT technique, couples/play/group methods).
+- "therapist-wellbeing": compassion fatigue, burnout, counselor self-care, self-supervision.
+- "ethics-practice": ethics, boundaries, confidentiality, documentation, private-practice operations.
+- "professional-development": supervision, training, career growth, industry/AI/tech trends.
 
 Return ONLY a JSON object, no prose, no code fence:
-{"verdict":"global|review|kr_only","score":0-100,"reason":"<=160 chars English","region_flags":["kr-specific tags or empty"],"target_locales":["en"],"suggested_category":"insights|technology|guides|case-studies","transcreation_notes":"<=200 chars: what to adapt; '' if none"}
+{"verdict":"global|review|kr_only","score":0-100,"reason":"<=160 chars English","region_flags":["kr-specific tags or empty"],"target_locales":["en"],"suggested_category":"case-conceptualization|assessment|clinical-skills|therapist-wellbeing|ethics-practice|professional-development","transcreation_notes":"<=200 chars: what to adapt; '' if none"}
 
 POST:`;
 

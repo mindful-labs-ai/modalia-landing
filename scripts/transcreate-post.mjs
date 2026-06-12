@@ -41,7 +41,11 @@ const ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 if (!SUPABASE_URL || !ANON) { console.error('Missing Supabase env'); process.exit(1); }
 const supabase = createClient(SUPABASE_URL, ANON);
 
-const CATEGORY_FALLBACK = { insights: 'insights', guides: 'guides', technology: 'technology', 'case-studies': 'case-studies' };
+// Global taxonomy (6 categories). Legacy classify verdicts (insights/technology/guides/case-studies)
+// map to the best-fit new slug so cached classify-results.jsonl rows still resolve.
+const GLOBAL_CATEGORIES = ['case-conceptualization', 'assessment', 'clinical-skills', 'therapist-wellbeing', 'ethics-practice', 'professional-development'];
+const LEGACY_CATEGORY = { insights: 'case-conceptualization', guides: 'clinical-skills', technology: 'professional-development', 'case-studies': 'professional-development' };
+const resolveCategory = (s) => (GLOBAL_CATEGORIES.includes(s) ? s : (LEGACY_CATEGORY[s] || 'case-conceptualization'));
 
 function buildPrompt(post, notes, suggestedCategory) {
   const glossaryStr = JSON.stringify(GLOSSARY.terms);
@@ -185,7 +189,7 @@ async function main() {
       const idx = i++; if (idx >= posts.length) return;
       const post = posts[idx];
       const meta = cls.get(post.id) || {};
-      const suggested = CATEGORY_FALLBACK[meta.suggested_category] || 'insights';
+      const suggested = resolveCategory(meta.suggested_category);
       let attempt = 0, doc = null, lastErr = null;
       while (attempt < 3 && !doc) {
         attempt++;

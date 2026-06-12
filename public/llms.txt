@@ -1,48 +1,51 @@
-# 마음토스 (Mindthos)
+# Modalia AI
 
-> 마음토스(Mindthos)는 임상심리사·심리상담사를 위한 안전한 AI 파트너입니다. 축어록 생성, 상담노트·진행노트, 사례개념화, 가계도(Genogram) 도식까지 상담 업무 전반을 한 곳에서 처리합니다. 운영사: 마인드풀랩스 주식회사 (Mindful Labs Inc.).
+> Modalia AI is a safe AI partner for counselors and clinical psychologists. From session transcripts to progress notes, case conceptualization, and genogram diagrams, Modalia AI handles the entire counseling documentation workflow in one secure place. Operated by Mindful Labs Inc.
 
-## 서비스 정의
+## Service definition
 
-마음토스(Mindthos)는 대한민국 서울에 본사를 둔 심리상담 전문 B2B SaaS입니다. 상담사가 회기 직후 녹음 파일이나 메모를 업로드하면, AI가 화자 분리·비식별화·축어록 생성·사례개념화 초안·기관 양식 변환을 자동으로 처리합니다. 1,400명 이상의 상담사가 사용 중이며 월평균 12시간 이상의 기록 업무 시간을 절감하고 있습니다 (2026년 5월, 내부 집계).
+Modalia AI is a B2B SaaS built for mental-health professionals. After a session, a counselor uploads the recording or notes, and the AI automatically handles speaker separation, de-identification, transcript generation, case-conceptualization drafts, and conversion into institutional formats. It is the global edition of Mindthos (mindthos.com), a service already used by 1,400+ counselors in Korea who save 12+ hours of documentation work per month on average (internal data, May 2026).
 
-## 핵심 기능
+## Core features
 
-- 자동 화자 분리 축어록 (상담사/내담자 구분)
-- 비언어적 표현(침묵·한숨) 자동 감지
-- 사례개념화 초안 생성 및 분석 지원
-- 가계도(Genogram) 도식 지원
-- 가족센터·EAP·대학상담센터 등 기관 양식 자동 변환
-- 내담자 데이터 모델 학습 미사용 정책
-- 저장 전 암호화·접근 권한 분리 기반 보안 설계
-- 분석 후 오디오 파일 자동 파기 옵션
+- Automatic speaker-separated transcripts (counselor vs. client)
+- Detection of non-verbal cues such as silence and sighs
+- Case-conceptualization draft generation and analysis support
+- Genogram diagram support
+- Automatic conversion into institutional formats (family centers, EAP, university counseling centers, and more)
+- Client data is never used to train AI models
+- Security by design: encryption before storage and separated access permissions
+- Optional automatic deletion of audio files after analysis
 
-## 보안 및 개인정보 보호
+## Security and privacy
 
-상담 기록은 AI 모델 학습에 사용되지 않습니다. 모든 데이터는 저장 전 암호화되며, 내담자 이름·연락처·기관명 등 식별 정보는 비식별화 처리를 거칩니다. 자세한 운영 기준은 https://mindthos.com/security 에서 확인할 수 있습니다.
+Counseling records are never used to train AI models. All data is encrypted before storage, and identifying information — client names, contact details, institution names — is de-identified. Modalia AI is operated by Mindful Labs Inc.
 
-## 가격 (KRW, 월간 구독)
+## Pricing
 
-- Starter: 8,900원/월 (500크레딧)
-- Plus: 29,900원/월 (2,500크레딧)
-- Pro: 49,900원/월 (5,000크레딧, 기관 및 다계정)
+Modalia AI is preparing its global launch. Join the waitlist at https://modalia.ai/en for early access and launch pricing.
 
-## 주요 페이지
+## Key pages
 
-- 홈: https://mindthos.com/
-- 보안 정책: https://mindthos.com/security
-- 교육 프로그램: https://mindthos.com/education
-- 블로그(상담 인사이트·기술·도입 사례): https://mindthos.com/blog
-- 사이트맵: https://mindthos.com/sitemap.xml
+- Home: https://modalia.ai/en
+- Blog (counseling insights, technology, case studies): https://modalia.ai/en/blog
+- Sitemap: https://modalia.ai/sitemap.xml
 
-## 회사 정보
+## Localized editions
 
-- 운영사: 마인드풀랩스 주식회사 (Mindful Labs Inc.)
-- 회사 사이트: https://www.mindfullabs.ai/
-- 주소: 서울특별시 성동구 뚝섬로13길 38, 4층
-- 문의: business@mindfullabs.ai
-- 카카오톡 오픈채팅: https://open.kakao.com/me/Mindthos
+- English: https://modalia.ai/en
+- Español: https://modalia.ai/es
+- 繁體中文: https://modalia.ai/zh-Hant
+- Deutsch: https://modalia.ai/de
+- 한국어 (Korean original): https://mindthos.com
 
-## AI 사용 정책
+## Company
 
-이 사이트의 콘텐츠를 AI 검색 결과 인용 및 답변 요약에 사용하는 것을 허용합니다. GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, Applebot-Extended 모두 robots.txt 에서 명시적으로 허용됩니다. Common Crawl(CCBot) 학습용 아카이빙은 차단됩니다.
+- Operator: Mindful Labs Inc.
+- Company site: https://www.mindfullabs.ai/
+- Address: 4F, 38 Ttukseom-ro 13-gil, Seongdong-gu, Seoul, Republic of Korea
+- Contact: business@mindfullabs.ai
+
+## AI usage policy
+
+The content on this site may be used in AI search results, citations, and answer summaries. GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, and Applebot-Extended are explicitly allowed in robots.txt. Common Crawl (CCBot) archiving for training is blocked.

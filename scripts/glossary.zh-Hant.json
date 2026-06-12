@@ -1,0 +1,42 @@
+{
+  "_note": "Clinical term map for en→zh-Hant transcreation (Taiwan conventions). Brand stays Modalia AI. preserve_verbatim items are language-neutral.",
+  "brand": {
+    "Mindthos": "Modalia AI",
+    "Modalia AI": "Modalia AI"
+  },
+  "terms": {
+    "case conceptualization": "個案概念化",
+    "case formulation": "個案形成",
+    "session transcript": "會談逐字稿",
+    "progress note": "進展紀錄",
+    "supervision": "督導",
+    "supervisor": "督導者",
+    "client": "個案",
+    "counselor": "諮商師",
+    "clinician": "臨床工作者",
+    "working alliance": "工作同盟",
+    "therapeutic alliance": "治療同盟",
+    "countertransference": "反移情",
+    "transference": "移情",
+    "cognitive behavioral therapy (CBT)": "認知行為治療（CBT）",
+    "acceptance and commitment therapy (ACT)": "接納與承諾治療（ACT）",
+    "dialectical behavior therapy (DBT)": "辯證行為治療（DBT）",
+    "exposure and response prevention (ERP)": "暴露與反應預防（ERP）",
+    "behavioral activation": "行為活化",
+    "cognitive restructuring": "認知重建",
+    "psychological assessment": "心理衡鑑",
+    "reality testing": "現實檢驗",
+    "defense mechanism": "防衛機轉",
+    "anhedonia": "失樂感",
+    "burnout": "職業倦怠",
+    "compassion fatigue": "同理疲勞",
+    "self-care": "自我照顧",
+    "self-supervision": "自我督導"
+  },
+  "preserve_verbatim": [
+    "Modalia AI", "MMPI", "MMPI-2", "RC", "RCd", "RC2", "WISC", "WISC-V", "TAT", "TCI", "BGT",
+    "DSM-5", "DSM-5-TR", "Rorschach", "Exner", "Erlebnistypus", "CBT", "ACT", "DBT", "ERP",
+    "Winnicott", "Salkovskis", "Rachman", "Berry", "Murray", "Jung", "Freud", "Vaillant", "Tellegen",
+    "DOI", "PsycINFO", "PubMed"
+  ]
+}

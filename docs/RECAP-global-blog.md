@@ -13,12 +13,12 @@
 > Original session-1 notes below (historical).
 
 ## Where we are
-Building the **global blog** at `global-web/` (Next 16 + next-intl, brand = **Modalia AI**, locales en/es/zh-Hant/de) on the **same Supabase project** as the Korean site (`ulrxefpxlsbpjgvpxxor`). Korean `posts` is read-only-ish (we only added additive nullable `global_*` columns). Global posts live in `global_posts` / `global_categories` (migrations 011, 012 applied).
+Building the **global blog** at `modalia-landing/` (Next 16 + next-intl, brand = **Modalia AI**, locales en/es/zh-Hant/de) on the **same Supabase project** as the Korean site (`ulrxefpxlsbpjgvpxxor`). Korean `posts` is read-only-ish (we only added additive nullable `global_*` columns). Global posts live in `global_posts` / `global_categories` (migrations 011, 012 applied).
 
 ## DONE
 1. **Blog system shipped & verified** (routes, components, SEO/hreflang, sitemap, `/api/{revalidate,indexnow}`, publish pipeline). tsc/eslint/build all green.
 2. **2 real type-A posts already live** in `global_posts` (en + es): `managing-intrusive-thoughts-counseling`, `multicultural-case-conceptualization-guide` (hand-translated earlier; ja versions have been deleted from DB — current hreflang is en↔es+ko).
-3. **Automation design docs** in `global-web/docs/`:
+3. **Automation design docs** in `modalia-landing/docs/`:
    - `global-blog-automation.md` (KR pipeline reverse-engineered from `/Users/sicei/Documents/GitHub/mindthos-landing/scripts/publish-blog` + global 2-track design)
    - `global-blog-reuse-execution-plan.md` (steps 1–3: select → English → other languages)
 4. **Step 1 — classification DONE.** `scripts/classify-kr-posts.mjs` (Claude CLI sonnet, reads FULL body, semantic verdict). All 988 published KR posts classified, **0 errors**. Results in `scripts/.data/classify-results.jsonl`.
@@ -43,9 +43,9 @@ Building the **global blog** at `global-web/` (Next 16 + next-intl, brand = **Mo
 ## NEXT STEP (resume here) — publish the 5 samples
 Pick ONE write path:
 
-**Path A (recommended, MCP-independent):** add `SUPABASE_SERVICE_ROLE_KEY=` to `global-web/.env.local` (same value the KR repo uses: `/Users/sicei/Documents/GitHub/mindthos-landing/web/.env.local`), then:
+**Path A (recommended, MCP-independent):** add `SUPABASE_SERVICE_ROLE_KEY=` to `modalia-landing/.env.local` (same value the KR repo uses: `/Users/sicei/Documents/GitHub/mindthos-landing/web/.env.local`), then:
 ```
-cd global-web
+cd modalia-landing
 node --env-file=.env.local scripts/publish-global-post.mjs scripts/content/*.en.json
 ```
 NOTE: `publish-global-post.mjs` currently UPSERTs `global_posts` by (locale,slug) and needs `category_slug`→`category_id` resolution; staging files already carry `category_slug`, `source_post_id`, `translation_group_id`, thumbnail. Verify the script handles `_source`/`reviewed` fields (it enforces `reviewed:true` to publish — the 5 files are `reviewed:false`, so either set them true after human review or pass an override). **Review the 5 files first, then flip `reviewed:true`.**
@@ -59,11 +59,11 @@ After publishing: clean rebuild + verify list/detail/hreflang, then decide scale
 - `.env.local` has only SUPABASE URL + ANON key today (no service role key) → that's the publish blocker for Path A.
 - Migration `012_posts_global_eligibility.sql` already applied (columns exist on `posts`); JSONL→columns sync still pending (optional — transcreate reads the JSONL directly, so not strictly required to publish).
 - Author byline: brand `Modalia AI` (DEFAULT_AUTHOR in `constants/blog.ts`).
-- Expansion languages: **es, zh-Hant, de** — site already supports them; step-3 (en→other languages) is build-later.
+- Expansion languages: **es, zh-Hant, de** — site already supports them; step-3 `translate-post.mjs --locale es|zh-Hant|de` is **built** (`scripts/style-guide.{es,zh-Hant,de}.md` + `scripts/glossary.{es,zh-Hant,de}.json` also exist). Ready to execute per language.
 
 ## TODO backlog
 - [ ] Publish the 5 sample en posts (NEXT STEP).
 - [ ] (optional) Sync `classify-results.jsonl` → `posts.global_*` columns.
 - [ ] Scale step 2: transcreate remaining ~785 global posts in waves (`scripts/transcreate-post.mjs --limit N`).
-- [ ] Step 3: build `translate-from-en` mode + per-locale style guides once languages chosen.
+- [x] Step 3: `translate-post.mjs --locale es|zh-Hant|de` built; per-locale style guides (`style-guide.{es,zh-Hant,de}.md`) and glossaries (`glossary.{es,zh-Hant,de}.json`) exist. Execute per language (es first, then zh-Hant, then de).
 - [ ] Human translation review for any es/zh-Hant/de before publish (PRD: no MT originals).

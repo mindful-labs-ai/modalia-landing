@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '@/constants/site';
  * Submit URLs to IndexNow (Bing / Yandex / Naver / Seznam) for fast discovery
  * of new global blog posts. Called by the publishing pipeline.
  *
- * POST /api/indexnow?secret=...   body: { "urls": ["https://global.mindthos.com/en/blog/my-slug"] }
+ * POST /api/indexnow?secret=...   body: { "urls": ["https://modalia.ai/en/blog/my-slug"] }
  *
  * Requires INDEXNOW_KEY (and the matching /<key>.txt hosted at the site root) and
  * REVALIDATE_SECRET (shared guard). Disabled (503) when either is unset.
