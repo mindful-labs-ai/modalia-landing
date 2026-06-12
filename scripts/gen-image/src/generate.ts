@@ -38,7 +38,7 @@ import { parseArgs } from 'node:util';
 
 // .env 우선순위:
 //   1) scripts/gen-image/.env (이 패키지 로컬)
-//   2) global-web/.env.local (글로벌 앱 공유)
+//   2) modalia-landing/.env.local (글로벌 앱 공유)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 if (!process.env.OPENAI_API_KEY) {
