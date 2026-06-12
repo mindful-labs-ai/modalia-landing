@@ -61,9 +61,12 @@ export function Footer() {
                 </dd>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <dd className="text-[15.5px] font-medium leading-[1.6] text-[var(--ink)]">
+              <div className="flex flex-col gap-1.5">
+                <dd className="text-[15.5px] font-semibold leading-[1.6] text-[var(--ink)]">
                   {t('companyLine')}
+                </dd>
+                <dd className="text-[13.5px] font-medium leading-[1.6] text-[var(--ink-2)]">
+                  {SITE_CONFIG.displayAddress}
                 </dd>
               </div>
             </dl>

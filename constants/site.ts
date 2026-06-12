@@ -33,12 +33,15 @@ export const SITE_CONFIG = {
   },
   /** Organization JSON-LD address — headquarters (Korea), locale-independent */
   address: {
-    streetAddress: '38 Ttukseom-ro 13-gil, 4F, Seongdong-gu',
+    streetAddress: '5–6F S.Village, 6 Jong-ro, Jongno-gu',
     addressLocality: 'Seoul',
     addressRegion: 'Seoul',
-    postalCode: '04782',
+    postalCode: '03187',
     addressCountry: 'KR',
   },
+  /** Human-readable HQ address for the footer (Latin form, locale-independent). */
+  displayAddress:
+    '5–6F S.Village, 6 Jong-ro, Jongno-gu, Seoul 03187, Republic of Korea',
   /** Brand colours */
   brand: {
     primary: '#44ce4b',
